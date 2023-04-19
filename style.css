@@ -1,0 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:wght@700&family=Montserrat:ital,wght@0,700;1,200&family=Roboto:wght@400;500;700&display=swap');
+
+
+
+body{
+    background-color: aqua;
+}
+
+h1{
+    font-size: 20px;
+    color:  #161853;
+    background-color: aqua;
+    font-family: 'Roboto';
+}
+
+h4{
+    color:#FAEDF0;
+}
