@@ -1,16 +1,18 @@
-
-
 @import url('https://fonts.googleapis.com/css2?family=Fraunces:wght@700&family=Montserrat:ital,wght@0,700;1,200&family=Roboto:wght@400;500;700&display=swap');
 
 
 
-color1 : #161853;
-color1 : #FAEDF0;
-he
+body{
+    background-color: aqua;
+}
 
 h1{
     font-size: 20px;
-    color: blue;
+    color:  #161853;
     background-color: aqua;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto';
+}
+
+h4{
+    color:#FAEDF0;
 }
