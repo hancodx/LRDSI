@@ -17,7 +17,7 @@
         die(print_r(sqlsrv_errors(), true));
     }
     else 
-    echo 'connection established';
+    echo 'connection established hello db';
 
 
 ?>
