@@ -12,9 +12,10 @@ header {
     overflow: hidden;
 }
 .container{
+    margin: 0 auto;
     width: 90%;
     height: auto;
-    margin: 0 auto;
+    
     background-color: rgba(240, 248, 255, 0.074);
     border-radius: 30px;
 }
