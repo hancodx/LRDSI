@@ -1,3 +1,13 @@
+:root {
+
+    /* dark mode */
+    --color1: 126E62;
+    --color2: E1EDEB;
+    --color2: 6BA49D;
+    --color2: 89B6B1;
+    
+
+  }
 *{
     margin: 0;
     padding:0;
@@ -23,7 +33,7 @@ header {
 a {
     width: 20%;
     text-decoration: none;
-    color: #ffffff;
+    color: #060606;
    
 }
  .logo img {
@@ -56,7 +66,7 @@ nav ul li a{
   text-decoration: none;
   margin: 0 2rem;
   letter-spacing: 1px;
-  color: #ffffff;
+  color: #000000;
 }
 nav ul .dropdown  {
     position: absolute;
@@ -301,14 +311,17 @@ animation: textOut .5s ease;
 section{
     width: 100%;
     height: auto;
-    background-color: #010b25;
+    background-color: #2c3d3d;
     display: flex;
     flex-wrap: wrap;
+    padding-bottom: 5%;
 
 }
 
 /* 1er section pub event */
-
+.first-section{
+    padding-top: 3%;
+}
 
 .first-section .sub-section{
 height: auto;
@@ -317,11 +330,11 @@ width: 50%;
 display: flex;
 justify-content: center;
 align-items: center;
-padding: 2%;
+padding: 5%;
 
 }
 .publication{
-width: 90%;
+width: 100%;
 height: auto;
 display: flex;
 flex-direction: column;
@@ -336,7 +349,7 @@ flex-direction: column;
 }
 
 .publication  .cadres{
-    height:350px;
+    height:300px;
     width: 100%;
     display: flex;
     /* align-items: flex-start; */
@@ -356,10 +369,10 @@ flex-direction: column;
 
 .cadres .cadre {
   
-    height:200px;
+    height:230px;
     width:170px;
     margin:5px 10px; 
-    text-align: center;
+    /* text-align: center; */
     border-radius: 20px;
     overflow: hidden;
     position: relative;
@@ -377,9 +390,15 @@ flex-direction: column;
 
   }
 
-  .cadres .cadre2{
-    align-self: flex-end;
-  } 
+.sub-sec-discription{
+    height: 100px;
+    padding: 5%;
+    text-align: center;
+    color: #ffffff;
+    font-size: 16px;
+    line-height: 25px;
+
+}
 
 
 .first-section .sec-button{
@@ -392,6 +411,7 @@ flex-direction: column;
     text-align: center;
     padding: 1%;
     cursor: pointer;
+
 }
 .first-section .sec-button a{
     color: #000f31;
@@ -399,76 +419,47 @@ flex-direction: column;
 
 .cadre-texte{
     position: absolute;
-    bottom: 0;
+    top: 85%;
     left: 0%;
-    background-color: #2e2f30af;
+    background-color: #000000e1;
     width: 100%;
-    height: 0%;
+    height: 22%;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    padding: 4% 8%;
+    
     color: #000f31;
     flex-direction: column;
     transition: 0.5s ease-in-out; 
     overflow: hidden;
+    font-size: 120%;
 
     
 }
-.cadre-texte h4{
-    color: #ffffff;
-    transform: rotate(-2deg) skewX(-4deg);
-}
-
-.cadre:hover .cadre-texte{
-    height: 100%;
-
-}
-
-.cadre:hover img{
-    transform:  scale(1.07);
-    transition: .4s ease-in;
-}
-
-
-
-
-
-/* 2eme section project  */
-.secend-section{
-    height: 80vh;
-   position: relative;
-}
-.secend-section .titre{
-    align-self: center;
-    color: #ffffff;
-    margin-top: 5%;
-    position: absolute;
-    left: 46%;
-    /* top: 0%;  in the top of the section*/
-}
-.secend-section .sub-section{
+.cadre-texte-back{
     height: 100%;
     width: 100%;
-    padding-top: 6%;
-    background-color: #ffffff00;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
+    background-color: #0000006b;
+    position: absolute;
+    top:0%;
+    left: 0%;
+}
+.cadre-texte h4{
+    color: #ffffff;
+    /* transform: rotate(-2deg) skewX(-4deg); */
+}
 
-}
-.secend-section .sub-section .container{
-    height: 300px;
-    width: 300px;
-    background-color: transparent;
-    position: relative;
-}
+
+
+
+
+
 .thecadre{
     position: absolute;
     width: 100%;
     height: 100%;
     transform-style: preserve-3d;
     /* transition: all 0.6s linear ; */
-    text-align: center;
+    /* text-align: center; */
    cursor: pointer;
     
 }
@@ -477,9 +468,6 @@ flex-direction: column;
     height: 100%;
     width: 100%;
     backface-visibility: hidden;
-    background-color: #31549a;
-    border-radius: 30px;
-    color: #ffffff;
     transform: perspective(1100px) rotateY(0deg);
     transition: .4s   linear;
 }
@@ -489,10 +477,7 @@ flex-direction: column;
     height: 100%;
     width: 100%;
     backface-visibility: hidden;
-    background-color: #213862;
     transform: perspective(1100px) rotateY(180deg);
-    border-radius: 30px;
-    color: #ffffff;
     transition: .4s  linear;
 
 }
@@ -503,6 +488,80 @@ flex-direction: column;
 }.thecadre:hover > .theback{
     transform: perspective(1100px) rotateY(0deg);
 
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 2eme section project  */
+.secend-section{
+    height: 90vh;
+   position: relative;
+
+  
+}
+
+.secend-section .sub-section{
+    height: 100%;
+    width: 50%;
+    min-width: 450px;
+    padding-top: 10%;
+    background-color: #ffffff00;
+    flex-wrap: wrap;
+    position: relative;
+
+
+}
+.secend-section .sub-section .box{
+    height: 300px;
+    width: 300px;
+    position: absolute;
+    background-color: #88a5e0;
+    border-radius: 30px;
+
+}
+.secend-section .sub-section >:nth-of-type(1){
+top:10%;
+left: 20%;
+}
+.secend-section .sub-section >:nth-of-type(2){
+top:35%;
+left: 45%;
+background-color: #3b527f;
+}
+
+.sub-section .titre{
+line-height: 25px;
+font-size: 20px;
+color: #ffffff;
+text-align: center;
+}
+.sub-section .titre h2{
+    font-size: 32px;
+    margin-bottom: 5%;
 }
 
 
