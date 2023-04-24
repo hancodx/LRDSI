@@ -12,7 +12,7 @@
         "PWD" => $pass 
     ];
 
-    $conn=mysqli_connect("localhost", "root", "", "LRDSI", 80);
+    $conn=mysqli_connect();
     if (!$conn) {
         die(print_r(sqlsrv_errors(), true));
     }
