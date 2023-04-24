@@ -12,7 +12,7 @@
     margin: 0;
     padding:0;
     box-sizing: border-box;
-    
+    font-family: 'Tajawal', sans-serif;
 }
 
 
@@ -67,6 +67,8 @@ nav ul li a{
   margin: 0 2rem;
   letter-spacing: 1px;
   color: #000000;
+  color: var(--color1);
+
 }
 nav ul .dropdown  {
     position: absolute;
