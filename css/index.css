@@ -579,6 +579,8 @@ background-color: var(--color1);
     width: 50%;
     min-width: 450px;
     padding-top: 10%;
+padding-left: 5%;
+padding-right: 5%;
     background-color: #ffffff00;
     flex-wrap: wrap;
     position: relative;
@@ -593,21 +595,31 @@ background-color: var(--color1);
     border-radius: 30px;
 
 }
-.secend-section .sub-section >:nth-of-type(1){
+.secend-section .sub-section.er1 >:nth-of-type(1){
 top:10%;
 left: 20%;
+z-index: 0;
+transition: 0.4s;
+
 }
-.secend-section .sub-section >:nth-of-type(2){
+.secend-section .sub-section.er1 >:nth-of-type(1):hover{
+    top:10%;
+    left: 20%;
+    z-index: 9;
+    }
+.secend-section .sub-section.er1 >:nth-of-type(2){
 top:35%;
 left: 45%;
 background-color: #3b527f;
 }
 
+
 .sub-section .titre{
-line-height: 25px;
+line-height: 29px;
 font-size: 20px;
 color: #ffffff;
 text-align: center;
+width: 90%;
 }
 .sub-section .titre h2{
     font-size: 32px;
@@ -654,6 +666,26 @@ text-align: center;
     background-color: #126e62cf;
     height: 90vh;
     position: relative;
+    display: flex;
+    padding-bottom: 0%;
+    
+}
+
+.therd-section .sub-section {
+    width: 55%;
+    padding-left: 7%;
+    display: flex;
+    align-items: center;
+   
+}
+/* .therd-section .sub-section .titre{
+    text-align: start;
+    width: 85%;
+} */
+.therd-section .sub-section.eme2{
+    width: 45%;
+    height: 100%;
+   
 }
 
 
@@ -730,4 +762,61 @@ footer{
 
   
 
- 
+  
+   
+
+   
+
+    .swiper {
+      width: 60%;
+      height: 75%;
+    }
+
+    .swiper-slide {
+      text-align: center;
+      font-size: 18px;
+      background: var(--color2);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .swiper-slide img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .swiper-button-next, .swiper-button-prev {color: var(--color3,var(--color4));}
+
+    
+    .autoplay-progress {
+      position: absolute;
+      right: 16px;
+      bottom: 16px;
+      z-index: 10;
+      width: 48px;
+      height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      color: var(--swiper-theme-color);
+    }
+
+    /* .autoplay-progress svg {
+      --progress: 0;
+      position: absolute;
+      left: 0;
+      top: 0px;
+      z-index: 10;
+      width: 100%;
+      height: 100%;
+      stroke-width: 4px;
+      stroke: var(--swiper-theme-color);
+      fill: none;
+      stroke-dashoffset: calc(125.6 * (1 - var(--progress)));
+      stroke-dasharray: 125.6;
+      transform: rotate(-90deg);
+    } */
+  

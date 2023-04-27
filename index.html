@@ -11,7 +11,10 @@
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     <title>index page</title>
- 
+
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+  
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Fraunces:wght@700&family=Montserrat:ital,wght@0,700;1,200&family=Roboto:wght@400;500;700&display=swap');
     </style>
@@ -249,7 +252,7 @@
 
 <section class="secend-section" id="project">
     
-    <div class="sub-section">
+    <div class="sub-section er1">
         
         <div class="box">
            <div class="thecadre">
@@ -263,7 +266,7 @@
         </div>
        
     </div>
-    <div class="sub-section">
+    <div class="sub-section  ">
        <div class="titre"><h2>projects</h2>
        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Mollitia iusto explicabo fugit? Sequi, placeat! Distinctio
          numquam commodi obcaecati tempora esse eveniet vel ab, illo et enim laborum! Nisi, necessitatibus consectetur.</p>    
@@ -275,16 +278,65 @@
 
 <section class="therd-section" id="project">
     
-    <div class="sub-section">
-        
-       
-       
-    </div>
+    
     <div class="sub-section">
        <div class="titre"><h2>projects</h2>
        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Mollitia iusto explicabo fugit? Sequi, placeat! Distinctio
          numquam commodi obcaecati tempora esse eveniet vel ab, illo et enim laborum! Nisi, necessitatibus consectetur.</p>    
     </div>
+</div>   
+    <div class="sub-section eme2">
+        
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">Slide</div>
+              <div class="swiper-slide">Slide</div>
+              <div class="swiper-slide">Slide</div>
+              <div class="swiper-slide">Slide</div>
+              <div class="swiper-slide">Slide</div>
+              <div class="swiper-slide">Slide</div>
+              <div class="swiper-slide">Slide</div>
+              <div class="swiper-slide">Slide</div>
+              <div class="swiper-slide">Slide</div>
+            </div>
+            <div class="swiper-button-next" style="color:var(--color3);" ></div>
+            <div class="swiper-button-prev" style="color:var(--color3);"></div>
+            <div class="swiper-pagination" style="color:darkcyan"></div>
+           
+          </div>
+        
+          <!-- Swiper JS -->
+          <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+        
+          <!-- Initialize Swiper -->
+          <script>
+            const progressCircle = document.querySelector(".autoplay-progress svg");
+            const progressContent = document.querySelector(".autoplay-progress span");
+            var swiper = new Swiper(".mySwiper", {
+              spaceBetween: 30,
+              centeredSlides: true,
+              autoplay: {
+                delay: 2500,
+                disableOnInteraction: false
+              },
+              pagination: {
+                el: ".swiper-pagination",
+                clickable: true
+              },
+              navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev"
+              },
+              on: {
+                autoplayTimeLeft(s, time, progress) {
+                  progressCircle.style.setProperty("--progress", 1 - progress);
+                  progressContent.textContent = `${Math.ceil(time / 7000)}`;
+                }
+              }
+            });
+          </script>
+   
+
    </div>
 </section>
 
