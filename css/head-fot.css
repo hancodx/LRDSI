@@ -20,13 +20,11 @@
     font-family: 'Tajawal', sans-serif;
 }
 
-
-
 .container{
-    margin: 0 auto;
-    width: 90%;
-    height: auto;
-    /* From https://css.glass */
+  margin: 0 auto;
+  width: 90%;
+  height: auto;
+  /* From https://css.glass */
 /* From https://css.glass */
 background: rgba(225, 237, 235, 0.67);
 border-radius: 16px;
@@ -34,31 +32,32 @@ box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
 backdrop-filter: blur(11px);
 -webkit-backdrop-filter: blur(11px);
 border: 1px solid rgba(225, 237, 235, 0);
-    border-radius: 30px;
-    margin-top: 25px;
+  border-radius: 30px;
+  margin-top: 25px;
 left: 5%;
-    position: fixed;
-    z-index: 999;
+  position: fixed;
+  top: 0;
+  z-index: 999;
 }
 a {
-    width: 20%;
-    text-decoration: none;
-    color: var(--color1);
-   
+  width: 20%;
+  text-decoration: none;
+  color: var(--color1);
+ 
 }
- .logo img {
-   width: 100px;
-   height: 30px;
-  
- }
+.logo img {
+ width: 100px;
+ height: 30px;
+
+}
 nav{
-    padding: 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    text-transform: uppercase;
-    font-size: .9rem;
-    
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-transform: uppercase;
+  font-size: .9rem;
+  
 }
 
 
@@ -68,54 +67,53 @@ nav{
 
 
 nav ul {
-    list-style: none;
-    display: flex;
-    position: relative;
+  list-style: none;
+  display: flex;
+  position: relative;
 }
 nav ul li a{
-  text-decoration: none;
-  margin: 0 2rem;
-  letter-spacing: 1px;
-  color: var(--color1);
-  font-weight: 510;
+text-decoration: none;
+margin: 0 2rem;
+letter-spacing: 1px;
+color: var(--color1);
+font-weight: 510;
 
 }
 nav ul .dropdown  {
-    position: absolute;
-    left: 5%;
-    top: 100%;
-    width: 150px;
-    height: 29px;
-    display: none;
+  position: absolute;
+  left: 5%;
+  top: 100%;
+  width: 150px;
+  height: 29px;
+  display: none;
 }
 nav ul .dropdown ul{
-    flex-direction: column;
-    position: absolute;
-    left: 20%;
-    top: 100%;
-    /* From https://css.glass */
+  flex-direction: column;
+  position: absolute;
+  left: 20%;
+  top: 100%;
+  /* From https://css.glass */
 background: rgba(225, 237, 235, 0.67);
 border-radius: 16px;
 box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
 backdrop-filter: blur(11px);
 -webkit-backdrop-filter: blur(11px);
 border: 1px solid rgba(225, 237, 235, 0.3);
-    width: 150px;
-    height: 100px;
-    justify-content: space-around;
-    border-radius: 8px;
-    transition: 0.5s ease;
-    
+  width: 190px;
+  height: 100px;
+  justify-content: space-around;
+  border-radius: 8px;
+  transition: 0.5s ease;
+  
 }
 
 nav ul a:hover{ 
-    color: black;
+  color: black;
 }
 
 nav ul li:hover .dropdown   {
-    display:block;
+  display:block;
 }
-
 
 
 
