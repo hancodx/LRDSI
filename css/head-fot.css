@@ -23,8 +23,6 @@
   margin: 0 auto;
   width: 90%;
   height: auto;
-  /* From https://css.glass */
-  /* From https://css.glass */
   background: rgba(225, 237, 235, 0.67);
   border-radius: 16px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
@@ -37,6 +35,8 @@
   position: fixed;
   top: 0;
   z-index: 999;
+  padding-left: 0;
+  padding-right: 0;
 }
 
 
@@ -149,24 +149,7 @@ body {
 }
 
 
-.container {
-  margin: 0 auto;
-  width: 90%;
-  height: auto;
-  /* From https://css.glass */
-  /* From https://css.glass */
-  background: rgba(225, 237, 235, 0.67);
-  border-radius: 16px;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(11px);
-  -webkit-backdrop-filter: blur(11px);
-  border: 1px solid rgba(225, 237, 235, 0);
-  border-radius: 30px;
-  margin-top: 25px;
-  left: 5%;
-  position: fixed;
-  z-index: 999;
-}
+
 
 .container a {
   width: 20%;
