@@ -1,63 +1,177 @@
-
-
 @import url('https://fonts.googleapis.com/css2?family=Fraunces:wght@700&family=Montserrat:ital,wght@0,700;1,200&family=Roboto:wght@400;500;700&display=swap');
 
 
 :root {
 
-    /* dark mode */
-    --color1: #126E62;
-    --color2: #E1EDEB;
-    --color3: #6BA49D;
-    --color4: #89B6B1;
-  color:   #000f31;
+  /* dark mode */
+  --color1: #126E62;
+  --color2: #E1EDEB;
+  --color3: #6BA49D;
+  --color4: #89B6B1;
+  color: #000f31;
 
-  }
-*{
-    margin: 0;
-    padding:0;
-    box-sizing: border-box;
-    font-family: 'Tajawal', sans-serif;
 }
 
-.container:first-of-type{
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Tajawal', sans-serif;
+}
+
+.container:first-of-type {
   margin: 0 auto;
   width: 90%;
   height: auto;
-  /* From https://css.glass */
-/* From https://css.glass */
-background: rgba(225, 237, 235, 0.67);
-border-radius: 16px;
-box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-backdrop-filter: blur(11px);
--webkit-backdrop-filter: blur(11px);
-border: 1px solid rgba(225, 237, 235, 0);
+  background: rgba(225, 237, 235, 0.67);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(11px);
+  -webkit-backdrop-filter: blur(11px);
+  border: 1px solid rgba(225, 237, 235, 0);
   border-radius: 30px;
   margin-top: 25px;
-left: 5%;
+  left: 5%;
   position: fixed;
   top: 0;
   z-index: 999;
+  padding-left: 0;
+  padding-right: 0;
 }
-a {
+
+
+
+
+/* footer css */
+footer {
+  background-color: var(--color3);
+  width: 100%;
+  height: 30vh;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  color: var(--color2);
+  flex-direction: column;
+}
+
+footer .txt {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  line-height: 22px;
+}
+
+.wrapper .button {
+  display: inline-block;
+  height: 60px;
+  width: 60px;
+  float: left;
+  margin: 0px 5px;
+  background: var(--color2);
+  border-radius: 50px;
+  cursor: pointer;
+  box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-out;
+  overflow: hidden;
+
+}
+
+.wrapper .button:hover {
+  width: 200px;
+}
+
+.wrapper .button .icon {
+  display: inline-block;
+  height: 60px;
+  width: 60px;
+  text-align: center;
+  border-radius: 50px;
+  box-sizing: border-box;
+  line-height: 60px;
+  transition: all 0.3s ease-out;
+}
+
+.wrapper .button:nth-child(1):hover .icon {
+  background: var(--color4);
+}
+
+.wrapper .button:nth-child(2):hover .icon {
+  background: var(--color4);
+}
+
+.wrapper .button:nth-child(3):hover .icon {
+  background: var(--color4);
+}
+
+.wrapper .button .icon ion-icon {
+  font-size: 25px;
+  line-height: 60px;
+  transition: all 0.3s ease-out;
+  color: var(--color1);
+  font-size: 150%;
+  margin-top: 30%;
+}
+
+.wrapper .button span {
+  font-size: 20px;
+  font-weight: 500;
+  position: relative;
+  bottom: 4px;
+  margin-left: 10px;
+  color: var(--color1);
+  transition: all 0.3s ease-out;
+}
+
+footer p {
+  font-size: 100%;
+  margin: 0;
+  color: #ffffff;
+  font-size: 100%;
+  font-weight: 200;
+}
+
+footer h5 {
+  margin-top: 0;
+  font-size: 90%;
+  font-weight: 600;
+  margin-bottom: 0%;
+  line-height: 22px;
+}
+
+
+
+
+
+
+
+body {
+  scroll-behavior: smooth;
+}
+
+
+
+
+.container a {
   width: 20%;
   text-decoration: none;
   color: var(--color1);
- 
-}
-.logo img {
- width: 100px;
- height: 30px;
 
 }
-nav{
+
+.logo img {
+  width: 100px;
+  height: 30px;
+
+}
+
+nav {
   padding: 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   text-transform: uppercase;
   font-size: .9rem;
-  
+
 }
 
 
@@ -70,265 +184,11 @@ nav ul {
   list-style: none;
   display: flex;
   position: relative;
-}
-nav ul li a{
-text-decoration: none;
-margin: 0 2rem;
-letter-spacing: 1px;
-color: var(--color1);
-font-weight: 510;
-
-}
-nav ul .dropdown  {
-  position: absolute;
-  left: 5%;
-  top: 100%;
-  width: 150px;
-  height: 29px;
-  display: none;
-}
-nav ul .dropdown ul{
-  flex-direction: column;
-  position: absolute;
-  left: 20%;
-  top: 100%;
-  /* From https://css.glass */
-background: rgba(225, 237, 235, 0.67);
-border-radius: 16px;
-box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-backdrop-filter: blur(11px);
--webkit-backdrop-filter: blur(11px);
-border: 1px solid rgba(225, 237, 235, 0.3);
-  width: 190px;
-  height: 100px;
-  justify-content: space-around;
-  border-radius: 8px;
-  transition: 0.5s ease;
-  
+  padding: 0%;
+  margin: 0%;
 }
 
-nav ul a:hover{ 
-  color: black;
-}
-
-nav ul li:hover .dropdown   {
-  display:block;
-}
-
-
-
-
-/* animation */
-nav ul li  {
-    transform: translateX(100rem);
-    animation: slideIn  1s forwards;
-}
-nav ul li:nth-child(1){
-    animation-delay: 0s ;
-}
-nav ul li:nth-child(2){
-    animation-delay: 0.4s ;
-}
-nav ul li:nth-child(3){
-    animation-delay: .8s ;
-}
-nav ul li:nth-child(4){
-    animation-delay: 1.2s ;
-}
-
-/* dropdown no animation  */
-nav ul li .dropdown ul li{
-    transform: translateX(0rem);
-    animation: none;
-}
-@keyframes slideIn {
-    to{
-transform: translateX(0rem)  ;
-    }
-}
-
-/* //search bare */
-.search-form{
-    height: 35px;
-    width: 20%;
-    background-color: rgba(255, 255, 255, 0.786);
-    border-radius: 30px;
-    box-shadow: 0 0 2px #030303d4;
-    display: flex;
-    justify-content: space-evenly;
-}
-.search-input{
-    background-color: transparent;
-    border: none;
-    height: auto;
-    width: 70%;
-}
-.search-button{
-    width: 35px;
-    font-size: 120%;
-    color: rgb(7, 7, 91);
-    background-color: transparent;
-    border: none;
-   
-    margin-top: 4px;
-}
-
-
-
-
-/* footer css */
-footer{
-  background-color: var(--color3);
-  width: 100%;
-  height: 30vh;
-  display: flex;
-  justify-content:space-evenly;
-  align-items: center;
-  color: var(--color2);
-  flex-direction: column;
-}
-footer .txt{
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  line-height: 22px;
-}
-
-.wrapper .button{
-  display: inline-block;
-  height: 60px;
-  width: 60px;
-  float: left;
-  margin: 0px 5px;
-  background:var(--color2);
-  border-radius: 50px;
-  cursor: pointer;
-  box-shadow: 0px 10px 10px rgba(0,0,0,0.1);
-  transition: all 0.3s ease-out; 
-  overflow: hidden;
- 
-}
-.wrapper .button:hover{
-  width: 200px;
-}
-.wrapper .button .icon{
-  display: inline-block;
-  height: 60px;
-  width: 60px;
-  text-align: center;
-  border-radius: 50px;
-  box-sizing: border-box;
-  line-height: 60px;
-  transition: all 0.3s ease-out; 
-}
-.wrapper .button:nth-child(1):hover .icon{
-  background: var(--color4);
-}
-.wrapper .button:nth-child(2):hover .icon{
-  background: var(--color4);
-}
-.wrapper .button:nth-child(3):hover .icon{
-  background: var(--color4);
-}
-
-.wrapper .button .icon ion-icon{
-  font-size: 25px;
-  line-height: 60px;
-  transition: all 0.3s ease-out; 
-  
-}
-.wrapper .button .icon ion-icon{
-  color: var(--color1);
-  font-size: 150%;
-  margin-top: 30%;
-}
-.wrapper .button span{
-  font-size: 20px;
-  font-weight: 500;
-  position: relative;
-  bottom: 4px;
-  margin-left: 10px;
-  color: var(--color1);
-  transition: all 0.3s ease-out; 
-}
-
-  footer p{
-    font-size: 100%;
-    margin: 0;
- color: #ffffff;
- font-size: 100%;
- font-weight: 200;
-  }
-  footer h5{
-    margin-top: 0;
-font-size: 90%;
-font-weight: 600;
-margin-bottom: 0%;
-line-height: 22px;
-  }
-
-
-
-
-
-
-
-  body{
-    scroll-behavior: smooth;
-}
-
-
-.container{
-    margin: 0 auto;
-    width: 90%;
-    height: auto;
-    /* From https://css.glass */
-/* From https://css.glass */
-background: rgba(225, 237, 235, 0.67);
-border-radius: 16px;
-box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-backdrop-filter: blur(11px);
--webkit-backdrop-filter: blur(11px);
-border: 1px solid rgba(225, 237, 235, 0);
-    border-radius: 30px;
-    margin-top: 25px;
-left: 5%;
-    position: fixed;
-    z-index: 999;
-}
-a {
-    width: 20%;
-    text-decoration: none;
-    color: var(--color1);
-   
-}
- .logo img {
-   width: 100px;
-   height: 30px;
-  
- }
-nav{
-    padding: 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    text-transform: uppercase;
-    font-size: .9rem;
-    
-}
-
-
-
-
-
-
-
-nav ul {
-    list-style: none;
-    display: flex;
-    position: relative;
-}
-nav ul li a{
+nav ul li a {
   text-decoration: none;
   margin: 0 2rem;
   letter-spacing: 1px;
@@ -336,77 +196,84 @@ nav ul li a{
   font-weight: 510;
 
 }
-nav ul .dropdown  {
-    position: absolute;
-    left: 5%;
-    top: 100%;
-    width: 150px;
-    height: 29px;
-    display: none;
-}
-nav ul .dropdown ul{
-    flex-direction: column;
-    position: absolute;
-    left: 20%;
-    top: 100%;
-    /* From https://css.glass */
-background: rgba(225, 237, 235, 0.67);
-border-radius: 16px;
-box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-backdrop-filter: blur(11px);
--webkit-backdrop-filter: blur(11px);
-border: 1px solid rgba(225, 237, 235, 0.3);
-    width: 190px;
-    height: 100px;
-    justify-content: space-around;
-    border-radius: 8px;
-    transition: 0.5s ease;
-    object-fit: cover;
-    
+
+nav ul .dropdown {
+  position: absolute;
+  left: 5%;
+  top: 100%;
+  width: 150px;
+  height: 29px;
+  display: none;
 }
 
-nav ul a:hover{ 
-    color: black;
+nav ul .dropdown ul {
+  flex-direction: column;
+  position: absolute;
+  left: 20%;
+  top: 100%;
+  /* From https://css.glass */
+  background: rgba(225, 237, 235, 0.67);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(11px);
+  -webkit-backdrop-filter: blur(11px);
+  border: 1px solid rgba(225, 237, 235, 0.3);
+  width: 190px;
+  height: 100px;
+  justify-content: space-around;
+  border-radius: 8px;
+  transition: 0.5s ease;
+  object-fit: cover;
+
 }
 
-nav ul li:hover .dropdown   {
-    display:block;
+nav ul a:hover {
+  color: black;
+}
+
+nav ul li:hover .dropdown {
+  display: block;
 
 }
 
 /* animation */
-nav ul li  {
-    transform: translateX(100rem);
-    animation: slideIn  1s forwards;
-    height: 23%;
+nav ul li {
+  transform: translateX(100rem);
+  animation: slideIn 1s forwards;
+  height: 23%;
 }
 
 nav ul li .dropdown ul li:hover {
   width: 100%;
 
 }
-nav ul li:nth-child(1){
-    animation-delay: 0s ;
+
+nav ul li:nth-child(1) {
+  animation-delay: 0s;
 }
-nav ul li:nth-child(2){
-    animation-delay: 0.4s ;
+
+nav ul li:nth-child(2) {
+  animation-delay: 0.4s;
 }
-nav ul li:nth-child(3){
-    animation-delay: .8s ;
+
+nav ul li:nth-child(3) {
+  animation-delay: .8s;
 }
-nav ul li:nth-child(4){
-    animation-delay: 1.2s ;
+
+nav ul li:nth-child(4) {
+  animation-delay: 1.2s;
 }
 
 /* dropdown no animation  */
-nav ul li .dropdown ul li{
-    transform: translateX(0rem);
-    animation: none;
+nav ul li .dropdown ul li {
+  transform: translateX(0rem);
+  animation: none;
 }
+
 @keyframes slideIn {
-    to{
-transform: translateX(0rem)  ;
-    }
+  to {
+    transform: translateX(0rem);
+  }
 }
 
 
@@ -416,31 +283,29 @@ transform: translateX(0rem)  ;
 
 
 /* //search bare */
-header .container .search-form{
-    height: 35px;
-    width: 20%;
-    background-color: rgba(255, 255, 255, 0.786);
-    border-radius: 30px;
-    box-shadow: 0 0 2px #030303d4;
-    display: flex;
-    justify-content: space-evenly;
-}
-header .container .search-input{
-    background-color: transparent;
-    border: none;
-    height: auto;
-    width: 70%;
-}
-header .container .search-button{
-    width: 35px;
-    font-size: 120%;
-    color: rgb(7, 7, 91);
-    background-color: transparent;
-    border: none;
-   
-    margin-top: 4px;
+.container .search-form {
+  height: 35px;
+  width: 20%;
+  background-color: rgba(255, 255, 255, 0.786);
+  border-radius: 30px;
+  box-shadow: 0 0 2px #030303d4;
+  display: flex;
+  justify-content: space-evenly;
 }
 
+.container .search-input {
+  background-color: transparent;
+  border: none;
+  height: auto;
+  width: 70%;
+}
 
+.container .search-button {
+  width: 35px;
+  font-size: 120%;
+  color: rgb(7, 7, 91);
+  background-color: transparent;
+  border: none;
 
-
+  margin-top: 4px;
+}
