@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/index.css">
-    <link rel="stylesheet" href="/css/head-fot.css">
+    <link rel="stylesheet" href="css/head-fot.css">
     <link rel="stylesheet" href="css/admin.css">
     <!-- animation link -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
@@ -62,12 +62,97 @@
                 </div>
             </nav>
             
-            <input type="checkbox">
         </div>
     </header>
 
+
+
+
+    <!DOCTYPE html>
+<html>
+  <head>
+    <title>Liste des membres</title>
+  </head>
+  <body>
     
 
+  <h1>voici la liste des etudiantrs</h1><br>
+
+<button class="add-button"  onclick="window.location.href = 'ajouter.php'">Ajouter étudiant</button>
+<br>
+
+
+<?php
+
+include('DBconn.php');
+
+
+$resultat = mysqli_query($conn, "SELECT id, nom, prenom, adresse_email FROM membre");
+
+if (!$resultat) {
+  echo "Erreur lors de la récupération des données : " . mysqli_error($conn);
+  exit;
+}
+
+
+
+
+echo "</table>";
+
+mysqli_free_result($resultat);
+
+// Vérifier si le bouton "Supprimer" a été cliqué
+if (isset($_POST["supprimer"])) {
+$numE = $_POST["id"];
+
+// Supprimer l'étudiant de la base de données
+$requete = "DELETE FROM membre WHERE id=$id";
+mysqli_query($conn, $requete);
+
+// Réinitialisation de l'identité auto-incrémentée
+
+
+// Rediriger vers la page d'accueil
+header("Location: admin.php");
+exit();
+}
+
+// Afficher la liste des étudiants
+$requete = "SELECT * FROM membre";
+$resultat = mysqli_query($conn, $requete);
+
+echo "<table>";
+echo "<tr><th>id</th><th>nom</th><th>prenom</th><th>adresse_email </th><th>Supprimer</th></tr>";
+
+while ($row = mysqli_fetch_assoc($resultat)) {
+  echo "<tr>";
+  echo "<td>" . $row["id"] . "</td>";
+  echo "<td>" . $row["nom"] . "</td>";
+  echo "<td>" . $row["prenom"] . "</td>";
+  echo "<td>" . $row["adresse_email"] . "</td>";
+  echo "<td><form method='post'><input type='hidden' name='id' value='" . $row["id"] . "'><input type='submit' name='supprimer' value='Supprimer'></form></td>";
+  echo "<td><button class='modification.php'>Modifier</button></td>";
+  echo "</tr>";
+}
+
+echo "</table>";
+
+mysqli_free_result($resultat);
+mysqli_close($conn); 
+?>
+
+
+
+  </body>
+</html>
+
+
+    
+
+
+
+
+include('DBconn.php');
 
 
 

@@ -1,16 +1,28 @@
 
-:root {
 
-    /* dark mode */
-    --color1: #126E62;
-    --color2: #E1EDEB;
-    --color3: #6BA49D;
-    --color4: #89B6B1;
-  color:   #000f31;
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin-bottom: 20px;
 }
 
+th, td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #89B6B1;
+}
 
-body {
-    background-color: var(--color4);
-      
+th {
+  background-color: #126E62;
+  color: #E1EDEB;
+}
+
+tr:hover {
+  background-color: #6BA49D;
+}
+
+h1 {
+  font-size: 28px;
+  color: #126E62;
 }

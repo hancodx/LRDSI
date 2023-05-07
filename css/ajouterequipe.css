@@ -1,62 +1,39 @@
-/* Couleurs de base */
-:root {
-    --couleur-principale: #126E62;
-    --couleur-secondaire: #E1EDEB;
-    --couleur-tertiaire: #6BA49D;
-    --couleur-quaternaire: #89B6B1;
-  }
-  
-  /* Style pour le corps de la page */
+form {
+  margin: auto;
+  width: 50%;
+  background-color: #E1EDEB;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 50px;
+}
 
-  /* Style pour le formulaire */
-  form {
-    background-color: var(--couleur-quaternaire);
-    border-radius: 10px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-    padding: 20px;
-    margin: 0 auto; /* Centre le formulaire horizontalement */
-    max-width: 600px; /* Limite la largeur du formulaire */
-  }
-  
-  /* Styles pour les champs d'entrée */
-  input[type="text"],
-  select {
-    background-color: var(--couleur-secondaire);
-    border: 2px solid var(--couleur-tertiaire);
-    border-radius: 5px;
-    color: var(--couleur-principale);
-    font-size: 18px;
-    margin-bottom: 10px;
-    padding: 10px;
-    width: 100%;
-  }
-  
-  /* Styles pour les étiquettes */
-  label {
-    color: var(--couleur-principale);
-    display: block;
-    font-size: 20px;
-    margin-bottom: 5px;
-  }
-  
-  /* Styles pour le bouton */
-  button[type="submit"] {
-    background-color: var(--couleur-principale);
-    border: none;
-    border-radius: 5px;
-    color: var(--couleur-secondaire);
-    cursor: pointer;
-    font-size: 20px;
-    padding: 10px;
-    transition: background-color 0.3s ease;
-  }
-  
-  button[type="submit"]:hover {
-    background-color: var(--couleur-tertiaire);
-  }
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
 
-  
-.formulaire{
-  margin-top: 13%;
-  margin-bottom: 10%;
+input[type="text"], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: none;
+  border-bottom: 2px solid #126E62;
+  background-color: #E1EDEB;
+  color: #126E62;
+}
+
+input[type="submit"] {
+  background-color: #6BA49D;
+  color: #E1EDEB;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+input[type="submit"]:hover {
+  background-color: #89B6B1;
 }

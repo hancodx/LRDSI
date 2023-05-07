@@ -1,120 +1,132 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-
 <head>
-<<<<<<< HEAD
-    <?php include 'include/head.php' ?>
-    <title>Ajouter produit</title>
-=======
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
-    <title>Document</title>
->>>>>>> ddb9914adcf56371cbc4b699c8bdc86c4f12c0b9
+    <link rel="stylesheet" href="css/head-fot.css">
+    <link rel="stylesheet" href="css/equipes.css">
+    <link rel="stylesheet" href="css/ajouterequipe.css">
+    
+    <!-- animation link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    <!-- incons link -->
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <title>index page</title>
+
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+  
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Fraunces:wght@700&family=Montserrat:ital,wght@0,700;1,200&family=Roboto:wght@400;500;700&display=swap');
+    </style>
+    
+
 </head>
-
 <body>
-<?php
-require_once 'include/database.php';
-include 'include/nav.php' ?>
-<div class="container py-2">
-    <h4>Ajouter produit</h4>
-    <?php
-    if (isset($_POST['ajouter'])) {
-        $libelle = $_POST['libelle'];
-        $prix = $_POST['prix'];
-        $discount = $_POST['discount'];
-        $categorie = $_POST['categorie'];
-        $description = $_POST['description'];
-        $date = date('Y-m-d');
-
-<<<<<<< HEAD
-        $filename = 'produit.png';
-        if (!empty($_FILES['image']['name'])) {
-            $image = $_FILES['image']['name'];
-            $filename = uniqid() . $image;
-            move_uploaded_file($_FILES['image']['tmp_name'], 'upload/produit/' . $filename);
-        }
-
-        if (!empty($libelle) && !empty($prix) && !empty($categorie)) {
-            $sqlState = $pdo->prepare('INSERT INTO produit VALUES (null,?,?,?,?,?,?,?)');
-            $inserted = $sqlState->execute([$libelle, $prix, $discount, $categorie, $date, $description, $filename]);
-            if ($inserted) {
-                header('location: produits.php');
-            } else {
-
-                ?>
-                <div class="alert alert-danger" role="alert">
-                    Database error (40023).
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo"> <a href=""> <img src="./photo/Fichier 2-8.png" alt="">
+                </a></div>
+                <ul>
+                    <li><a href="index.html">home</a></li>
+                    <li><a href="Equips.html">Equipes</a></li>
+                    <li ><a href="#pub&event">pub&event</a>
+                        <div class="dropdown">
+                            <ul>
+                                <li> <a href="./events.html"> events </a></li>
+                                <li> <a href="publication.html"> publication </a></li>
+                            </ul>
+                        </div>
+                    </li>
+                   
+                    <li ><a href="ProjectsH.html">projects</a>
+                        <div class="dropdown">
+                            <ul>
+                                <li> <a href="projetsH.html">national </a></li>
+                                <li> <a href="projetsH.html"> international </a></li>
+                                <li> <a href="projetsH.html"> tous </a></li>
+                              
+                            </ul>
+                        </div>
+                    </li>
+                    <li><a href="admin.html">Admin</a></li>
+                </ul>
+                <div class="search-form">
+                    <input type="search" value="" placeholder="Search" class="search-input">
+                    <button type="submit" class="search-button">
+                        <ion-icon name="search-outline"></ion-icon>
+                    </button>
+                  
+               
                 </div>
-                <?php
-            }
-        } else {
-            ?>
-            <div class="alert alert-danger" role="alert">
-                Libelle , prix , catégorie sont obligatoires.
-            </div>
-            <?php
-        }
+            </nav>
+            
+        </div>
+    </header>
 
-    }
+
+<section class="formulaire">
+    <form action="ajouter_equipe.php" method="post">
+  <label for="nom_equipe">Nom </label>
+  <input type="text" id="nom_equipe" name="nom_equipe"><br><br>
+
+  <label for="nom_chef">Prenom</label>
+  <input type="text" id="nom_chef" name="nom_chef"><br><br>
+
+  <label for="domaine_recherche">Adresse email</label>
+  <input type="text" id="domaine_recherche" name="domaine_recherche"><br><br>
+
+  <label for="membres_equipe">Membres de l'équipe :</label>
+  <select id="membres_equipe" name="membres_equipe[]" multiple>
+    <?php
+      // Code pour récupérer les noms des membres de la table "membre"
+      // et les afficher dans une liste déroulante
+      // en utilisant leur nom comme valeur et comme texte affiché
+      // dans la liste déroulante
     ?>
-    <form method="post" enctype="multipart/form-data">
-        <label class="form-label">Libelle</label>
-        <input type="text" class="form-control" name="libelle">
+  </select><br><br>
 
-        <label class="form-label">Prix</label>
-        <input type="number" class="form-control" step="0.1" name="prix" min="0">
+  <input type="submit" value="Ajouter l'équipe">
+</form>
+</section>
 
-        <label class="form-label">Discount</label>
-        <input type="range" value="0" class="form-control" name="discount" min="0" max="90">
-
-        <label class="form-label">Description</label>
-        <textarea class="form-control" name="description"></textarea>
-
-        <label class="form-label">Image</label>
-        <input type="file" class="form-control" name="image">
-
-        <?php
-        $categories = $pdo->query('SELECT * FROM categorie')->fetchAll(PDO::FETCH_ASSOC);
-        ?>
-        <label class="form-label">Catégorie</label>
-        <select name="categorie" class="form-control">
-            <option value="">Choisissez une catégorie</option>
-            <?php
-            foreach ($categories as $categorie) {
-                echo "<option value='" . $categorie['id'] . "'>" . $categorie['libelle'] . "</option>";
-            }
-            ?>
-        </select>
-=======
-    <nav class="navbar navbar-light justifty-content-center fs-3 mb-5" style="background-color: blue;">
-        PHP CRUD APPLICATION
-    </nav>
->>>>>>> ddb9914adcf56371cbc4b699c8bdc86c4f12c0b9
-
-
-        <input type="submit" value="Ajouter produit" class="btn btn-primary my-2" name="ajouter">
-    </form>
-</div>
-
-<<<<<<< HEAD
-=======
+    
 
 
 
 
 
 
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js"
-        integrity="sha384-zYPOMqeu1DAVkHiLqWBUTcbYfZ8osu1Nd6Z89ify25QV9guujx43ITvfi12/QExE"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.min.js"
-        integrity="sha384-Y4oOpwW3duJdCWv5ly8SCFYWqFDsfob/3GkgExXKV4idmbt98QcxXYs9UoXAB7BZ"
-        crossorigin="anonymous"></script>
->>>>>>> ddb9914adcf56371cbc4b699c8bdc86c4f12c0b9
+
+
+    <footer>
+        <div class="wrapper">
+            <div class="button">
+                <div class="icon"><ion-icon name="call"></ion-icon></div>
+                <span>Telephone</span>
+                </div>
+            <div class="button">
+                <div class="icon"><ion-icon name="mail"></ion-icon></div>
+                <span>Email</span>
+                </div>
+            <div class="button">
+                <div class="icon"><ion-icon name="location-sharp"></ion-icon></i></div>
+                <span>Location</span>
+                </div>
+                 
+            </div>  
+    </footer>
+
+
+
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </body>
-
 </html>
