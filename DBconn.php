@@ -1,36 +1,21 @@
 <?php
-    
-    $servername = "localhost\SQLEXPRESS02";
-    $database = "LRDSI";
-    $uid = "";
-    $pass = "";
-     
+// Informations de connexion à la base de données
+$host = 'localhost';  // Le nom de l'hôte de votre base de données
+$username = 'root' ;   // Votre nom d'utilisateur MySQL
+$password ='' ;   // Votre mot de passe MySQL (laissez les guillemets vides si vous n'en avez pas)
+$dbname = 'LRDSI';  // Le nom de votre base de données
 
-    $connection = [
-        "database" => $database,
-        "uid" => $uid,
-        "PWD" => $pass 
-    ];
+// Connexion à la base de données
+$conn = mysqli_connect($host, $username, $password, $dbname);
 
-    $conn=mysqli_connect();
-    if (!$conn) {
-        die(print_r(sqlsrv_errors(), true));
-    }
-    else 
-    echo 'vous etes connectés a la base de données';
+// Vérifier si la connexion a réussi
+if (!$conn) {
+    die("Connexion à la base de données échouée : " . mysqli_connect_error());
+}
+echo "Connexion à la base de données réussie !";
 
+// Inserer les etudiants
 
-<<<<<<< Updated upstream
-?>
-=======
-    $sql =mysqli_query($conn, "select * from membre");
-    if ($sql) {
-        $row = mysqli_fetch_array($sql);
-        for ($i=0; $i < 2; $i++) { 
-            echo $row[$i];
-        }
-    }
 
 
 ?>
->>>>>>> Stashed changes
