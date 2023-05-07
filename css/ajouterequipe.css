@@ -7,12 +7,7 @@
   }
   
   /* Style pour le corps de la page */
-  body {
-    background-color: var(--couleur-secondaire);
-    color: var(--couleur-principale);
-    font-family: sans-serif;
-  }
-  
+
   /* Style pour le formulaire */
   form {
     background-color: var(--couleur-quaternaire);
@@ -59,4 +54,9 @@
   button[type="submit"]:hover {
     background-color: var(--couleur-tertiaire);
   }
+
   
+.formulaire{
+  margin-top: 13%;
+  margin-bottom: 10%;
+}

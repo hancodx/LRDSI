@@ -20,7 +20,7 @@
         font-size: 130%;
 
       }
-      h5{
+     section h5{
         margin-bottom: .7%;
         flex-direction: row;
         display: flex;
@@ -30,23 +30,27 @@
         margin-bottom: 1%;
         color: black;
        
-      }h5 p{
+      }
+      section h5 p{
         font-size: 100%;
         font-weight: 300;
         color: var(--color1);
         margin-top: 0%;
       }
       
-      p {
+     section p {
         margin-top: 3%;
         font-size: 0.8em;
         line-height: 1.4em; 
         
       }
+      section{
+        margin-top: 15%;
+      }
       
       .readmore {
         margin: 2em auto;
-        width: 1050px;
+        width: 80%;
         display: flex;
         background-color: var(--color2);
         padding: 30px;
@@ -99,4 +103,18 @@
       }
       .readmore .readmore-link a:hover {
         opacity: 1;
+      }
+      .mamber  {
+        height: 220px;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+      }
+      .mamber h6{
+        margin-top: 3%;
+        font-size: 80%;
+      }
+      .mamber p{
+        color: var(--color1);
+        margin-top: 0%;
       }
