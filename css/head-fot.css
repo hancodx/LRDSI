@@ -380,15 +380,8 @@ nav ul li  {
     animation: slideIn  1s forwards;
     height: 23%;
 }
-header {
-    height: 100vh;
-    width: 100%;
-    background-color:var(--color3);
-    overflow: hidden;
-    
-}nav ul li .dropdown ul li:hover {
- 
- 
+
+nav ul li .dropdown ul li:hover {
   width: 100%;
 
 }
@@ -423,7 +416,7 @@ transform: translateX(0rem)  ;
 
 
 /* //search bare */
-header .search-form{
+header .container .search-form{
     height: 35px;
     width: 20%;
     background-color: rgba(255, 255, 255, 0.786);
@@ -432,13 +425,13 @@ header .search-form{
     display: flex;
     justify-content: space-evenly;
 }
-header .search-input{
+header .container .search-input{
     background-color: transparent;
     border: none;
     height: auto;
     width: 70%;
 }
-header .search-button{
+header .container .search-button{
     width: 35px;
     font-size: 120%;
     color: rgb(7, 7, 91);
