@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/admin.css">
+    <link rel="stylesheet" href="css/ajouterequipe.css">
     <!-- animation link -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
     <!-- incons link -->
@@ -64,6 +65,32 @@
             <input type="checkbox">
         </div>
     </header>
+
+
+
+    <form action="ajouter_equipe.php" method="post">
+  <label for="nom_equipe">Nom de l'équipe :</label>
+  <input type="text" id="nom_equipe" name="nom_equipe"><br><br>
+
+  <label for="nom_chef">Nom du chef d'équipe :</label>
+  <input type="text" id="nom_chef" name="nom_chef"><br><br>
+
+  <label for="domaine_recherche">Domaine de recherche :</label>
+  <input type="text" id="domaine_recherche" name="domaine_recherche"><br><br>
+
+  <label for="membres_equipe">Membres de l'équipe :</label>
+  <select id="membres_equipe" name="membres_equipe[]" multiple>
+    <?php
+      // Code pour récupérer les noms des membres de la table "membre"
+      // et les afficher dans une liste déroulante
+      // en utilisant leur nom comme valeur et comme texte affiché
+      // dans la liste déroulante
+    ?>
+  </select><br><br>
+
+  <input type="submit" value="Ajouter l'équipe">
+</form>
+
 
     
 

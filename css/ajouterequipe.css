@@ -1,0 +1,62 @@
+/* Couleurs de base */
+:root {
+    --couleur-principale: #126E62;
+    --couleur-secondaire: #E1EDEB;
+    --couleur-tertiaire: #6BA49D;
+    --couleur-quaternaire: #89B6B1;
+  }
+  
+  /* Style pour le corps de la page */
+  body {
+    background-color: var(--couleur-secondaire);
+    color: var(--couleur-principale);
+    font-family: sans-serif;
+  }
+  
+  /* Style pour le formulaire */
+  form {
+    background-color: var(--couleur-quaternaire);
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    margin: 0 auto; /* Centre le formulaire horizontalement */
+    max-width: 600px; /* Limite la largeur du formulaire */
+  }
+  
+  /* Styles pour les champs d'entrée */
+  input[type="text"],
+  select {
+    background-color: var(--couleur-secondaire);
+    border: 2px solid var(--couleur-tertiaire);
+    border-radius: 5px;
+    color: var(--couleur-principale);
+    font-size: 18px;
+    margin-bottom: 10px;
+    padding: 10px;
+    width: 100%;
+  }
+  
+  /* Styles pour les étiquettes */
+  label {
+    color: var(--couleur-principale);
+    display: block;
+    font-size: 20px;
+    margin-bottom: 5px;
+  }
+  
+  /* Styles pour le bouton */
+  button[type="submit"] {
+    background-color: var(--couleur-principale);
+    border: none;
+    border-radius: 5px;
+    color: var(--couleur-secondaire);
+    cursor: pointer;
+    font-size: 20px;
+    padding: 10px;
+    transition: background-color 0.3s ease;
+  }
+  
+  button[type="submit"]:hover {
+    background-color: var(--couleur-tertiaire);
+  }
+  
