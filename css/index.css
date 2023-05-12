@@ -1,11 +1,16 @@
 :root {
 
     /* dark mode */
-    --color1: #126E62;
+    /* --color1: #126E62;
     --color2: #E1EDEB;
     --color3: #6BA49D;
     --color4: #89B6B1;
-  color:   #000f31;
+  color:   #000f31; */
+  --color4:#f0fafb;
+  --color2:#ffff;
+ --color3:#64babb ;
+ --color1:#5ea4a4 ;
+
 
   }
 *{
@@ -235,19 +240,21 @@ input[type="checkbox"]{
 header {
     height: 100vh;
     width: 100%;
-    background-color:var(--color3);
+    background-color:var(--color4);
+    background-color: #64babb;
     overflow: hidden;
+
     
 }
-
 /* prisentation animate */
 
 .home{
-    padding-top: 32%;
+    padding-top:290px;
     width: 100%;
     height: 50vh;
     background-color: #0b0b0b00;
-    color: #ffffff;
+    color: var(--color1);
+    color: #f0fafb;
     display: flex;
     justify-content: center;
     align-items: flex-end;
@@ -259,7 +266,6 @@ header {
     display: flex;
    align-items: center;
     flex-direction: column;
-    line-height: 130px;
     overflow: hidden;
     padding-bottom: 2px;
     text-align: center;
@@ -272,19 +278,18 @@ header {
   width: 50%;
   text-align: center;
   line-height: 25px;
-  height: 100px;
 }
-.home-animation span{
+/* .home-animation span{
     font-size: 150%;
     margin-top: 5%;
     display: none;
     
-}
+} */
 
-.home-animation span.text-in {
+/* .home-animation span.text-in {
 display: block;
 animation: textIn .7s ease;
-}
+} */
 
 .home-animation span.text-out {
 animation: textOut .5s ease;
@@ -305,8 +310,7 @@ animation: textOut .5s ease;
     }
     100%{
         transform: translateY(-100%);
-    }
-    
+    } 
 }
 
 
@@ -404,6 +408,13 @@ animation: textOut .5s ease;
 }
 
 
+.card {
+	border-radius: 14px;
+	inset: 0;
+	position: absolute;
+
+}
+
 
 
 
@@ -479,7 +490,8 @@ align-items: center;
 .publication .titre{
     text-align: center;
     height: 50px;
-    color: #ffffff;
+    color: var(--color1);
+    
     
 }
 
@@ -529,7 +541,7 @@ align-items: center;
     height: 100px;
     padding: 5%;
     text-align: center;
-    color: #ffffff;
+    color: var(--color1);
     font-size: 16px;
     line-height: 25px;
 
@@ -743,10 +755,10 @@ box-shadow:2px 4px 10px #126E62;
 }
 
 
-.sub-section .titre{
+.secend-section .sub-section .titre{
 line-height: 29px;
 font-size: 20px;
-color: #ffffff;
+color: var(--color1);
 text-align: center;
 width: 90%;
 }
@@ -807,6 +819,18 @@ width: 90%;
    
 }
 
+.therd-section .sub-section .titre{
+    line-height: 29px;
+    font-size: 20px;
+    color: #ffffff;
+    text-align: center;
+    width: 90%;
+    }
+   .therd-section .sub-section .titre h2{
+        font-size: 32px;
+        margin-bottom: 5%;
+    }
+    
 
 
 

@@ -1,11 +1,16 @@
 :root {
 
     /* dark mode */
-    --color1: #126E62;
+    /* --color1: #126E62;
     --color2: #E1EDEB;
     --color3: #6BA49D;
     --color4: #89B6B1;
-  color:   #000f31;
+  color:   #000f31; */
+  --color4:#f0fafb;
+  --color2:#ffff;
+ --color3:#64babb ;
+ --color1:#5ea4a4 ;
+
 
   }
  body {
