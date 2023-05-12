@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/head-fot.css">
     <link rel="stylesheet" href="css/admin.css">
+    <link rel="stylesheet" href="css/sidbar.css">
     <!-- animation link -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
     <!-- incons link -->
@@ -66,17 +67,30 @@
     </header>
 
 
-
-
-    <!DOCTYPE html>
-<html>
-  <head>
-    <title>Liste des membres</title>
-  </head>
-  <body>
     
+    <div class="sidebar">
+        <h3 class="titre">gestion</h3>
+        <ul class="sidebar-list">
+        <li class="sub-menu">
+            <a href="#">Projets</a>
+            <ul>
+              <li><a href="#">tous</a></li>
+              <li><a href="#">les projets nationaux</a></li>
+              <li><a href="#">les projets internationaux </a></li>
+            </ul>
+          </li>
+          <li><a href="#">Membres</a></li>
+          <li><a href="#">Publications</a></li>
+          <li><a href="#">Événements</a></li>
+          <li><a href="#">Thèses</a></li>
+        </ul>
+      </div>
+      
 
-  <h1>voici la liste des etudiantrs</h1><br>
+    
+  
+// la liste des membres 
+  <h1>voici la liste membres</h1><br>
 
 <button class="add-button"  onclick="window.location.href = 'ajouter.php'">Ajouter étudiant</button>
 <br>
@@ -85,18 +99,12 @@
 <?php
 
 include('DBconn.php');
-
-
-$resultat = mysqli_query($conn, "SELECT id, nom, prenom, adresse_email FROM membre");
+$resultat = mysqli_query($conn, "SELECT id, nom, prenom, adresse_email, grade FROM membre");
 
 if (!$resultat) {
   echo "Erreur lors de la récupération des données : " . mysqli_error($conn);
   exit;
 }
-
-
-
-
 echo "</table>";
 
 mysqli_free_result($resultat);
@@ -111,18 +119,16 @@ mysqli_query($conn, $requete);
 
 // Réinitialisation de l'identité auto-incrémentée
 
-
 // Rediriger vers la page d'accueil
 header("Location: admin.php");
 exit();
 }
-
 // Afficher la liste des étudiants
 $requete = "SELECT * FROM membre";
 $resultat = mysqli_query($conn, $requete);
 
 echo "<table>";
-echo "<tr><th>id</th><th>nom</th><th>prenom</th><th>adresse_email </th><th>Supprimer</th></tr>";
+echo "<tr><th>id</th><th>nom</th><th>prenom</th><th>adresse_email </th><th>grade</th><th>Supprimer</th><th>Modifier</th></tr>";
 
 while ($row = mysqli_fetch_assoc($resultat)) {
   echo "<tr>";
@@ -130,7 +136,9 @@ while ($row = mysqli_fetch_assoc($resultat)) {
   echo "<td>" . $row["nom"] . "</td>";
   echo "<td>" . $row["prenom"] . "</td>";
   echo "<td>" . $row["adresse_email"] . "</td>";
+  echo "<td>" . $row["grade"] . "</td>";
   echo "<td><form method='post'><input type='hidden' name='id' value='" . $row["id"] . "'><input type='submit' name='supprimer' value='Supprimer'></form></td>";
+  
   echo "<td><button class='modification.php'>Modifier</button></td>";
   echo "</tr>";
 }
@@ -138,23 +146,49 @@ while ($row = mysqli_fetch_assoc($resultat)) {
 echo "</table>";
 
 mysqli_free_result($resultat);
-mysqli_close($conn); 
 ?>
 
 
 
-  </body>
-</html>
-
-
-    
 
 
 
+<h1>voici la liste des equipes </h1><br>
 
+<button class="add-button"  onclick="window.location.href = 'ajouter.php'">Ajouter étudiant</button>
+<br>
+
+
+
+<?php
 include('DBconn.php');
 
+$resultat2 = mysqli_query($conn, "SELECT equipe.id_equipe, equipe.nom_equipe, equipe.nom_chef_equipe, equipe.domaine_recherche, GROUP_CONCAT(membre.nom, ' ', membre.prenom) AS membres FROM equipe LEFT JOIN equipe_membre ON equipe.id_equipe = equipe_membre.id_equipe LEFT JOIN membre ON equipe_membre.id_membre = membre.id GROUP BY equipe.id_equipe;");
 
+if (!$resultat2) {
+  echo "Erreur lors de la récupération des données : " . mysqli_error($conn);
+  exit;
+}
+
+echo "<table>";
+echo "<tr><th>Nom de l'équipe</th><th>Nom de chef d'équipe</th><th>Domaine de recherche</th><th>Membres</th><th>Supprimer</th><th>Modifier</th></tr>";
+
+while ($row = mysqli_fetch_assoc($resultat2)) {
+  echo "<tr>";
+  echo "<td>" . $row["nom_equipe"] . "</td>";
+  echo "<td>" . $row["nom_chef_equipe"] . "</td>";
+  echo "<td>" . $row["domaine_recherche"] . "</td>";
+  echo "<td>" . $row["membres"] . "</td>";
+  echo "<td><form method='post'><input type='hidden' name='id' value='" . $row["id_equipe"] . "'><input type='submit' name='supprimer' value='Supprimer'></form></td>";
+  echo "<td><form method='post' action='modification_equipe.php'><input type='hidden' name='id' value='" . $row["id_equipe"] . "'><input type='submit' name='modifier' value='Modifier'></form></td>";
+  echo "</tr>";
+}
+
+echo "</table>";
+
+mysqli_free_result($resultat2);
+mysqli_close($conn);
+?>
 
 
 
@@ -186,5 +220,6 @@ include('DBconn.php');
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
 </body>
 </html>

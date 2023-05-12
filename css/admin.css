@@ -1,6 +1,5 @@
 
 
-
 table {
   border-collapse: collapse;
   width: 100%;
@@ -26,3 +25,79 @@ h1 {
   font-size: 28px;
   color: #126E62;
 }
+
+
+  h1 {
+    color: #126E62;
+  }
+
+  button.add-button {
+    background-color: #E1EDEB;
+    color: #126E62;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    float: right;
+    margin-right: 20px;
+  }
+
+  button.add-button:hover {
+    background-color: #6BA49D;
+    color: #E1EDEB;
+  }
+
+  table {
+    border-collapse: collapse;
+    margin-top: 20px;
+    width: 100%;
+  }
+
+  table th,
+  table td {
+    border: 1px solid #89B6B1;
+    padding: 10px;
+    text-align: center;
+  }
+
+  table th {
+    background-color: #E1EDEB;
+    color: #126E62;
+  }
+
+  table td form {
+    display: inline-block;
+  }
+
+  table td form input[type='submit'] {
+    background-color: #E1EDEB;
+    color: #126E62;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  table td form input[type='submit']:hover {
+    background-color: #6BA49D;
+    color: #E1EDEB;
+  }
+
+  button.modification.php {
+    background-color: #E1EDEB;
+    color: #126E62;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  button.modification.php:hover {
+    background-color: #6BA49D;
+    color: #E1EDEB;
+}
+
+
+
+

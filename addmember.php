@@ -52,7 +52,7 @@
                             </ul>
                         </div>
                     </li>
-                    <li><a href="admin.html">Admin</a></li>
+                    <li><a href="admin.html">Gestion</a></li>
                 </ul>
                 <div class="search-form">
                     <input type="search" value="" placeholder="Search" class="search-input">
@@ -67,38 +67,87 @@
         </div>
     </header>
 
+    <div class="content">
 
-<section class="formulaire">
-    <form action="ajouter_equipe.php" method="post">
-  <label for="nom_equipe">Nom </label>
-  <input type="text" id="nom_equipe" name="nom_equipe"><br><br>
 
-  <label for="nom_chef">Prenom</label>
-  <input type="text" id="nom_chef" name="nom_chef"><br><br>
-
-  <label for="domaine_recherche">Adresse email</label>
-  <input type="text" id="domaine_recherche" name="domaine_recherche"><br><br>
-
-  <label for="membres_equipe">Membres de l'équipe :</label>
-  <select id="membres_equipe" name="membres_equipe[]" multiple>
-    <?php
-      // Code pour récupérer les noms des membres de la table "membre"
-      // et les afficher dans une liste déroulante
-      // en utilisant leur nom comme valeur et comme texte affiché
-      // dans la liste déroulante
-    ?>
-  </select><br><br>
-
-  <input type="submit" value="Ajouter l'équipe">
-</form>
+    <section class="formulaire">
+    <form method="post" action="addmember.php">
+        <label for="nom">Nom :</label>
+        <input type="text" name="nom" required><br><br>
+        <label for="prenom">Prénom :</label>
+        <input type="text" name="prenom" required><br><br>
+        <label for="adresse_email">Adresse e-mail :</label>
+        <input type="text" name="adresse_email" required><br><br>
+        <label for="grade">Grade :</label>
+        <select name="grade" id="grade">
+            <option value="Doctorant">Doctorant</option>
+            <option value="Chercheur">Chercheur</option>
+        </select>
+        <br><br>
+        <input type="submit" name="submit" value="Ajouter">
+    </form>
 </section>
 
-    
+
+<div class="sidebar">
+        <h3 class="titre">gestion</h3>
+        <ul class="sidebar-list">
+        <li class="sub-menu">
+            <a href="#">Projets</a>
+            <ul>
+              <li><a href="#">tous</a></li>
+              <li><a href="#">les projets nationaux</a></li>
+              <li><a href="#">les projets internationaux </a></li>
+            </ul>
+          </li>
+          <li><a href="#">Membres</a></li>
+          <li><a href="#">Publications</a></li>
+          <li><a href="#">Événements</a></li>
+          <li><a href="#">Thèses</a></li>
+        </ul>
+      </div>
 
 
 
 
 
+
+
+
+
+
+
+
+
+      <?php
+include('DBconn.php');
+
+// Vérifier si le formulaire a été soumis
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+
+  // Récupérer les données du formulaire
+  $nom = $_POST['nom'];
+  $prenom = $_POST['prenom'];
+  $adresse_email = $_POST['adresse_email'];
+  $grade = $_POST['grade'];
+
+  // Insérer le membre dans la table membre
+  $requete = "INSERT INTO membre (nom, prenom, adresse_email, grade) VALUES ('$nom', '$prenom', '$adresse_email', '$grade')";
+  if (!mysqli_query($conn, $requete)) {
+    echo "Erreur lors de l'insertion du membre : " . mysqli_error($conn);
+    exit;
+  }
+
+  // Récupérer l'ID du membre inséré
+  $id_membre = mysqli_insert_id($conn);
+
+  // Afficher un message de confirmation
+  echo "Le membre a été ajouté avec succès !";
+
+}
+
+mysqli_close($conn); 
+?>
 
 
 

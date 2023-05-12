@@ -12,7 +12,7 @@ $conn = mysqli_connect($host, $username, $password, $dbname);
 if (!$conn) {
     die("Connexion à la base de données échouée : " . mysqli_connect_error());
 }
-echo "Connexion à la base de données réussie !";
+echo " ";
 
 // Inserer les etudiants
 

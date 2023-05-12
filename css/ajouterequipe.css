@@ -1,3 +1,5 @@
+
+
 form {
   margin: auto;
   width: 50%;
@@ -13,7 +15,7 @@ label {
   margin-bottom: 10px;
 }
 
-input[type="text"], select {
+input[type="text"], input[type="email"], select {
   width: 100%;
   padding: 12px 20px;
   margin: 8px 0;
@@ -37,3 +39,4 @@ input[type="submit"] {
 input[type="submit"]:hover {
   background-color: #89B6B1;
 }
+
