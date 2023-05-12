@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="css/head-fot.css">
     <link rel="stylesheet" href="css/equipes.css">
     <link rel="stylesheet" href="css/ajouterequipe.css">
+    <link rel="stylesheet" href="css/sidbar.css">
+
     
     <!-- animation link -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
