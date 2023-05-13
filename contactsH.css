@@ -1,0 +1,105 @@
+main {
+    width: 600px;
+    height: fit-content;
+    position: relative;
+    margin: auto;
+}
+
+.form {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+    background-image: linear-gradient(45deg, #6BA49D, 
+    #89B6B1);
+    border-radius: 2.5em;
+    padding: 30px;
+    color: #E5F3FD;
+  }
+  
+  .form::before {
+    content: '';
+    background-image: linear-gradient(45deg, #000080, 
+    #0CBABA);
+    top: -10px; bottom: -10px; left: -10px; right: -10px;
+    position: absolute;
+    z-index: -1;
+    border-radius: 2.7em;
+  }
+  
+  .button {
+    margin-top: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 17px;
+    background: #20cd5a;
+    color: white;
+    padding: 0.7em 5.5em;
+    display: flex;
+    align-items: center;
+    border: 2px solid #66da4300;
+    border-radius: 5em;
+    overflow: hidden;
+    transition: all 0.2s;
+    cursor: pointer;
+  }
+  
+  .button:hover {
+    border: 2px solid #01796f;
+    background: #00000000;
+    color: #20cd5a;
+  }
+  
+  .button:active {
+    border: 2px solid #66da4300;
+    background: #009E60;
+    color: black;
+  }
+  
+  .input {
+    width: calc(100% - 10px);
+    padding: 8px;
+    margin-bottom: 20px;
+    border: 1px solid #66da4300;
+    border-bottom: 1px solid #01796f;
+    outline: none;
+    background-color: transparent;
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+    transition: 0.2s;
+  }
+  
+  .input:focus {
+    border: 1px solid #66da4300;
+    border-bottom: 1px solid #01796f;
+    background-color: transparent;
+    color: black;
+  }
+  
+  .input::placeholder {
+    color: #01796f;
+  }
+  
+  .textarea {
+    font-family: Arial, Helvetica, sans-serif;
+    width: calc(100% - 10px);
+    padding: 8px;
+    height: 100px;
+    margin-bottom: 20px;
+    border: 1px solid #66da4300;
+    border-bottom: 1px solid #01796f;
+    outline: none;
+    resize: none;
+    background-color: transparent;
+    color: black;
+  }
+  
+  .textarea::placeholder {
+    color: #01796f;
+  }
+  
+  .textarea:focus {
+    border: 1px solid #66da4300;
+    border-bottom: 1px solid #29AB87;
+    background-color: transparent;
+    color: black;
+  }
