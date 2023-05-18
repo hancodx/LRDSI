@@ -1,13 +1,16 @@
-.sidebar {
+
+  .sidebar {
     position: fixed;
-    top: 130px;
+    top: 178px;
     right: 20px;
     width: 200px;
     padding: 20px;
     background-color: #E1EDEB;
     border-radius: 10px;
   }
-  
+  ul{
+    list-style: none;
+  }
   .sidebar h3.titre {
     margin-top: 0;
     margin-bottom: 20px;
@@ -34,13 +37,14 @@
     font-size: 14px;
   }
   
-  .sidebar-list li a:hover {
+  .sub-menu ul li a:hover {
     background-color: #89B6B1;
     color: #E1EDEB;
   }
   
   .sub-menu ul {
-    display: none;
+    /* display: none; */
+    padding: 4%;
   }
   
   .sub-menu:hover ul {
@@ -51,9 +55,11 @@
     color: #126E62;
   }
   
-  .sub-menu:hover a:before {
+  .sidebar-list li a:before {
     content: '\25BC';
-    display: inline-block;
-    margin-right: 5px;
+    /* display: inline-block;
+    margin-right: 5px;  */
   }
-  
+  .sub-menu li a:before{
+    content: '';
+  }
