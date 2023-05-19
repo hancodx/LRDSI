@@ -73,6 +73,54 @@
 
 
     <section class="formulaire">
+    <div class="said-check">
+        <div class="side-ul">
+         <h4>Projets </h4> 
+         <label for="Tout">
+      <div class="choix">
+        <input type="radio" id="Tout" name="projets" value="Tout" checked> Tout
+      </div>
+    </label>
+
+    <label for="Nationaux">
+      <div class="choix">
+        <input type="radio" id="Nationaux" name="projets" value="Nationaux"> Nationaux
+        
+      </div>
+    </label>
+
+    <label for="Internationaux">
+      <div class="choix">
+        <input type="radio" id="Internationaux" name="projets" value="Internationaux"> Nnternationaux
+      </div>
+    </label>
+
+    </div>
+    <div class="side-ul">
+      <h4>Pub&Evnt</h4> 
+    <div class="choix">
+      Publication 
+    </div>
+    <div class="choix">
+      Evenment 
+    </div>
+    <div class="choix">
+      Thèses et mémoires
+    </div>
+
+ </div>
+ <div class="side-ul">
+  <h4>Equipe</h4> 
+<div class="choix">
+  Equipes
+</div>
+
+
+</div>
+
+
+    
+  </div> 
     <form method="post" action="addmember.php">
         <label for="nom">Nom :</label>
         <input type="text" name="nom" required><br><br>

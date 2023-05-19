@@ -1,125 +1,219 @@
 :root {
 
-    /* dark mode */
-    /* --color1: #126E62;
+  /* dark mode */
+  /* --color1: #126E62;
     --color2: #E1EDEB;
     --color3: #6BA49D;
     --color4: #89B6B1;
   color:   #000f31; */
-  --color4:#f0fafb;
-  --color2:#ffff;
- --color3:#64babb ;
- --color1:#5ea4a4 ;
+  --color4: #f0fafb;
+  --color2: #ffff;
+  --color3: rgb(141, 179, 179);
+  --color1: #5ea4a4;
 
 
-  }
- body {
-     background-color: var(--color4);
-       
-      }
-      
-      h2 {
-        margin: 0.25em 0;
-        padding-bottom: 2%;
-        color: var(--color1);
-        font-size: 130%;
+}
 
-      }
-     section h5{
-        margin-bottom: .7%;
-        flex-direction: row;
-        display: flex;
-        gap: 10px;
-        font-size: 90%;
-        font-weight: 400;
-        margin-bottom: 1%;
-        color: black;
-       
-      }
-      section h5 p{
-        font-size: 100%;
-        font-weight: 300;
-        color: var(--color1);
-        margin-top: 0%;
-      }
-      
-     section p {
-        margin-top: 3%;
-        font-size: 0.8em;
-        line-height: 1.4em; 
-        
-      }
-      section{
-        margin-top: 15%;
-      }
-      
-      .readmore {
-        margin: 2em auto;
-        width: 80%;
-        display: flex;
-        background-color: var(--color2);
-        padding: 30px;
-        max-height: 200px;
-        border-radius: 30px;
-        position: relative;
-        overflow-y: hidden;
-        box-shadow: 0 4px 7px rgba(0, 0, 0, 0.18), 0 1px 2px rgba(0, 0, 0, 0.24);
-        transition: all 0.5s ease;
-      }
-      .readmore.open {
-        max-height: 999px;
-        transition: all 0.5s ease;
-      }
-      .readmore .div2 {
-        margin-left: 30px;
-        width: 250px;
-      }
-    
-    .readmore .div2 h3 {
-        color: var(--color3);
-        padding: 15px 0px;
-    }
-      .readmore div {
-        width: 650px;
-      }
-      .readmore .readmore-link {
-        position: absolute;
-        bottom: 0;
-        right: 0;
-        width: 100%;
-        text-align: right;
-        margin: 0;
-        padding: 30px 15px 15px 15px;
-        background-image: -moz-linear-gradient(top, transparent, white);
-        background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, transparent), color-stop(1, #eeeeee));
-      }
-      .readmore .readmore-link a {
-        color: #ffffff;
-        text-decoration: none;
-        font-size: 0.9em;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-        background-color:var(--color1);
-        padding: 10px 20px;
-        border-radius: 20px;
-        opacity: 0.6;
-        transition: all 0.25s ease;
+body {
+  background-color: var(--color4);
 
-      }
-      .readmore .readmore-link a:hover {
-        opacity: 1;
-      }
-      .mamber  {
-        height: 220px;
-        display: flex;
-        flex-direction: column;
-        flex-wrap: wrap;
-      }
-      .mamber h6{
-        margin-top: 3%;
-        font-size: 80%;
-      }
-      .mamber p{
-        color: var(--color1);
-        margin-top: 0%;
-      }
+}
+
+h2 {
+  margin: 0.25em 0;
+  padding-bottom: 2%;
+  color: var(--color1);
+  font-size: 130%;
+
+}
+
+section h5 {
+  margin-bottom: .7%;
+  flex-direction: row;
+  display: flex;
+  gap: 10px;
+  font-size: 90%;
+  font-weight: 400;
+  margin-bottom: 1%;
+  color: black;
+
+}
+
+section h5 p {
+  font-size: 100%;
+  font-weight: 300;
+  color: var(--color1);
+  margin-top: 0%;
+}
+
+section p {
+  margin-top: 3%;
+  font-size: 0.8em;
+  line-height: 1.4em;
+
+}
+
+section {
+  display: flex;
+  justify-content: space-between;
+  padding: 12% 4%;
+
+}
+
+
+.readmore {
+  /* margin: 2em auto; */
+  width: 98%;
+  display: flex;
+  background-color: var(--color2);
+  padding: 30px;
+  max-height: 200px;
+  border-radius: 30px;
+  position: relative;
+  overflow-y: hidden;
+  box-shadow: 0 4px 7px rgba(0, 0, 0, 0.18), 0 1px 2px rgba(0, 0, 0, 0.24);
+  transition: all 0.5s ease;
+  margin-bottom: 30px;
+}
+
+.readmore.open {
+  max-height: 999px;
+  transition: all 0.5s ease;
+}
+
+.readmore .div2 {
+  margin-left: 30px;
+  width: 250px;
+}
+
+.readmore .div2 h3 {
+  color: var(--color3);
+  padding: 15px 0px;
+}
+
+.readmore div {
+  width: 650px;
+}
+
+.readmore .readmore-link {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  text-align: right;
+  margin: 0;
+  padding: 30px 15px 15px 15px;
+  background-image: -moz-linear-gradient(top, transparent, white);
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, transparent), color-stop(1, #eeeeee));
+}
+
+.readmore .readmore-link a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 0.9em;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  background-color: var(--color1);
+  padding: 10px 20px;
+  border-radius: 20px;
+  opacity: 0.6;
+  transition: all 0.25s ease;
+
+}
+
+.readmore .readmore-link a:hover {
+  opacity: 1;
+}
+
+.mamber {
+  height: 220px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+.mamber h6 {
+  margin-top: 3%;
+  font-size: 80%;
+}
+
+.mamber p {
+  color: var(--color1);
+  margin-top: 0%;
+}
+
+.said-check {
+  background-color: var(--color2);
+  height: 530px;
+  width: 17.5%;
+  border-radius: 13px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  color: var(--color3);
+  margin-top: 2.9%;
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+  box-shadow: 0 3px 10px rgba(163, 198, 198, 0.791);
+  /* position: fixed; */
+  /* left: 5%; */
+  /* top: 023.4%; */
+  position: sticky;
+  overflow: hidden;
+  top: 100px;
+  left: 69px;
+}
+
+.said-check::after {
+  content: "";
+  height: 11px;
+  background-color: #64b9bb92;
+  background-color: rgba(163, 198, 198, 0.791);
+
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(15.6px);
+  -webkit-backdrop-filter: blur(15.6px);
+  position: absolute;
+  top: 0%;
+  width: 100%;
+
+}
+
+.said-check .side-ul {
+  gap: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 8%;
+
+}
+
+.said-check .side-ul .choix {
+  padding-left: 15px;
+  height: 35px;
+  padding-top: 9px;
+  cursor: pointer;
+  color: rgb(110, 133, 133);
+}
+
+.said-check .side-ul .choix:hover {
+  background-color: #f0fafb;
+  color: #385f5f;
+}
+
+.side-ul h4 {
+  padding-left: 5%;
+  background-color: var(--color4);
+  height: 35px;
+  padding-top: 4%;
+  color: var(--color1);
+  font-size: 110%;
+  font-weight: 500;
+  border-left: #64babb solid;
+  border-radius: 2px;
+}
+
+.EQPS {
+  width: 75%;
+  margin-top: 34px;
+}
+
