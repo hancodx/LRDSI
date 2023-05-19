@@ -4,11 +4,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    
     <link rel="stylesheet" href="css/head-fot.css">
-    <link rel="stylesheet" href="css/admin.css">
+    <link rel="stylesheet" href="css/equipes.css">
+    <link rel="stylesheet" href="css/ajouterequipe.css">
     <link rel="stylesheet" href="css/sidbar.css">
+
+    
     <!-- animation link -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
     <!-- incons link -->
@@ -22,10 +23,10 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Fraunces:wght@700&family=Montserrat:ital,wght@0,700;1,200&family=Roboto:wght@400;500;700&display=swap');
     </style>
+    
 
 </head>
 <body>
-
     <header>
         <div class="container">
             <nav>
@@ -53,7 +54,7 @@
                             </ul>
                         </div>
                     </li>
-                    <li><a href="admin.html">Admin</a></li>
+                    <li><a href="admin.html">Gestion</a></li>
                 </ul>
                 <div class="search-form">
                     <input type="search" value="" placeholder="Search" class="search-input">
@@ -68,12 +69,29 @@
         </div>
     </header>
 
+    <div class="content">
 
-    <section ></section>
+
+    <section class="formulaire">
+    <form method="post" action="addmember.php">
+        <label for="nom">Nom :</label>
+        <input type="text" name="nom" required><br><br>
+        <label for="prenom">Prénom :</label>
+        <input type="text" name="prenom" required><br><br>
+        <label for="adresse_email">Adresse e-mail :</label>
+        <input type="text" name="adresse_email" required><br><br>
+        <label for="grade">Grade :</label>
+        <select name="grade" id="grade">
+            <option value="Doctorant">Doctorant</option>
+            <option value="Chercheur">Chercheur</option>
+        </select>
+        <br><br>
+        <input type="submit" name="submit" value="Ajouter">
+    </form>
+</section>
 
 
-    
-    <div class="sidebar">
+<div class="sidebar">
         <h3 class="titre">gestion</h3>
         <ul class="sidebar-list">
         <li class="sub-menu">
@@ -90,112 +108,48 @@
           <li><a href="#">Thèses</a></li>
         </ul>
       </div>
-      
-
-    
-  
-// la liste des membres 
-  <h1>voici la liste membres</h1><br>
-
-<button class="add-button"  onclick="window.location.href = 'ajouter.php'">Ajouter étudiant</button>
-<br>
-
-
-<?php
-
-include('DBconn.php');
-$resultat = mysqli_query($conn, "SELECT id, nom, prenom, adresse_email, grade FROM membre");
-
-if (!$resultat) {
-  echo "Erreur lors de la récupération des données : " . mysqli_error($conn);
-  exit;
-}
-echo "</table>";
-
-mysqli_free_result($resultat);
-
-// Vérifier si le bouton "Supprimer" a été cliqué
-if (isset($_POST["supprimer"])) {
-$numE = $_POST["id"];
-
-// Supprimer l'étudiant de la base de données
-$requete = "DELETE FROM membre WHERE id=$id";
-mysqli_query($conn, $requete);
-
-// Réinitialisation de l'identité auto-incrémentée
-
-// Rediriger vers la page d'accueil
-header("Location: admin.php");
-exit();
-}
-// Afficher la liste des étudiants
-$requete = "SELECT * FROM membre";
-$resultat = mysqli_query($conn, $requete);
-
-echo "<table>";
-echo "<tr><th>id</th><th>nom</th><th>prenom</th><th>adresse_email </th><th>grade</th><th>Supprimer</th><th>Modifier</th></tr>";
-
-while ($row = mysqli_fetch_assoc($resultat)) {
-  echo "<tr>";
-  echo "<td>" . $row["id"] . "</td>";
-  echo "<td>" . $row["nom"] . "</td>";
-  echo "<td>" . $row["prenom"] . "</td>";
-  echo "<td>" . $row["adresse_email"] . "</td>";
-  echo "<td>" . $row["grade"] . "</td>";
-  echo "<td><form method='post'><input type='hidden' name='id' value='" . $row["id"] . "'><input type='submit' name='supprimer' value='Supprimer'></form></td>";
-  
-  echo "<td><button class='modification.php'>Modifier</button></td>";
-  echo "</tr>";
-}
-
-echo "</table>";
-
-mysqli_free_result($resultat);
-?>
 
 
 
 
 
 
-<h1>voici la liste des equipes </h1><br>
-
-<button class="add-button"  onclick="window.location.href = 'ajouter.php'">Ajouter étudiant</button>
-<br>
 
 
 
-<?php
+
+
+
+
+      <?php
 include('DBconn.php');
 
-$resultat2 = mysqli_query($conn, "SELECT equipe.id_equipe, equipe.nom_equipe, equipe.nom_chef_equipe, equipe.domaine_recherche, GROUP_CONCAT(membre.nom, ' ', membre.prenom) AS membres FROM equipe LEFT JOIN equipe_membre ON equipe.id_equipe = equipe_membre.id_equipe LEFT JOIN membre ON equipe_membre.id_membre = membre.id GROUP BY equipe.id_equipe;");
+// Vérifier si le formulaire a été soumis
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
-if (!$resultat2) {
-  echo "Erreur lors de la récupération des données : " . mysqli_error($conn);
-  exit;
+  // Récupérer les données du formulaire
+  $nom = $_POST['nom'];
+  $prenom = $_POST['prenom'];
+  $adresse_email = $_POST['adresse_email'];
+  $grade = $_POST['grade'];
+
+  // Insérer le membre dans la table membre
+  $requete = "INSERT INTO membre (nom, prenom, adresse_email, grade) VALUES ('$nom', '$prenom', '$adresse_email', '$grade')";
+  if (!mysqli_query($conn, $requete)) {
+    echo "Erreur lors de l'insertion du membre : " . mysqli_error($conn);
+    exit;
+  }
+
+  // Récupérer l'ID du membre inséré
+  $id_membre = mysqli_insert_id($conn);
+
+  // Afficher un message de confirmation
+  echo "Le membre a été ajouté avec succès !";
+
 }
 
-echo "<table>";
-echo "<tr><th>Nom de l'équipe</th><th>Nom de chef d'équipe</th><th>Domaine de recherche</th><th>Membres</th><th>Supprimer</th><th>Modifier</th></tr>";
-
-while ($row = mysqli_fetch_assoc($resultat2)) {
-  echo "<tr>";
-  echo "<td>" . $row["nom_equipe"] . "</td>";
-  echo "<td>" . $row["nom_chef_equipe"] . "</td>";
-  echo "<td>" . $row["domaine_recherche"] . "</td>";
-  echo "<td>" . $row["membres"] . "</td>";
-  echo "<td><form method='post'><input type='hidden' name='id' value='" . $row["id_equipe"] . "'><input type='submit' name='supprimer' value='Supprimer'></form></td>";
-  echo "<td><form method='post' action='modification_equipe.php'><input type='hidden' name='id' value='" . $row["id_equipe"] . "'><input type='submit' name='modifier' value='Modifier'></form></td>";
-  echo "</tr>";
-}
-
-echo "</table>";
-
-mysqli_free_result($resultat2);
-mysqli_close($conn);
+mysqli_close($conn); 
 ?>
-
-
 
 
 
@@ -225,6 +179,5 @@ mysqli_close($conn);
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-
 </body>
 </html>
