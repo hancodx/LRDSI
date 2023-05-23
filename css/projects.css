@@ -219,3 +219,11 @@ p {
 .listes {
    display: none;
 }
+@media screen and (max-width: 600px) {
+   .said-check {
+     display: none;
+   }
+   section{
+       justify-content: center;
+   }
+ }
