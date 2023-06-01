@@ -24,6 +24,8 @@
 
 </head>
 <body>
+  <a class="contact" href="">contact</a>
+
     <header>
         <div class="container">
             <nav>

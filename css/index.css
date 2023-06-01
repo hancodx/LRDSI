@@ -25,8 +25,23 @@
 
 body{
     scroll-behavior: smooth;
+    position: relative;
 }
 
+
+.contact {
+	bottom: 25px;
+	right: 25px;
+	position: fixed;
+	background-color: var(--color3);
+	color: #fff;
+	height: 34px;
+	width: 75px;
+	padding: 8px;
+	border-radius: 50px;
+	padding-left: 11px;
+	box-shadow: 2px 2px 12px -1px gray;
+}
 header {
     height: 100vh;
     width: 100%;
@@ -505,7 +520,7 @@ align-items: center;
    
    
 }
-@media screen and (max-width: 480px){
+@media screen and (max-width: 440px){
     .publication  .cadres{
         height: auto;
         flex-wrap: wrap;
@@ -574,9 +589,18 @@ align-items: center;
     
 }
  .sec-button:hover  {
-    background-color: var(--color1);
-    width: 122px;
+    background-color: rgba(163, 198, 198, 0.964);;
+    /* width: 122px; */
 }
+
+
+
+.sec-button:active{
+    border:1px #6fc1c1 solid;
+}
+
+
+
 
 
 .cadre-texte{
@@ -750,7 +774,7 @@ box-shadow:2px 4px 10px #126E62;
 }
 .secend-section .sub-section.er1 >:nth-of-type(1):hover{
     top:10%;
-    left: 20%;
+    left: 22%;
     z-index: 9;
     }
 .secend-section .sub-section.er1 >:nth-of-type(2){
@@ -795,7 +819,16 @@ width: 90%;
 }
 
 
-
+@media screen and (max-width: 440px){
+    .secend-section .sub-section.er1 > :nth-of-type(1){
+        top: 10%;
+    left: 6%;
+    }
+    .secend-section .sub-section.er1 > :nth-of-type(2){
+        top: 42%;
+       left: 29%;
+    }
+}
 
 
 
@@ -899,6 +932,8 @@ width: 90%;
    
 
 
+
+   
 
 
 

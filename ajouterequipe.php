@@ -25,6 +25,7 @@
 
 </head>
 <body>
+<a class="contact" href="">contact</a>
 
 
     <header>

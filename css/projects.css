@@ -203,11 +203,11 @@ main::first-line {
 .projet a {
    text-decoration: none;
    color: var(--color2);
-   background-color: var(--color1);
+   background-color: var(--color3);
    width: 80px;
    text-align: center;
    height: 30px;
-   padding-top: 1%;
+   padding-top: .5%;
    border-radius: 50px;
 }
 
