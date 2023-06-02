@@ -5,7 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/head-fot.css">
-    <link rel="stylesheet" href="css/equipes.css">
     <link rel="stylesheet" href="css/ajouterequipe.css">
     <link rel="stylesheet" href="css/sidbar.css">
     
@@ -97,6 +96,56 @@
 
 
     <section class="formulaire">
+    <div class="said-check">
+        <div class="side-ul">
+         <h4>Projets </h4> 
+         <label for="Tout">
+      <div class="choix">
+        <input type="radio" id="Tout" name="projets" value="Tout" checked> Tout
+      </div>
+    </label>
+
+    <label for="Nationaux">
+      <div class="choix">
+        <input type="radio" id="Nationaux" name="projets" value="Nationaux"> Nationaux
+        
+      </div>
+    </label>
+
+    <label for="Internationaux">
+      <div class="choix">
+        <input type="radio" id="Internationaux" name="projets" value="Internationaux"> Nnternationaux
+      </div>
+    </label>
+
+    </div>
+    <div class="side-ul">
+      <h4>Pub&Evnt</h4> 
+    <div class="choix">
+      Publication 
+    </div>
+    <div class="choix">
+      Evenment 
+    </div>
+    <div class="choix">
+      Thèses et mémoires
+    </div>
+
+ </div>
+ <div class="side-ul">
+  <h4>Equipe</h4> 
+<div class="choix">
+  Equipes
+</div>
+
+
+</div>
+
+
+    
+  </div> 
+
+    
   <form action="ajouter_equipe.php" method="post">
     <label for="nom_equipe">Nom de l'équipe :</label>
     <input type="text" id="nom_equipe" name="nom_equipe"><br><br>
@@ -107,31 +156,38 @@
     <label for="domaine_recherche">Domaine de recherche :</label>
     <input type="text" id="domaine_recherche" name="domaine_recherche"><br><br>
 
+    <label for="mots_clé">Mots clés :</label>
+    <input type="text" id="mots_clé" name="mots_clé"><br><br>
+
+    <label for="date" class="description_projet">Description :</label>
+    <textarea name="description_projet" rows="3"></textarea>
+    <br><br>
+
+    
     <label for="membres_equipe">Membres de l'équipe :</label>
-    <select id="membres_equipe" name="membres_equipe[]" multiple>
-      <?php
-      include('DBconn.php');
-    
-      $resultat = mysqli_query($conn, "SELECT nom, prenom FROM membre");
-    
-      if (!$resultat) {
-        echo "Erreur lors de la récupération des données : " . mysqli_error($conn);
-        exit;
-      }
-    
-      while ($row = mysqli_fetch_assoc($resultat)) {
-        echo "<option value='" . $row["nom"] . " " . $row["prenom"] . "'>" . $row["nom"] . " " . $row["prenom"] . "</option>";
-      }
-    
-      mysqli_free_result($resultat);
-      mysqli_close($conn); 
-      ?>
-    </select><br><br>
+<select id="membres_equipe" name="membres_equipe[]" multiple size="5">
+  <?php
+  include('DBconn.php');
+  $resultat = mysqli_query($conn, "SELECT nom, prenom FROM membre");
+  
+  if (!$resultat) {
+    echo "Erreur lors de la récupération des données : " . mysqli_error($conn);
+    exit;
+  }
+  
+  while ($row = mysqli_fetch_assoc($resultat)) {
+    echo "<option value='" . $row["nom"] . " " . $row["prenom"] . "'>" . $row["nom"] . " " . $row["prenom"] . "</option>";
+  }
+  
+  mysqli_free_result($resultat);
+  mysqli_close($conn);
+  ?>
+</select><br><br>
+<input type="submit" value ="ajouter">
 
     <input type="submit" value="Ajouter l'équipe">
   </form>
 </section>
-
 
 <?php
 include('DBconn.php');
@@ -140,45 +196,27 @@ include('DBconn.php');
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
   // Récupérer les données du formulaire
-  $nom_equipe = $_POST['nom_equipe'];
-  $nom_chef = $_POST['nom_chef'];
+  $nom_equipe = $_POST['nom'];
+  $nom_chef_equipe = $_POST['nom_chef_equipe'];
   $domaine_recherche = $_POST['domaine_recherche'];
   $membres_equipe = $_POST['membres_equipe'];
 
-  // Insérer l'équipe dans la table equipe
-  $requete = "INSERT INTO equipe (nom_equipe, nom_chef_equipe, domaine_recherche) VALUES (?, ?, ?)";
-  $stmt = mysqli_prepare($conn, $requete);
-  mysqli_stmt_bind_param($stmt, "sss", $nom_equipe, $nom_chef, $domaine_recherche);
-  if (!mysqli_stmt_execute($stmt)) {
-    echo "Erreur lors de l'insertion de l'équipe : " . mysqli_error($conn);
+  // Insérer le membre dans la table membre
+  $requete = "INSERT INTO membre (nom, prenom, adresse_email, grade) VALUES ('$nom_equipe', '$nom_chef_equipe', '$domaine_recherche', '$membres_equipe')";
+  if (!mysqli_query($conn, $requete)) {
+    echo "Erreur lors de l'insertion du membre : " . mysqli_error($conn);
     exit;
   }
-
-  // Récupérer l'ID de l'équipe insérée
-  $id_equipe = mysqli_insert_id($conn);
-
-  // Insérer les membres de l'équipe dans la table equipe_membre
-  foreach ($membres_equipe as $membre) {
-    $membre_parts = explode(" ", $membre);
-    $nom = $membre_parts[0];
-    $prenom = $membre_parts[1];
-    $requete = "INSERT INTO equipe_membre (id_equipe, id_membre) SELECT ?, id FROM membre WHERE nom = ? AND prenom = ?";
-    $stmt = mysqli_prepare($conn, $requete);
-    mysqli_stmt_bind_param($stmt, "iss", $id_equipe, $nom, $prenom);
-    if (!mysqli_stmt_execute($stmt)) {
-      echo "Erreur lors de l'insertion des membres de l'équipe : " . mysqli_error($conn);
-      exit;
-    }
-  }
+  // Récupérer l'ID du membre inséré
+  $id_membre = mysqli_insert_id($conn);
 
   // Afficher un message de confirmation
-  echo "L'équipe a été ajoutée avec succès !";
+  echo "Le membre a été ajouté avec succès !";
 
 }
 
 mysqli_close($conn); 
 ?>
-
 
     
 

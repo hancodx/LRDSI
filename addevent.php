@@ -1,3 +1,56 @@
+<?php
+// inclure la page de connexion
+include("DBconn.php");
+
+// vérifier si le formulaire a été soumis
+if(isset($_POST['submit'])){
+    // récupérer les données du formulaire
+    $titre = $_POST['titre'];
+    $date = $_POST['date'];
+    $lieu = $_POST['lieu'];
+
+    // vérifier si un fichier a été sélectionné
+    if(isset($_FILES['photo']) && $_FILES['photo']['error'] === UPLOAD_ERR_OK){
+        $photo = $_FILES['photo']['tmp_name'];
+
+        // lire le contenu du fichier
+        $photo_contenu = file_get_contents($photo);
+
+        // échapper les caractères spéciaux dans les données pour les utiliser dans une requête SQL
+        $titre = mysqli_real_escape_string($con, $titre);
+        $date = mysqli_real_escape_string($con, $date);
+        $lieu = mysqli_real_escape_string($con, $lieu);
+        $photo_contenu = mysqli_real_escape_string($con, $photo_contenu);
+
+        // construire et exécuter la requête d'insertion
+        $sql = "INSERT INTO events (titre, date, lieu, photo) VALUES ('$titre', '$date', '$lieu', '$photo_contenu')";
+        $result = mysqli_query($con, $sql);
+
+        if($result){
+            // insertion réussie, effectuer les actions souhaitées (redirection, affichage d'un message, etc.)
+            header("Location: addevent.php");
+            exit;
+        }else{
+            // échec de l'insertion, afficher un message d'erreur
+            $message = "Erreur lors de l'ajout de l'événement.";
+        }
+    }else{
+        // aucun fichier sélectionné, afficher un message d'erreur
+        $message = "Veuillez sélectionner une photo.";
+    }
+}
+
+?>
+
+
+
+
+
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -121,19 +174,17 @@
 
     
   </div> 
-    <form method="post" action="addmember.php">
-        <label for="nom">Nom :</label>
-        <input type="text" name="nom" required><br><br>
-        <label for="prenom">Prénom :</label>
-        <input type="text" name="prenom" required><br><br>
-        <label for="adresse_email">Adresse e-mail :</label>
-        <input type="text" name="adresse_email" required><br><br>
-        <label for="grade">Grade :</label>
-        <select name="grade" id="grade">
-            <option value="Doctorant">Doctorant</option>
-            <option value="Chercheur">Chercheur</option>
-        </select>
+    <form method="post">
+        <label for="titre">Titre :</label>
+        <input type="text" name="titre" required><br><br>
+
+        <label for="date">Date :</label>
+        <input type="date" name="date" required><br><br>
+        <label for="lieu">Lieu :</label>
+        <input type="text" name="lieu" required><br><br>
         <br><br>
+        <label for="photo">Photo :</label>
+        <input type="file" name="photo" required><br><br>
         <input type="submit" name="submit" value="Ajouter">
     </form>
 </section>
@@ -169,35 +220,7 @@
 
 
 
-      <?php
-include('DBconn.php');
-
-// Vérifier si le formulaire a été soumis
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-
-  // Récupérer les données du formulaire
-  $nom = $_POST['nom'];
-  $prenom = $_POST['prenom'];
-  $adresse_email = $_POST['adresse_email'];
-  $grade = $_POST['grade'];
-
-  // Insérer le membre dans la table membre
-  $requete = "INSERT INTO membre (nom, prenom, adresse_email, grade) VALUES ('$nom', '$prenom', '$adresse_email', '$grade')";
-  if (!mysqli_query($conn, $requete)) {
-    echo "Erreur lors de l'insertion du membre : " . mysqli_error($conn);
-    exit;
-  }
-
-  // Récupérer l'ID du membre inséré
-  $id_membre = mysqli_insert_id($conn);
-
-  // Afficher un message de confirmation
-  echo "Le membre a été ajouté avec succès !";
-
-}
-
-mysqli_close($conn); 
-?>
+    
 
 
 

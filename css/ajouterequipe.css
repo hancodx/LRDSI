@@ -1,14 +1,111 @@
+:root {
+
+  
+  --color4: #f0fafb;
+  --color2: #ffff;
+  --color3: rgb(141, 179, 179);
+  --color1: #5ea4a4;
 
 
-form {
-  margin: auto;
-  width: 50%;
-  background-color: #E1EDEB;
-  padding: 20px;
-  border-radius: 10px;
-  margin-bottom: 50px;
+  
+}
+*{
+  margin: 0%;
+  padding: 0%;
+  box-sizing: border-box;
+}
+section {
+  display: flex;
+  justify-content: center;
+  padding-right: 10%;
+  position: relative;
+ padding: 12% 4%;
 }
 
+
+.said-check {
+  background-color: var(--color2);
+  height: 530px;
+  width: 17.5%;
+  border-radius: 13px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  color: var(--color3);
+  margin-top: 2.9%;
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+  box-shadow: 0 3px 10px rgba(163, 198, 198, 0.791);
+  /* position: fixed; */
+  /* left: 5%; */
+  /* top: 023.4%; */
+  position: sticky;
+  overflow: hidden;
+  top: 100px;
+  left: 69px;
+}
+
+.said-check::after {
+  content: "";
+  height: 11px;
+  background-color: #64b9bb92;
+  background-color: rgba(163, 198, 198, 0.791);
+
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(15.6px);
+  -webkit-backdrop-filter: blur(15.6px);
+  position: absolute;
+  top: 0%;
+  width: 100%;
+
+}
+
+.said-check .side-ul {
+  gap: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 8%;
+
+}
+
+.said-check .side-ul .choix {
+  padding-left: 15px;
+  height: 35px;
+  padding-top: 9px;
+  cursor: pointer;
+  color: rgb(110, 133, 133);
+}
+
+.said-check .side-ul .choix:hover {
+  background-color: #f0fafb;
+  color: #385f5f;
+}
+
+.side-ul h4 {
+  padding-left: 5%;
+  background-color: var(--color4);
+  height: 35px;
+  padding-top: 4%;
+  color: var(--color1);
+  font-size: 110%;
+  font-weight: 500;
+  border-left: #64babb solid;
+  border-radius: 2px;
+}
+ 
+ 
+form {
+	margin: auto;
+	width: 50%;
+	background-color: #E1EDEB;
+	padding: 20px;
+	border-radius: 10px;
+	margin-bottom: 50px;
+	margin-top: 34px;
+}
+.side-ul label{
+  margin-bottom: 0;
+}
 label {
   display: block;
   font-weight: bold;
@@ -42,4 +139,10 @@ input[type="submit"]:hover {
   background-color: #89B6B1;
 }
 
+<<<<<<< HEAD
+=======
+label .choix {
+  font-weight: 200;
+}
+>>>>>>> 73511e64c77242474ac8ac8df47c009625d9945b
 

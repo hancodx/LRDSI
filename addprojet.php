@@ -75,9 +75,9 @@
     <section class="formulaire">
     <form method="post" action="addprojet.php">
         <label for="titre">Titre :</label>
-        <input type="text" name="nom" required><br><br>
+        <input type="text" name="titre" required><br><br>
         <label for="responsable">Responsable :</label>
-        <input type="text" name="responsable" required><br><br>
+        <input type="text" name="responsable"required><br><br>
         <label for="date">date :</label>
         <input type="date" name="date" required><br><br>
         <label for="date">Type</label>
@@ -86,7 +86,7 @@
             <option value="International">International</option>
         </select>
         <label for="date" class="description_projet">Description :</label>
-        <textarea name="description_projet" rows="6"></textarea>
+        <textarea name="description_projet" rows="3"></textarea>
         <br><br>
         <input type="submit" name="submit" value="Ajouter">
     </form>
@@ -118,7 +118,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   $id_membre = mysqli_insert_id($conn);
 
   // Afficher un message de confirmation
-  echo "Le membre a été ajouté avec succès !";
+  echo "Le projet a été ajouté avec succès !";
 
 }
 
