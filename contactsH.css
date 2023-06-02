@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 main {
     width: 600px;
     height: fit-content;
@@ -103,3 +104,247 @@ main {
     background-color: transparent;
     color: black;
   }
+=======
+:root {
+
+  /* dark mode */
+  /* --color1: #126E62;
+   --color2: #E1EDEB;
+   --color3: #6BA49D;
+   --color4: #89B6B1;
+ color:   #000f31; */
+  --color4: #f0fafb;
+  --color2: #ffff;
+  --color3: rgb(141, 179, 179);
+  --color1: #5ea4a4;
+
+
+
+}
+body{
+  background-color: var(--color4);
+}
+
+
+section {
+  height: auto;
+  padding: 12% 4%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.said-check {
+  background-color: var(--color2);
+  height: 530px;
+  width: 17.5%;
+  border-radius: 13px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  color: var(--color3);
+  margin-top: 2.9%;
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+  box-shadow: 0 3px 10px rgba(163, 198, 198, 0.791);
+  /* position: fixed; */
+  /* left: 5%; */
+  /* top: 023.4%; */
+  position: sticky;
+  overflow: hidden;
+  right: 78.5%;
+  top: 100px;
+}
+
+.said-check::after {
+  content: "";
+  height: 11px;
+  background-color: #64b9bb92;
+  background-color: rgba(163, 198, 198, 0.791);
+
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(15.6px);
+  -webkit-backdrop-filter: blur(15.6px);
+  position: absolute;
+  top: 0%;
+  width: 100%;
+
+}
+
+.said-check .side-ul {
+  gap: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 8%;
+
+}
+
+.said-check .side-ul .choix {
+  padding-left: 15px;
+  height: 35px;
+  padding-top: 9px;
+  cursor: pointer;
+  color: rgb(110, 133, 133);
+}
+
+.said-check .side-ul .choix:hover {
+  background-color: #f0fafb;
+  color: #385f5f;
+}
+
+.side-ul h4 {
+  padding-left: 5%;
+  background-color: var(--color4);
+  height: 35px;
+  padding-top: 4%;
+  color: var(--color1);
+  font-size: 110%;
+  font-weight: 500;
+  border-left: #64babb solid;
+  border-radius: 2px;
+}
+
+
+.container2 {
+  width: 75%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  position: relative;
+  left: -6%;
+  margin-top: 2.9%;
+
+}
+
+.container2>div {
+  width: 50%;
+}
+.dbox .icon {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  text-align: center;
+  background-color: var(--color3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.icon ion-icon {
+  color:var(--color2);
+  font-size: 140%;
+}
+
+.titre {
+  font-size: 1.3em;
+  text-align: center;
+  color: var(--color3);
+}
+.container2 >div{
+width: 70%;
+}
+.infos .about-us .row {
+  display: flex;
+  height: auto;
+  justify-content: space-around;
+  margin:10% 0%;
+}
+
+.infos .about-us .row .col-md-4 {
+  width: 30%;
+  height: 100%;
+  margin: 0% 4%;
+min-width: 150px;
+}
+
+.dbox{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  line-height: 25px;
+}
+.dbox div {
+  text-align: center;
+  margin: 10% 0%;
+
+}
+a{
+  text-decoration: none;
+  color: var(--color1);
+}
+
+.messege{
+display: flex;
+justify-content: center;
+}
+.messege .contact-wrap  {
+  width: 100%;
+}
+.contactForm{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-top: 5%;
+}
+.contactForm .row
+{
+  width: 80%;
+
+}
+.contactForm .row .form-group>*
+{
+  width: 100%;
+  margin: 1% 0%;
+  height: 47px;
+  padding: 3%;
+  background-color: rgba(141, 179, 179, 0.561); ;
+  color: #385f5f ;
+  border: none;
+  border-radius: 2px;
+  font-weight: 400;
+  font-size: 95%;
+}
+.contactForm .row .form-group>*:focus{
+  background-color: rgba(141, 179, 179, 0.804); 
+  
+}
+#message{
+  height: 200px;
+  font-weight: 400;
+  font-size: 100%;
+  
+}
+#btn{
+  font-size: 110%;
+  font-weight: 500;
+  color: var(--color2);
+background-color: #5ea4a4b9;
+box-shadow: 4px 3px 14px .3px #4646466e;
+
+}
+#btn:hover{
+  background-color: var(--color1);
+
+}
+@media screen and (max-width: 600px) {
+  .said-check {
+    display: none;
+  }
+  .messege{
+    width: 100%;
+  }
+ 
+ 
+  .container2{
+    width: 90%;
+    align-items: center;
+  }
+  .container2 >div{
+    width: 90%;
+  }
+  .row{
+  flex-wrap: wrap;
+
+  }
+}
+>>>>>>> 9d23ed02294fb9586dabaa8fc4d49ff7174f751f

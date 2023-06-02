@@ -3,6 +3,7 @@
 
 :root {
 
+<<<<<<< HEAD
   /* dark mode */
   /* --color1: #126E62;
   --color2: #E1EDEB;
@@ -13,6 +14,9 @@
   --color2:#ffff;
  --color3:#64babb ;
  --color1:#5ea4a4 ; */
+=======
+ 
+>>>>>>> 9d23ed02294fb9586dabaa8fc4d49ff7174f751f
 }
 
 * {
@@ -20,13 +24,60 @@
   padding: 0;
   box-sizing: border-box;
   font-family: 'Tajawal', sans-serif;
+  text-decoration: none;
+}
+a{
+  text-decoration: none;
+}
+.contact {
+	bottom: 25px;
+	right: 25px;
+	position: fixed;
+	background-color: #2F9FF4;
+  /* background-color: #639BBA; */
+	color: #fff;
+	height: 34px;
+	width: 75px;
+	padding: 8px;
+	border-radius: 50px;
+	padding-left: 11px;
+	box-shadow: 2px 2px 12px -1px gray;
+  z-index: 2;
+  text-decoration: none;
+  animation: cant infinite;
 }
 
-.container:first-of-type {
+
+@keyframes glowing {
+  0% { box-shadow: 0 0 -10px #23d9ca; }
+  40% { box-shadow: 0 0 20px #22d9ca; }
+  60% { box-shadow: 0 0 20px #22d9ca; }
+  100% { box-shadow: 0 0 -10px #23dccc; }
+}
+@keyframes post{
+  0%{
+    bottom:26.5px ;
+    
+  }
+
+
+}
+
+.contact {
+  animation: glowing 5000ms infinite ,post 1s infinite;
+}
+
+
+
+/* .container:first-of-type {
   margin: 0 auto;
   width: 90%;
   height: auto;
+<<<<<<< HEAD
  /* From https://css.glass */
+=======
+
+>>>>>>> 9d23ed02294fb9586dabaa8fc4d49ff7174f751f
  background:rgba(202, 216, 218, 0.67) ; 
  background:rgba(163, 198, 198, 0.791) ; 
  
@@ -36,12 +87,12 @@
  -webkit-backdrop-filter: blur(15.6px);
  border: 1px solid rgba(223, 238, 240, 0.146);
 
- /* avent  background: rgba(225, 237, 235, 0.67);
+   background: rgba(225, 237, 235, 0.67);
  border-radius: 16px;
  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
  backdrop-filter: blur(11px);
  -webkit-backdrop-filter: blur(11px);
- border: 1px solid rgba(225, 237, 235, 0); */
+ border: 1px solid rgba(225, 237, 235, 0); 
 
   border-radius: 30px;
   margin-top: 25px;
@@ -52,6 +103,7 @@
   padding-left: 0;
   padding-right: 0;
   
+<<<<<<< HEAD
 }
 
 .container:first-of-type {
@@ -75,6 +127,31 @@
 	padding-right: 0;
 }
 
+=======
+} */
+
+.container:first-of-type {
+	margin: 0 auto;
+	width: 90%;
+	height: auto;
+	background: rgba(202, 216, 218, 0.67);
+	background: rgba(163, 198, 198, 0.791);
+	border-radius: 16px;
+	box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+	backdrop-filter: blur(15.6px);
+	-webkit-backdrop-filter: blur(15.6px);
+	border: 1px solid rgba(223, 238, 240, 0.146);
+	border-radius: 30px;
+	margin-top: 25px;
+	left: 5%;
+	position: fixed;
+	top: 0;
+	z-index: 999;
+	padding-left: 0;
+	padding-right: 0;
+}
+
+>>>>>>> 9d23ed02294fb9586dabaa8fc4d49ff7174f751f
 
 /* footer css */
 footer {
@@ -92,6 +169,7 @@ footer {
   align-items: center;
   color: var(--color2);
   flex-direction: column;
+  z-index: 99;
 }
 
 footer .txt {
@@ -233,17 +311,40 @@ nav ul li a {
   margin: 0 2rem;
   letter-spacing: 1px;
   /* color: var(--color4); */
+<<<<<<< HEAD
   font-weight: 510;
+=======
+  font-weight: 400;
+>>>>>>> 9d23ed02294fb9586dabaa8fc4d49ff7174f751f
 
 }
 
 nav ul .dropdown {
   position: absolute;
-  left: 5%;
+  left: 2%;
   top: 100%;
   width: 150px;
   height: 29px;
   display: none;
+}
+nav ul li .dropdown ul li {
+	transform: translateX(0rem);
+	animation: none;
+	height: 15px;
+	margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+nav ul li .dropdown ul li a{
+  transition: .5s;
+  margin: 0 1.2rem;
+
+}
+nav ul li .dropdown ul li a:hover{
+  position: relative;
+  bottom:  10%;
+  margin-left: 30px;
+  
 }
 
 nav ul .dropdown ul {
@@ -260,29 +361,37 @@ nav ul .dropdown ul {
   backdrop-filter: blur(15.6px);
   -webkit-backdrop-filter: blur(15.6px);
   border: 1px solid rgba(223, 238, 240, 0.146);
+<<<<<<< HEAD
   width: 190px;
   height: 100px;
+=======
+  width: 200px;
+  height: max-content;
+>>>>>>> 9d23ed02294fb9586dabaa8fc4d49ff7174f751f
   justify-content: space-around;
   border-radius: 8px;
   transition: 0.5s ease;
   object-fit: cover;
-
 }
 
 nav ul a:hover {
   color: black;
 }
 
+.dropdown a:hover{
+  padding-bottom: 0px;
+border-bottom: none;
+}
+
 nav ul li:hover .dropdown {
   display: block;
-
 }
 
 /* animation */
 nav ul li {
   transform: translateX(100rem);
   animation: slideIn 1s forwards;
-  height: 23%;
+  
 }
 
 nav ul li .dropdown ul li:hover {
@@ -306,11 +415,7 @@ nav ul li:nth-child(4) {
   animation-delay: 1.2s;
 }
 
-/* dropdown no animation  */
-nav ul li .dropdown ul li {
-  transform: translateX(0rem);
-  animation: none;
-}
+
 
 @keyframes slideIn {
   to {
@@ -353,4 +458,15 @@ nav ul li .dropdown ul li {
 }
 *:focus{
 outline: none;
+<<<<<<< HEAD
+=======
+}
+
+.choix a{
+  color: rgb(110, 133, 133);
+
+}
+.choix a:hover{
+  color: #385f5f;
+>>>>>>> 9d23ed02294fb9586dabaa8fc4d49ff7174f751f
 }

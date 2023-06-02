@@ -23,10 +23,12 @@
     ?>
 
     <?php  foreach ($posts as $value) {  ?>
-    <div>
+    <div>  
+
         <h2><?php   echo $value['title'];?></h2>
         <p><?php echo $value['body']; ?></p>
         <hr>
+        
     </div>
     <?php } ?>
 

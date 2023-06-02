@@ -99,6 +99,15 @@ h1 {
 }
 */
 
-
+.sidebar {
+  --sidebar-width: 230px;
+  width: var(--sidebar-width);
+  background-color: var(--color-bg);
+  border-radius: .5rem;
+  padding: .5rem 0;
+  height: fit-content;
+  position: relative;
+  margin-top: 34px;
+}
 
 
