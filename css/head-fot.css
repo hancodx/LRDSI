@@ -11,6 +11,10 @@
   padding: 0;
   box-sizing: border-box;
   font-family: 'Tajawal', sans-serif;
+  text-decoration: none;
+}
+a{
+  text-decoration: none;
 }
 .contact {
 	bottom: 25px;
@@ -402,4 +406,12 @@ nav ul li:nth-child(4) {
 }
 *:focus{
 outline: none;
+}
+
+.choix a{
+  color: rgb(110, 133, 133);
+
+}
+.choix a:hover{
+  color: #385f5f;
 }

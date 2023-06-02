@@ -92,12 +92,18 @@ section {
    height: 35px;
    padding-top: 9px;
    cursor: pointer;
-   color: rgb(110, 133, 133);
-}
 
+}
+.choix a{
+   color: rgb(110, 133, 133);
+
+}
+.choix a:hover{
+   color: #385f5f;
+}
 .said-check .side-ul .choix:hover {
    background-color: #f0fafb;
-   color: #385f5f;
+   
 }
 
 .side-ul h4 {

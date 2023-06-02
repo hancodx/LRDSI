@@ -102,6 +102,7 @@ form {
 	border-radius: 10px;
 	margin-bottom: 50px;
 	margin-top: 34px;
+  height: fit-content;
 }
 .side-ul label{
   margin-bottom: 0;

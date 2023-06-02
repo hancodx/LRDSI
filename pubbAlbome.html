@@ -43,6 +43,15 @@
 
     }
 
+    .choix a {
+      color: rgb(110, 133, 133);
+
+    }
+
+    .choix a:hover {
+      color: #385f5f;
+    }
+
     body {
       background-color: var(--color4);
     }
@@ -262,6 +271,7 @@
       right: 78.5%;
       top: 100px;
     }
+
     .said-check {
       background-color: var(--color2);
       height: 530px;
@@ -279,7 +289,7 @@
       /* top: 023.4%; */
       position: sticky;
       overflow: hidden;
-      
+
       top: 100px;
       left: 69px;
     }
@@ -290,12 +300,14 @@
       font-weight: 500;
       line-height: 1.2;
     }
+
     @media screen and (max-width: 600px) {
       .said-check {
         display: none;
       }
-      .main{
-        justify-content:flex-start;
+
+      .main {
+        justify-content: flex-start;
       }
     }
   </style>
@@ -306,7 +318,7 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
     crossorigin="anonymous"></script>
-  
+
   <a class="contact contac" href="./contactsH.html">contact</a>
 
 
@@ -316,30 +328,30 @@
         </a></div>
       <ul>
         <li><a href="./index.html">Accueil</a></li>
-       
+
         <li><a href="./projects2.html">Projets </a>
           <div class="dropdown">
             <ul>
               <li> <a href="./projects2.html">Nationaux </a></li>
               <li> <a href="./projects2.html">Internationaux </a></li>
-              
+
 
             </ul>
           </div>
         </li>
         <li><a href="./Equips.html">Equipes</a></li>
 
-        
+
         <li><a href="./pubbAlbome.html">Pub&Event</a>
           <div class="dropdown">
             <ul>
-              <li> <a href="./events.html"> Evenement  </a></li>
+              <li> <a href="./events.html"> Evenement </a></li>
               <li> <a href="./pubbAlbome.html"> Publications </a></li>
               <li> <a href="">Thèse et mémoire </a></li>
             </ul>
           </div>
         </li>
-        
+
       </ul>
       <div class="search-form">
         <input type="search" value="" placeholder="Search" class="search-input">
@@ -360,20 +372,22 @@
         <h4>Projets </h4>
         <label for="Tout">
           <div class="choix">
-            <input type="radio" id="Tout" name="projets" value="Tout" checked> Tout
+            <input type="radio" id="Tout" name="projets" value="Tout" checked> <a href="./projects2.html">Tout</a>
           </div>
         </label>
 
         <label for="Nationaux">
           <div class="choix">
-            <input type="radio" id="Nationaux" name="projets" value="Nationaux"> Nationaux
+            <input type="radio" id="Nationaux" name="projets" value="Nationaux"><a href="./projects2.html">
+              Nationaux</a>
 
           </div>
         </label>
 
         <label for="Internationaux">
           <div class="choix">
-            <input type="radio" id="Internationaux" name="projets" value="Internationaux"> Nnternationaux
+            <input type="radio" id="Internationaux" name="projets" value="Internationaux"> <a
+              href="./projects2.html">Internationaux</a>
           </div>
         </label>
 
@@ -381,20 +395,20 @@
       <div class="side-ul">
         <h4>Pub&Evnt</h4>
         <div class="choix">
-          Publication
+          <a href="./pubbAlbome.html"> Publication</a>
         </div>
         <div class="choix">
-          Evenment
+          <a href="./events.html">Evenment</a>
         </div>
         <div class="choix">
-          Thèses et mémoires
+          <a href="">Thèses et mémoires</a>
         </div>
 
       </div>
       <div class="side-ul">
         <h4>Equipe</h4>
         <div class="choix">
-          Equipes
+          <a href="./Equips.php">Equipes</a>
         </div>
 
 
