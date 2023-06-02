@@ -5,10 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/head-fot.css">
-<<<<<<< HEAD:addequipe.php
-=======
+
     <link rel="stylesheet" href="./css/equipes.css">
->>>>>>> 9d23ed02294fb9586dabaa8fc4d49ff7174f751f:ajouterequipe.php
+
     <link rel="stylesheet" href="css/ajouterequipe.css">
     <link rel="stylesheet" href="css/sidbar.css">
     
@@ -89,48 +88,33 @@
          <h4>Projets </h4> 
          <label for="Tout">
       <div class="choix">
-<<<<<<< HEAD:addequipe.php
-        <input type="radio" id="Tout" name="projets" value="Tout" checked> Tout
-=======
+
         <input type="radio" id="Tout" name="projets" value="Tout" checked=""> <a href="./projects2.html">Tout</a>
->>>>>>> 9d23ed02294fb9586dabaa8fc4d49ff7174f751f:ajouterequipe.php
+
       </div>
     </label>
 
     <label for="Nationaux">
       <div class="choix">
-<<<<<<< HEAD:addequipe.php
-        <input type="radio" id="Nationaux" name="projets" value="Nationaux"> Nationaux
-=======
+
         <input type="radio" id="Nationaux" name="projets" value="Nationaux"> <a href="./projects2.html">Nationaux</a>
->>>>>>> 9d23ed02294fb9586dabaa8fc4d49ff7174f751f:ajouterequipe.php
+
         
       </div>
     </label>
 
     <label for="Internationaux">
       <div class="choix">
-<<<<<<< HEAD:addequipe.php
-        <input type="radio" id="Internationaux" name="projets" value="Internationaux"> Nnternationaux
-=======
+
+  
         <input type="radio" id="Internationaux" name="projets" value="Internationaux"> <a href="./projects2.html">Internationaux</a>
->>>>>>> 9d23ed02294fb9586dabaa8fc4d49ff7174f751f:ajouterequipe.php
+
       </div>
     </label>
 
     </div>
     <div class="side-ul">
-<<<<<<< HEAD:addequipe.php
-      <h4>Pub&Evnt</h4> 
-    <div class="choix">
-      Publication 
-    </div>
-    <div class="choix">
-      Evenment 
-    </div>
-    <div class="choix">
-      Thèses et mémoires
-=======
+
       <h4>Pub&amp;Evnt</h4> 
     <div class="choix">
      <a href="./pubbAlbome.html"> Publication </a>
@@ -140,18 +124,16 @@
     </div>
     <div class="choix">
       <a href="">Thèses et mémoires</a>
->>>>>>> 9d23ed02294fb9586dabaa8fc4d49ff7174f751f:ajouterequipe.php
+
     </div>
 
  </div>
  <div class="side-ul">
   <h4>Equipe</h4> 
 <div class="choix">
-<<<<<<< HEAD:addequipe.php
-  Equipes
-=======
+
   <a href="./Equips.php"> Equipes</a>
->>>>>>> 9d23ed02294fb9586dabaa8fc4d49ff7174f751f:ajouterequipe.php
+
 </div>
 
 
@@ -181,9 +163,9 @@
 
     
     <label for="membres_equipe">Membres de l'équipe :</label>
-<<<<<<< HEAD:addequipe.php
+
 <select id="membres_equipe" name="membres_equipe[]" multiple size="5">
-  <?php
+   <?php
   include('DBconn.php');
   $resultat = mysqli_query($conn, "SELECT nom, prenom FROM membre");
   
@@ -198,10 +180,10 @@
   
   mysqli_free_result($resultat);
   mysqli_close($conn);
-  ?>
+  ?> 
 </select><br><br>
 <input type="submit" value ="ajouter">
-=======
+
     <select id="membres_equipe" name="membres_equipe[]" multiple="">
       
 
@@ -345,8 +327,7 @@
 
     <div class="sidebar__section sidebar__section--account">
       <div class="account">
-      <img src="./photo/Untitleerd.png" alt="Avatar image" class="account__avatar">
-
+        <img src="./photo/Untitleerd.png" alt="Avatar image" class="account__avatar">
         <div class="account__details">
           <h4 class="account__name">Luke Skywalker</h4>
           <p class="account__email">luke@force.com</p>
@@ -356,12 +337,10 @@
     </div>
   </aside>
 
->>>>>>> 9d23ed02294fb9586dabaa8fc4d49ff7174f751f:ajouterequipe.php
+
 
 </section>
 
-<<<<<<< HEAD:addequipe.php
-=======
 
 
 
@@ -371,14 +350,6 @@
 
 
 
-
-
-
-
-
-
-
->>>>>>> 9d23ed02294fb9586dabaa8fc4d49ff7174f751f:ajouterequipe.php
 <?php
 include('DBconn.php');
 
