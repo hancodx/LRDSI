@@ -102,7 +102,10 @@ form {
 	border-radius: 10px;
 	margin-bottom: 50px;
 	margin-top: 34px;
+<<<<<<< HEAD
+=======
   height: fit-content;
+>>>>>>> 9d23ed02294fb9586dabaa8fc4d49ff7174f751f
 }
 .side-ul label{
   margin-bottom: 0;
@@ -113,7 +116,8 @@ label {
   margin-bottom: 10px;
 }
 
-input[type="text"], input[type="email"], select {
+
+textarea, input[type="text"], input[type="email"], input[type="date"], select {
   width: 100%;
   padding: 12px 20px;
   margin: 8px 0;
@@ -123,6 +127,7 @@ input[type="text"], input[type="email"], select {
   background-color: #E1EDEB;
   color: #126E62;
 }
+
 
 input[type="submit"] {
   background-color: #6BA49D;
@@ -138,7 +143,16 @@ input[type="submit"]:hover {
   background-color: #89B6B1;
 }
 
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
 label .choix {
   font-weight: 200;
 }
+>>>>>>> 73511e64c77242474ac8ac8df47c009625d9945b
+=======
+label .choix {
+  font-weight: 200;
+}
+>>>>>>> 9d23ed02294fb9586dabaa8fc4d49ff7174f751f
 

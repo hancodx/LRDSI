@@ -1,11 +1,12 @@
+.body{
+  
+}
 
-
-table {
+ /*table {
   border-collapse: collapse;
   width: 100%;
   margin-bottom: 20px;
 }
-
 th, td {
   padding: 8px;
   text-align: left;
@@ -79,11 +80,10 @@ h1 {
     cursor: pointer;
   }
 
-  table td form input[type='submit']:hover {
+   table td form input[type='submit']:hover {
     background-color: #6BA49D;
     color: #E1EDEB;
   }
-
   button.modification.php {
     background-color: #E1EDEB;
     color: #126E62;
@@ -97,6 +97,7 @@ h1 {
     background-color: #6BA49D;
     color: #E1EDEB;
 }
+*/
 
 .sidebar {
   --sidebar-width: 230px;

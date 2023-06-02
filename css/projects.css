@@ -92,6 +92,14 @@ section {
    height: 35px;
    padding-top: 9px;
    cursor: pointer;
+<<<<<<< HEAD
+   color: rgb(110, 133, 133);
+}
+
+.said-check .side-ul .choix:hover {
+   background-color: #f0fafb;
+   color: #385f5f;
+=======
 
 }
 .choix a{
@@ -104,6 +112,7 @@ section {
 .said-check .side-ul .choix:hover {
    background-color: #f0fafb;
    
+>>>>>>> 9d23ed02294fb9586dabaa8fc4d49ff7174f751f
 }
 
 .side-ul h4 {
@@ -209,11 +218,19 @@ main::first-line {
 .projet a {
    text-decoration: none;
    color: var(--color2);
+<<<<<<< HEAD
+   background-color: var(--color1);
+   width: 80px;
+   text-align: center;
+   height: 30px;
+   padding-top: 1%;
+=======
    background-color: var(--color3);
    width: 80px;
    text-align: center;
    height: 30px;
    padding-top: .5%;
+>>>>>>> 9d23ed02294fb9586dabaa8fc4d49ff7174f751f
    border-radius: 50px;
 }
 
@@ -225,6 +242,8 @@ p {
 .listes {
    display: none;
 }
+<<<<<<< HEAD
+=======
 @media screen and (max-width: 600px) {
    .said-check {
      display: none;
@@ -233,3 +252,4 @@ p {
        justify-content: center;
    }
  }
+>>>>>>> 9d23ed02294fb9586dabaa8fc4d49ff7174f751f

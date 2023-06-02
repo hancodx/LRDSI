@@ -106,7 +106,10 @@ width: 100%;}
  
 .all {
 	width: 76%;
+<<<<<<< HEAD
+=======
 	height: auto;
+>>>>>>> 9d23ed02294fb9586dabaa8fc4d49ff7174f751f
 }
 .said-check {
 	background-color: var(--color2);
@@ -134,12 +137,19 @@ section {
 	padding: 12% 5%;
 	display: flex;
 	justify-content: space-between;
+<<<<<<< HEAD
+=======
 	/*! height: 538px; */
+>>>>>>> 9d23ed02294fb9586dabaa8fc4d49ff7174f751f
 }
 .event {
 	margin-top: 34px;
 	width: 100%;
+<<<<<<< HEAD
+	height: 250px;
+=======
 	height: auto;
+>>>>>>> 9d23ed02294fb9586dabaa8fc4d49ff7174f751f
 	display: flex;
 	justify-content: space-between;
 	/* background-color: #c9eae6; */
@@ -151,6 +161,9 @@ section {
 	box-shadow: 1px 2px 13px 5px rgba(128, 128, 128, 0.484);
 	background-color: #a2c8c8a1;
 	background-color: #ffffff;
+<<<<<<< HEAD
+}
+=======
 	flex-wrap: wrap;
 }
 
@@ -167,3 +180,4 @@ section {
         justify-content: center;
     }
   }
+>>>>>>> 9d23ed02294fb9586dabaa8fc4d49ff7174f751f
