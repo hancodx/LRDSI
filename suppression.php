@@ -33,21 +33,15 @@ if (isset($_POST['supprimer-me'])) {
 
 // Suppression de l'équipe
 
-
-
-
-
 if (isset($_POST['supprimer-eq'])) {
     $idEquipe = $_POST['id_equipe'];
 
-    // Supprimer les références dans la table "equipe_membre"
     $query = "DELETE FROM equipe_membre WHERE id_equipe = $idEquipe";
     $result = mysqli_query($conn, $query);
     if (!$result) {
         die("Erreur lors de la suppression des références dans la table equipe_membre : " . mysqli_error($conn));
     }
 
-    // Supprimer l'équipe de la table "equipe"
     $query = "DELETE FROM equipe WHERE id_equipe = $idEquipe";
     $result = mysqli_query($conn, $query);
     if (!$result) {
@@ -76,6 +70,31 @@ if(isset($_POST['supprimer-pr'])) {
       echo "Erreur lors de la suppression de l'équipe.";
   }
 }
+
+
+
+//suppression d un evenement
+
+if(isset($_POST['supprimer_ev'])){
+    $id = $_POST['id'];
+
+    $id = mysqli_real_escape_string($conn, $id);
+
+    $sql = "DELETE FROM events WHERE id = '$id'";
+    $result = mysqli_query($conn, $sql);
+
+    if($result){
+        header("Location: admin.php");
+        exit;
+    }else{
+        // échec de la suppression, afficher un message d'erreur
+        $message = "Erreur lors de la suppression de l'événement.";
+    }
+}
+
+
+
+
 
 
 

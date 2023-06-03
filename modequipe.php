@@ -1,3 +1,64 @@
+<?php
+include('DBconn.php');
+
+// Vérifier si l'ID du membre est passé en paramètre dans l'URL
+if (isset($_GET['id_equipe'])) {
+    $id = $_GET['id_equipe'];
+
+    // Vérifier si le formulaire a été soumis
+    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+        // Récupérer les nouvelles valeurs des champs
+        $nom_equipe = $_POST['nom_equipe'];
+        $nom_chef_equipe = $_POST['nom_chef_equipe'];
+        $domaine_recherche = $_POST['domaine_recherche'];
+        $mots_clé = $_POST['mots_clé'];
+        $description = $_POST['description '];
+        $membres = $_POST['membres'];
+
+        // Exécuter une requête UPDATE pour mettre à jour les informations du membre
+        $requete = "UPDATE membre SET nom_equipe = '$nom_equipe', nom_chef_equipe = '$nom_chef_equipe', domaine_recherche = '$domaine_recherche', mots_clé = '$mots_clé' ', description = '$description' ', membres = '$membres' WHERE id = $id";
+        if (mysqli_query($conn, $requete)) {
+            // Afficher un message de succès
+            echo "Le membre a été modifié avec succès !";
+        } else {
+            // Afficher un message d'erreur si la mise à jour a échoué
+            echo "Erreur lors de la modification du membre : " . mysqli_error($conn);
+        }
+    }
+
+    // Récupérer les informations actuelles du membre à partir de la base de données
+    $requete = "SELECT * FROM equipe WHERE id_equipe = $id";
+    $resultat = mysqli_query($conn, $requete);
+
+    // Vérifier si le membre existe
+    if (mysqli_num_rows($resultat) == 1) {
+        // Récupérer les données du membre
+        $equipe = mysqli_fetch_assoc($resultat);
+
+        // Utiliser les valeurs récupérées pour pré-remplir le formulaire de modification
+        $nom_equipe = $equipe['nom_equipe'];
+        $nom_chef_equipe = $equipe['nom_chef_equipe'];
+        $domaine_recherche = $equipe['domaine_recherche'];
+        $mots_clé = $equipe['mots_clé'];
+        $description = $equipe['description '];
+        $membres = $equipe['membres'];
+    } else {
+        // Afficher un message d'erreur si le membre n'existe pas
+        echo "equipe introuvable.";
+        exit;
+    }
+} else {
+    // Afficher un message d'erreur si l'ID du membre n'est pas passé en paramètre
+    echo "ID dequipe non spécifié.";
+    exit;
+}
+
+mysqli_close($conn);
+?>
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,10 +66,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/head-fot.css">
-    <link rel="stylesheet" href="css/equipes.css">
+    <link rel="stylesheet" href="./css/equipes.css">
     <link rel="stylesheet" href="css/ajouterequipe.css">
     <link rel="stylesheet" href="css/sidbar.css">
-
     
     <!-- animation link -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
@@ -29,7 +89,8 @@
 <body>
 
 
-    <header>
+
+<header>
     <div class="container">
     <nav>
       <div class="logo"> <a href=""> <img src="./photo/Fichier 2-8.png" alt="">
@@ -73,9 +134,13 @@
   </div>
     </header>
 
-    <div class="content">
+   
+    
 
-<!-- formulaire a droite -->
+   
+		
+
+
     <section class="formulaire">
     <div class="said-check">
         <div class="side-ul">
@@ -83,15 +148,14 @@
          <label for="Tout">
       <div class="choix">
         <input type="radio" id="Tout" name="projets" value="Tout" checked> Tout
-        <input type="radio" id="Tout" name="projets" value="Tout" checked> <a href="./projects2.html">Tout</a>
+        <input type="radio" id="Tout" name="projets" value="Tout" checked=""> <a href="./projects2.html">Tout</a>
       </div>
     </label>
 
     <label for="Nationaux">
       <div class="choix">
         <input type="radio" id="Nationaux" name="projets" value="Nationaux"> Nationaux
-        <input type="radio" id="Nationaux" name="projets" value="Nationaux"> <a href="./projects2.html">Nationaux
-        </a>
+        <input type="radio" id="Nationaux" name="projets" value="Nationaux"> <a href="./projects2.html">Nationaux</a>
         
       </div>
     </label>
@@ -114,10 +178,12 @@
     </div>
     <div class="choix">
       Thèses et mémoires
-      <a href="./pubbAlbome.html">Publication </a>
+      <h4>Pub&amp;Evnt</h4> 
+    <div class="choix">
+     <a href="./pubbAlbome.html"> Publication </a>
     </div>
     <div class="choix">
-      <a href="./events.html">Evenment </a>
+        <a href="./events.html">Evenment </a>
     </div>
     <div class="choix">
       <a href="">Thèses et mémoires</a>
@@ -128,38 +194,61 @@
   <h4>Equipe</h4> 
 <div class="choix">
   Equipes
-    <a href="./Equips.php">Equipes</a>
+  <a href="./Equips.php"> Equipes</a>
 </div>
 
 
 </div>
 
 
-    <!-- formulaire -->
+    
   </div> 
-    <form method="post" action="addmember.php">
 
-        <label for="nom">Nom :</label>
-        <input type="text" name="nom" required><br><br>
-        <label for="prenom">Prénom :</label>
-        <input type="text" name="prenom" required><br><br>
-        <label for="adresse_email">Adresse e-mail :</label>
-        <input type="text" name="adresse_email" required><br><br>
-        <label for="grade">Grade :</label>
-        <select name="grade" id="grade">
-            <option value="Doctorant">Doctorant</option>
-            <option value="Chercheur">Chercheur</option>
-        </select>
-        <br><br>
-        <input type="submit" name="submit" value="Ajouter">
-    </form>
+    
+  <form method="post">
+    <label for="nom_equipe">Nom de l'équipe :</label>
+    <input type="text" id="nom_equipe" name="nom_equipe" value="<?php echo $nom_equipe; ?>"><br><br>
 
+    <label for="nom_chef">Nom du chef d'équipe :</label>
+    <input type="text" id="nom_chef" name="nom_chef" value="<?php echo $nom_chef_equipe; ?>"><br><br>
 
+    <label for="domaine_recherche">Domaine de recherche :</label>
+    <input type="text" id="domaine_recherche" name="domaine_recherche" value="<?php echo $domaine_recherche; ?>"><br><br>
 
+    <label for="mots_clé">Mots clés :</label>
+    <input type="text" id="mots_clé" name="mots_clé" value="<?php echo $mots_clé; ?>"><br><br>
 
+    <label for="date" class="description_projet">Description :</label>
+    <textarea name="description_projet" rows="3" value="<?php echo $description_projet; ?>"></textarea>
+    <br><br>
 
-<!-- sidbare droite -->
+    
+    <label for="membres_equipe">Membres de l'équipe :</label>
+<select id="membres" name="membres" multiple size="5" value="<?php echo $membres_equipr; ?>">
+  <?php
+  include('DBconn.php');
+  $resultat = mysqli_query($conn, "SELECT nom, prenom FROM membre");
+  
+  if (!$resultat) {
+    echo "Erreur lors de la récupération des données : " . mysqli_error($conn);
+    exit;
+  }
+  
+  while ($row = mysqli_fetch_assoc($resultat)) {
+    echo "<option value='" . $row["nom"] . " " . $row["prenom"] . "'>" . $row["nom"] . " " . $row["prenom"] . "</option>";
+  }
+  
+  mysqli_free_result($resultat);
+  mysqli_close($conn);
+  ?>
+</select><br><br>
+<input type="submit" value ="ajouter">
+    <select id="membres_equipe" name="membres_equipe[]" multiple="">
+      
 
+</select>
+
+</form>
 <aside class="sidebar" theme="dark">
     <div class="sidebar__section sidebar__section--title">
     Gestion 
@@ -297,7 +386,8 @@
 
     <div class="sidebar__section sidebar__section--account">
       <div class="account">
-        <img src="./photo/Untitleerd.png" alt="Avatar image" class="account__avatar">
+      <img src="./photo/Untitleerd.png" alt="Avatar image" class="account__avatar">
+
         <div class="account__details">
           <h4 class="account__name">Luke Skywalker</h4>
           <p class="account__email">luke@force.com</p>
@@ -314,25 +404,36 @@
 
 
 
-      <?php
+
+
+
+
+
+
+
+
+
+
+
+
+<?php
 include('DBconn.php');
 
 // Vérifier si le formulaire a été soumis
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
   // Récupérer les données du formulaire
-  $nom = $_POST['nom'];
-  $prenom = $_POST['prenom'];
-  $adresse_email = $_POST['adresse_email'];
-  $grade = $_POST['grade'];
+  $nom_equipe = $_POST['nom'];
+  $nom_chef_equipe = $_POST['nom_chef_equipe'];
+  $domaine_recherche = $_POST['domaine_recherche'];
+  $membres_equipe = $_POST['membres_equipe'];
 
   // Insérer le membre dans la table membre
-  $requete = "INSERT INTO membre (nom, prenom, adresse_email, grade) VALUES ('$nom', '$prenom', '$adresse_email', '$grade')";
+  $requete = "INSERT INTO membre (nom, prenom, adresse_email, grade) VALUES ('$nom_equipe', '$nom_chef_equipe', '$domaine_recherche', '$membres_equipe')";
   if (!mysqli_query($conn, $requete)) {
     echo "Erreur lors de l'insertion du membre : " . mysqli_error($conn);
     exit;
   }
-
   // Récupérer l'ID du membre inséré
   $id_membre = mysqli_insert_id($conn);
 
@@ -343,6 +444,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 mysqli_close($conn); 
 ?>
+
+    
+
+
+
+
+
 
 
 

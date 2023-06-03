@@ -1,3 +1,57 @@
+<?php
+include('DBconn.php');
+
+// Vérifier si l'ID du membre est passé en paramètre dans l'URL
+if (isset($_GET['id'])) {
+    $id_membre = $_GET['id'];
+
+    // Vérifier si le formulaire a été soumis
+    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+        // Récupérer les nouvelles valeurs des champs
+        $nom = $_POST['nom'];
+        $prenom = $_POST['prenom'];
+        $adresse_email = $_POST['adresse_email'];
+        $grade = $_POST['grade'];
+
+        // Exécuter une requête UPDATE pour mettre à jour les informations du membre
+        $requete = "UPDATE membre SET nom = '$nom', prenom = '$prenom', adresse_email = '$adresse_email', grade = '$grade' WHERE id = $id_membre";
+        if (mysqli_query($conn, $requete)) {
+            // Afficher un message de succès
+            echo "Le membre a été modifié avec succès !";
+        } else {
+            // Afficher un message d'erreur si la mise à jour a échoué
+            echo "Erreur lors de la modification du membre : " . mysqli_error($conn);
+        }
+    }
+
+    // Récupérer les informations actuelles du membre à partir de la base de données
+    $requete = "SELECT * FROM membre WHERE id = $id_membre";
+    $resultat = mysqli_query($conn, $requete);
+
+    // Vérifier si le membre existe
+    if (mysqli_num_rows($resultat) == 1) {
+        // Récupérer les données du membre
+        $membre = mysqli_fetch_assoc($resultat);
+
+        // Utiliser les valeurs récupérées pour pré-remplir le formulaire de modification
+        $nom = $membre['nom'];
+        $prenom = $membre['prenom'];
+        $adresse_email = $membre['adresse_email'];
+        $grade = $membre['grade'];
+    } else {
+        // Afficher un message d'erreur si le membre n'existe pas
+        echo "Membre introuvable.";
+        exit;
+    }
+} else {
+    // Afficher un message d'erreur si l'ID du membre n'est pas passé en paramètre
+    echo "ID du membre non spécifié.";
+    exit;
+}
+
+mysqli_close($conn);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -137,16 +191,16 @@
 
     <!-- formulaire -->
   </div> 
-    <form method="post" action="addmember.php">
+    <form method="post">
 
-        <label for="nom">Nom :</label>
-        <input type="text" name="nom" required><br><br>
+        <label for="nom">Modifier le nom :</label>
+        <input type="text" name="nom" required value="<?php echo $nom; ?>"><br><br>
         <label for="prenom">Prénom :</label>
-        <input type="text" name="prenom" required><br><br>
+        <input type="text" name="prenom" required  value="<?php echo $prenom; ?>"><br><br>
         <label for="adresse_email">Adresse e-mail :</label>
-        <input type="text" name="adresse_email" required><br><br>
+        <input type="text" name="adresse_email" required value="<?php echo $adresse_email; ?>"><br><br>
         <label for="grade">Grade :</label>
-        <select name="grade" id="grade">
+        <select name="grade" id="grade" value="<?php echo $grade; ?>">
             <option value="Doctorant">Doctorant</option>
             <option value="Chercheur">Chercheur</option>
         </select>
@@ -314,35 +368,6 @@
 
 
 
-      <?php
-include('DBconn.php');
-
-// Vérifier si le formulaire a été soumis
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-
-  // Récupérer les données du formulaire
-  $nom = $_POST['nom'];
-  $prenom = $_POST['prenom'];
-  $adresse_email = $_POST['adresse_email'];
-  $grade = $_POST['grade'];
-
-  // Insérer le membre dans la table membre
-  $requete = "INSERT INTO membre (nom, prenom, adresse_email, grade) VALUES ('$nom', '$prenom', '$adresse_email', '$grade')";
-  if (!mysqli_query($conn, $requete)) {
-    echo "Erreur lors de l'insertion du membre : " . mysqli_error($conn);
-    exit;
-  }
-
-  // Récupérer l'ID du membre inséré
-  $id_membre = mysqli_insert_id($conn);
-
-  // Afficher un message de confirmation
-  echo "Le membre a été ajouté avec succès !";
-
-}
-
-mysqli_close($conn); 
-?>
 
 
 

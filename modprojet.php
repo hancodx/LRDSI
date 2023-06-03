@@ -1,3 +1,59 @@
+<?php
+include('DBconn.php');
+
+// Vérifier si l'ID du membre est passé en paramètre dans l'URL
+if (isset($_GET['id'])) {
+    $id = $_GET['id'];
+
+    // Vérifier si le formulaire a été soumis
+    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+        // Récupérer les nouvelles valeurs des champs
+        $titre = $_POST['titre'];
+        $responsable = $_POST['responsable'];
+        $date = $_POST['date'];
+        $type_projet = $_POST['type_projet'];
+        $description_projet = $_POST['description_projet'];
+
+        // Exécuter une requête UPDATE pour mettre à jour les informations du membre
+        $requete = "UPDATE projet SET titre= '$titre', responsable = '$responsable', date = '$date', type_projet = '$type_projet'  , description_projet = '$description_projet'  WHERE id = $id";
+        if (mysqli_query($conn, $requete)) {
+            // Afficher un message de succès
+            echo "Le projet a été modifié avec succès !";
+        } else {
+            // Afficher un message d'erreur si la mise à jour a échoué
+            echo "Erreur lors de la modification du projet : " . mysqli_error($conn);
+        }
+    }
+
+    // Récupérer les informations actuelles du membre à partir de la base de données
+    $requete = "SELECT * FROM projet WHERE id = $id";
+    $resultat = mysqli_query($conn, $requete);
+
+    // Vérifier si le membre existe
+    if (mysqli_num_rows($resultat) == 1) {
+        // Récupérer les données du membre
+        $projet = mysqli_fetch_assoc($resultat);
+
+        // Utiliser les valeurs récupérées pour pré-remplir le formulaire de modification
+        $titre = $projet['titre'];
+        $responsable = $projet['responsable'];
+        $date = $projet['date'];
+        $type_projet = $projet['type_projet'];
+        $description_projet = $projet['description_projet'];
+    } else {
+        // Afficher un message d'erreur si le membre n'existe pas
+        echo "projet introuvable.";
+        exit;
+    }
+} else {
+    // Afficher un message d'erreur si l'ID du membre n'est pas passé en paramètre
+    echo "ID du projet non spécifié.";
+    exit;
+}
+
+mysqli_close($conn);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -135,24 +191,29 @@
 </div>
 
 
-    <!-- formulaire -->
+ <!-- formulaire -->
   </div> 
-    <form method="post" action="addmember.php">
-
-        <label for="nom">Nom :</label>
-        <input type="text" name="nom" required><br><br>
-        <label for="prenom">Prénom :</label>
-        <input type="text" name="prenom" required><br><br>
-        <label for="adresse_email">Adresse e-mail :</label>
-        <input type="text" name="adresse_email" required><br><br>
-        <label for="grade">Grade :</label>
-        <select name="grade" id="grade">
-            <option value="Doctorant">Doctorant</option>
-            <option value="Chercheur">Chercheur</option>
+    
+  <section class="formulaire">
+    <form method="post">
+        <label for="titre">Titre :</label>
+        <input type="text" name="titre" required value="<?php echo $titre; ?>"><br><br>
+        <label for="responsable">Responsable :</label>
+        <input type="text" name="responsable"required value="<?php echo $responsable; ?>"><br><br>
+        <label for="date">date :</label>
+        <input type="date" name="date" required value="<?php echo $date; ?>"><br><br>
+        <label for="date">Type</label>
+        <select name="type_projet" id="type_projet" value="<?php echo $type_projet; ?>">
+            <option value="National">National</option>
+            <option value="International">International</option>
         </select>
+        <label for="date" class="description_projet">Description :</label>
+        <textarea name="description_projet" rows="3" value="<?php echo $description_projet; ?>"></textarea>
         <br><br>
-        <input type="submit" name="submit" value="Ajouter">
+        <input type="submit" name="submit" value="modifier">
     </form>
+</section>
+
 
 
 
@@ -314,35 +375,6 @@
 
 
 
-      <?php
-include('DBconn.php');
-
-// Vérifier si le formulaire a été soumis
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-
-  // Récupérer les données du formulaire
-  $nom = $_POST['nom'];
-  $prenom = $_POST['prenom'];
-  $adresse_email = $_POST['adresse_email'];
-  $grade = $_POST['grade'];
-
-  // Insérer le membre dans la table membre
-  $requete = "INSERT INTO membre (nom, prenom, adresse_email, grade) VALUES ('$nom', '$prenom', '$adresse_email', '$grade')";
-  if (!mysqli_query($conn, $requete)) {
-    echo "Erreur lors de l'insertion du membre : " . mysqli_error($conn);
-    exit;
-  }
-
-  // Récupérer l'ID du membre inséré
-  $id_membre = mysqli_insert_id($conn);
-
-  // Afficher un message de confirmation
-  echo "Le membre a été ajouté avec succès !";
-
-}
-
-mysqli_close($conn); 
-?>
 
 
 
