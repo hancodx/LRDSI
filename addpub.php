@@ -1,6 +1,6 @@
 <?php
 // inclure la page de connexion
-//include("DBconn.php");
+include("DBconn.php");
 
 // vérifier si le formulaire a été soumis
 if(isset($_POST['submit'])){
