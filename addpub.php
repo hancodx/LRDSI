@@ -1,6 +1,6 @@
 <?php
 // inclure la page de connexion
-include("DBconn.php");
+//include("DBconn.php");
 
 // vérifier si le formulaire a été soumis
 if(isset($_POST['submit'])){
@@ -81,45 +81,47 @@ if(isset($_POST['submit'])){
 </head>
 <body>
     <header>
-        <div class="container">
-            <nav>
-                <div class="logo"> <a href=""> <img src="./photo/Fichier 2-8.png" alt="">
-                </a></div>
-                <ul>
-                    <li><a href="index.html">home</a></li>
-                    <li><a href="Equips.html">Equipes</a></li>
-                    <li ><a href="#pub&event">pub&event</a>
-                        <div class="dropdown">
-                            <ul>
-                                <li> <a href="./events.html"> events </a></li>
-                                <li> <a href="publication.html"> publication </a></li>
-                            </ul>
-                        </div>
-                    </li>
-                   
-                    <li ><a href="ProjectsH.html">projects</a>
-                        <div class="dropdown">
-                            <ul>
-                                <li> <a href="projetsH.html">national </a></li>
-                                <li> <a href="projetsH.html"> international </a></li>
-                                <li> <a href="projetsH.html"> tous </a></li>
-                              
-                            </ul>
-                        </div>
-                    </li>
-                    <li><a href="admin.html">Gestion</a></li>
-                </ul>
-                <div class="search-form">
-                    <input type="search" value="" placeholder="Search" class="search-input">
-                    <button type="submit" class="search-button">
-                        <ion-icon name="search-outline"></ion-icon>
-                    </button>
-                  
-               
-                </div>
-            </nav>
-            
-        </div>
+    <div class="container">
+    <nav>
+      <div class="logo"> <a href=""> <img src="./photo/Fichier 2-8.png" alt="">
+        </a></div>
+      <ul>
+        <li><a href="./index.html">Accueil</a></li>
+       
+        <li><a href="./projects2.html">Projets </a>
+          <div class="dropdown">
+            <ul>
+              <li> <a href="./projects2.html">Nationaux </a></li>
+              <li> <a href="./projects2.html">Internationaux </a></li>
+              
+
+            </ul>
+          </div>
+        </li>
+        <li><a href="./Equips.html">Equipes</a></li>
+
+        
+        <li><a href="./pubbAlbome.html">Pub&Event</a>
+          <div class="dropdown">
+            <ul>
+              <li> <a href="./events.html"> Evenement  </a></li>
+              <li> <a href="./pubbAlbome.html"> Publications </a></li>
+              <li> <a href="">Thèse et mémoire </a></li>
+            </ul>
+          </div>
+        </li>
+        <li><a href="admin.html">Gestion</a></li>
+      </ul>
+      <div class="search-form">
+        <input type="search" value="" placeholder="Search" class="search-input">
+        <button type="submit" class="search-button">
+          <ion-icon name="search-outline"></ion-icon>
+        </button>
+
+
+      </div>
+    </nav>
+  </div>
     </header>
 
     <div class="content">
@@ -131,41 +133,52 @@ if(isset($_POST['submit'])){
          <h4>Projets </h4> 
          <label for="Tout">
       <div class="choix">
-        <input type="radio" id="Tout" name="projets" value="Tout" checked> Tout
+
+        <input type="radio" id="Tout" name="projets" value="Tout" checked=""> <a href="./projects2.html">Tout</a>
+
       </div>
     </label>
 
     <label for="Nationaux">
       <div class="choix">
-        <input type="radio" id="Nationaux" name="projets" value="Nationaux"> Nationaux
+
+        <input type="radio" id="Nationaux" name="projets" value="Nationaux"> <a href="./projects2.html">Nationaux</a>
+
         
       </div>
     </label>
 
     <label for="Internationaux">
       <div class="choix">
-        <input type="radio" id="Internationaux" name="projets" value="Internationaux"> Nnternationaux
+
+  
+        <input type="radio" id="Internationaux" name="projets" value="Internationaux"> <a href="./projects2.html">Internationaux</a>
+
       </div>
     </label>
 
     </div>
     <div class="side-ul">
-      <h4>Pub&Evnt</h4> 
+
+      <h4>Pub&amp;Evnt</h4> 
     <div class="choix">
-      Publication 
+     <a href="./pubbAlbome.html"> Publication </a>
     </div>
     <div class="choix">
-      Evenment 
+        <a href="./events.html">Evenment </a>
     </div>
     <div class="choix">
-      Thèses et mémoires
+      <a href="">Thèses et mémoires</a>
+
     </div>
 
  </div>
  <div class="side-ul">
   <h4>Equipe</h4> 
 <div class="choix">
-  Equipes
+
+  <a href="./Equips.php"> Equipes</a>
+
 </div>
 
 
@@ -187,26 +200,155 @@ if(isset($_POST['submit'])){
         <input type="file" name="photo" required><br><br>
         <input type="submit" name="submit" value="Ajouter">
     </form>
-</section>
+    
+<aside class="sidebar" theme="dark">
+    <div class="sidebar__section sidebar__section--title">
+    Gestion 
+    </div>
 
 
-<div class="sidebar">
-        <h3 class="titre">gestion</h3>
-        <ul class="sidebar-list">
-        <li class="sub-menu">
-            <a href="#">Projets</a>
-            <ul>
-              <li><a href="#">tous</a></li>
-              <li><a href="#">les projets nationaux</a></li>
-              <li><a href="#">les projets internationaux </a></li>
-            </ul>
+    <div class="sidebar__section sidebar__section--menu">
+      <h2 class="sidebar__subtitle">Menu</h2>
+      <div class="nav">
+        <ul class="nav__list">
+          <li class="nav__item">
+            <a href="#" class="nav__link">
+              <span class="nav__icon nav__icon--home"></span>
+              <span class="nav__text">Accueil</span>
+             
+            </a>
           </li>
-          <li><a href="#">Membres</a></li>
-          <li><a href="#">Publications</a></li>
-          <li><a href="#">Événements</a></li>
-          <li><a href="#">Thèses</a></li>
+          <li class="nav__item">
+            <a href="#" class="nav__link">
+              <span class="nav__icon nav__icon--activity"></span>
+              <span class="nav__text">Activite</span>
+            </a>
+          </li>
+         
         </ul>
       </div>
+      <h2 class="sidebar__subtitle"><a href="">Projet</a></h2>
+      <div class="nav">
+        <ul class="nav__list">
+          <li class="nav__item">
+            <a href="#" class="nav__link">
+            <ion-icon name="person-add-outline"></ion-icon>
+              <span class="nav__text">ajouté un projet</span>
+             
+            </a>
+          </li>
+      
+    </div>
+    <h2 class="sidebar__subtitle"> <a href="">Equipes</a>  </h2>
+      <div class="nav">
+        <ul class="nav__list">
+          <li class="nav__item">
+            <a href="#" class="nav__link">
+            <ion-icon name="person-add-outline"></ion-icon>
+              <span class="nav__text">ajouté une equipe</span>
+             
+            </a>
+          </li>
+      
+    </div>
+
+    <h2 class="sidebar__subtitle"> <a href="">Publication et Event</a>  </h2>
+      <div class="nav">
+        <ul class="nav__list">
+          <li class="nav__item">
+            <a href="#" class="nav__link">
+            <ion-icon name="person-add-outline"></ion-icon>
+              <span class="nav__text">ajouté une publication</span>
+             
+            </a>
+          </li>
+          <li class="nav__item">
+            <a href="#" class="nav__link">
+            <ion-icon name="person-add-outline"></ion-icon>
+              <span class="nav__text">ajouté une evenement</span>
+             
+            </a>
+          </li>
+      
+    </div>
+
+</div>
+    <hr class="divider">
+
+    <div class="sidebar__section sidebar__section--settings">
+  
+     
+    <div class="nav">
+
+        <ul class="nav__list">
+          <li class="nav__item">
+            <a href="#" class="nav__link">
+              <span class="nav__icon nav__icon--settings"></span>
+              <span class="nav__text">Settings</span>
+            </a>
+          </li>
+          <li class="nav__item">
+            <a href="#" class="nav__link">
+              <span class="nav__icon nav__icon--report"></span>
+              <span class="nav__text">Report</span>
+            </a>
+          </li>
+          <li class="nav__item">
+            <a href="#" class="nav__link">
+              <span class="nav__icon nav__icon--support"></span>
+              <span class="nav__text">Support</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <hr class="divider">
+
+    <div class="sidebar__section sidebar__section--groups">
+      <h2 class="sidebar__subtitle">Group</h2>
+      <div class="nav">
+        <ul class="nav__list">
+          <li class="nav__item">
+            <a href="#" class="nav__link">
+              <span class="nav__circle nav__circle--green"></span>
+              <span class="nav__text">Logoipsum Studio</span>
+              <span class="nav__chevron"></span>
+            </a>
+          </li>
+          <li class="nav__item">
+            <a href="#" class="nav__link">
+              <span class="nav__circle nav__circle--blue"></span>
+              <span class="nav__text">Design System</span>
+              <span class="nav__chevron"></span>
+            </a>
+          </li>
+          <li class="nav__item">
+            <a href="#" class="nav__link">
+              <span class="nav__circle nav__circle--yellow"></span>
+              <span class="nav__text">Accessibility</span>
+              <span class="nav__chevron"></span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+   
+
+    <div class="sidebar__section sidebar__section--account">
+      <div class="account">
+        <img src="./photo/Untitleerd.png" alt="Avatar image" class="account__avatar">
+        <div class="account__details">
+          <h4 class="account__name">Luke Skywalker</h4>
+          <p class="account__email">luke@force.com</p>
+        </div>
+        <button class="account__exit"></button>
+      </div>
+    </div>
+  </aside>
+</section>
+
 
 
 
@@ -224,23 +366,30 @@ if(isset($_POST['submit'])){
 
 
 
-    <footer>
-        <div class="wrapper">
-            <div class="button">
-                <div class="icon"><ion-icon name="call"></ion-icon></div>
-                <span>Telephone</span>
-                </div>
-            <div class="button">
-                <div class="icon"><ion-icon name="mail"></ion-icon></div>
-                <span>Email</span>
-                </div>
-            <div class="button">
-                <div class="icon"><ion-icon name="location-sharp"></ion-icon></i></div>
-                <span>Location</span>
-                </div>
-                 
-            </div>  
-    </footer>
+<footer>
+    <div class="txt">
+      <h5> LABORATOIRE DE RECHERCHE POUR LE DEVELOPPEMENT DES SYSTEMES INFORMATISES</h5>
+      <p> Université Saad Dahlab - Blida 1 | Faculté des Sciences </p>
+      <p> http://www.univ-blida.dz </p>
+    </div>
+    <div class="wrapper">
+      <div class="button">
+       <a href="./contactsH.php"> <div class="icon"><ion-icon name="call"></ion-icon></div>
+        <span>Telephone</span>
+      </div></a>
+      <div class="button">
+    <a href=""> <div class="icon"><ion-icon name="mail"></ion-icon></div>
+        <span>Email</span>
+      </div></a>
+      <div class="button">
+     <a href="https://www.google.com/maps?client=firefox-b-d&q=saad+dahleb&um=1&ie=UTF-8&sa=X&ved=2ahUKEwj60s6Y8Kb_AhXQwKQKHcsMAk0Q_AUoA3oECAEQBQ">  <div class="icon"><ion-icon name="location-sharp"></ion-icon></i></div>
+        <span>Location</span>
+      </div></a> 
+
+    </div>
+    <p> Copyright ©2020 All rights reserved to LRDSI</p>
+    <p>made by Izem Bahidja . Sameut Hind . Benmeddah Hadjer </p>
+  </footer>
 
 
 

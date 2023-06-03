@@ -153,7 +153,7 @@ $resu=mysqli_query($conn, $req);
 
 </section>
     
-  <footer>
+<footer>
     <div class="txt">
       <h5> LABORATOIRE DE RECHERCHE POUR LE DEVELOPPEMENT DES SYSTEMES INFORMATISES</h5>
       <p> Université Saad Dahlab - Blida 1 | Faculté des Sciences </p>
@@ -161,20 +161,21 @@ $resu=mysqli_query($conn, $req);
     </div>
     <div class="wrapper">
       <div class="button">
-        <div class="icon"><ion-icon name="call"></ion-icon></div>
+       <a href="./contactsH.php"> <div class="icon"><ion-icon name="call"></ion-icon></div>
         <span>Telephone</span>
-      </div>
+      </div></a>
       <div class="button">
-        <div class="icon"><ion-icon name="mail"></ion-icon></div>
+    <a href=""> <div class="icon"><ion-icon name="mail"></ion-icon></div>
         <span>Email</span>
-      </div>
+      </div></a>
       <div class="button">
-        <div class="icon"><ion-icon name="location-sharp"></ion-icon></i></div>
+     <a href="https://www.google.com/maps?client=firefox-b-d&q=saad+dahleb&um=1&ie=UTF-8&sa=X&ved=2ahUKEwj60s6Y8Kb_AhXQwKQKHcsMAk0Q_AUoA3oECAEQBQ">  <div class="icon"><ion-icon name="location-sharp"></ion-icon></i></div>
         <span>Location</span>
-      </div>
+      </div></a> 
 
     </div>
     <p> Copyright ©2020 All rights reserved to LRDSI</p>
+    <p>made by Izem Bahidja . Sameut Hind . Benmeddah Hadjer </p>
   </footer>
 
 

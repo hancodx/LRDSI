@@ -822,24 +822,6 @@ width: 90%;
 }
 
 
-@media screen and (max-width: 440px){
-    .secend-section .sub-section.er1 > :nth-of-type(1){
-        top: 10%;
-    left: 6%;
-    }
-    .secend-section .sub-section.er1 > :nth-of-type(2){
-        top: 42%;
-       left: 29%;
-    }
-
-    .home-discreption{
-        font-size: small;
-    }
-    .container{
-        display: none;
-    }
-}
-
 
 
 
@@ -901,7 +883,7 @@ width: 90%;
     .swiper {
       width: 60%;
       height: 75%;
-      
+     
     }
 
     .swiper-slide {
@@ -912,7 +894,6 @@ width: 90%;
       justify-content: center;
       align-items: center;
      
-
     }
 
     .swiper-slide img {
@@ -1022,3 +1003,119 @@ width: 90%;
           transform: translateY(-10%);
         }
       }
+
+.swiper-slide- {
+    padding: 0%;
+}
+
+      .er1{
+        padding: 7%;
+        height: 57%;
+       border-radius: 15px;
+        background-color: #cee1e13c;
+      }
+
+    .eme2{
+     font-size: 80%;
+     height: auto;
+     padding: 16px;
+     color: #5e999a;
+
+    }
+    .er1 p:first-of-type{
+        color: #126E62;
+        font-size:111% ;
+    }
+    .er1 p{
+        margin: 16px 0;
+        color: #353f3f;
+        font-size: 92%;
+    }
+    .er1 p span{
+        font-size: 97%;
+        color: #5ea4a4;
+        line-height: 40px;
+    }
+
+
+
+
+
+
+
+
+
+
+    
+
+.my-button {
+    background-color: transparent;
+    border: 10px;
+    color: black;
+    cursor: pointer;
+    font-size: 30px;
+    margin-left: 32px;
+    float: left;
+    line-height: 70px;
+    display: none;
+  }
+  
+  .my-button:focus {
+    outline: none;
+  }
+  
+  nav.eme2 {
+      background-color: grey;
+      flex-wrap: wrap;
+      display: none;
+  }
+  
+  nav.eme2 ul {
+      display: flex;
+      justify-content: center;
+      list-style: none
+  }
+  
+  nav.eme2 ul li {
+      padding: 20px 20px;
+  }
+  
+  nav.eme2 ul li a {
+      color: white;
+      text-decoration: none;
+  }
+
+
+  @media screen and (max-width: 440px){
+    .secend-section .sub-section.er1 > :nth-of-type(1){
+        top: 10%;
+    left: 6%;
+    }
+    .secend-section .sub-section.er1 > :nth-of-type(2){
+        top: 42%;
+       left: 29%;
+    }
+
+    .home-discreption{
+        font-size: small;
+    }
+    .container{
+        display: none;
+    }
+    nav ul {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+      }
+      
+      nav ul.showw {
+        display: flex;
+      }
+      
+      .my-button {
+        display: block;
+      }
+      
+    
+}
+

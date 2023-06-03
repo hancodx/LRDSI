@@ -13,20 +13,19 @@ $resevent = mysqli_query($conn, "SELECT * FROM events");
 <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<<<<<<< HEAD
-    <link rel="stylesheet" href="css/head-fot.css">
-    <link rel="stylesheet" href="css/admin.css">
+
+   
     
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="//cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css" rel="stylesheet">
     <!--<link rel="stylesheet" href="css/braa.css"> -->
-=======
+
     
     <link rel="stylesheet" href="css/head-fot.css">
     <link rel="stylesheet" href="css/admin.css">
     <link rel="stylesheet" href="./css/equipes.css">
     <link rel="stylesheet" href="css/sidbar.css">
->>>>>>> 9d23ed02294fb9586dabaa8fc4d49ff7174f751f
+
     <!-- animation link -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
     <!-- incons link -->
@@ -119,17 +118,11 @@ $resevent = mysqli_query($conn, "SELECT * FROM events");
     </style>
 </head>
 <body>
-<<<<<<< HEAD
-  
-
-<!-- header -->
-<div class="container">
-=======
  
 
     <header>
         <div class="container">
->>>>>>> 9d23ed02294fb9586dabaa8fc4d49ff7174f751f
+
             <nav>
                 <div class="logo"> <a href=""> <img src="./photo/Fichier 2-8.png" alt="">
                 </a></div>
@@ -242,7 +235,7 @@ $resevent = mysqli_query($conn, "SELECT * FROM events");
             </a>
           </li>
          
->>>>>>> 9d23ed02294fb9586dabaa8fc4d49ff7174f751f
+
         </ul>
       </div>
       <h2 class="sidebar__subtitle"><a href="">Projet</a></h2>

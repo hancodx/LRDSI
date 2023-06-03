@@ -13,7 +13,7 @@
   <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
   <title>index page</title>
 
-
+  <script src="./jquery-3.6.4.js"></script>
   <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -39,6 +39,18 @@
   <a class="contact contac" href="./contactsH.html">contact</a>
 
   <header>
+    <nav class="eme2">
+      <button class="my-button" id="my-button">
+          <i class="fas fa-bars"></i>
+      </button>
+          <ul id="mynav">
+              <li><a href="#">home.</a></li>
+              <li><a href="#">work.</a></li>
+              <li><a href="#">about.</a></li>
+              <li><a href="#">contact.</a></li>
+          </ul>
+      </nav>
+    
     <div class="container">
       <nav>
         <div class="logo"> <a href=""> <img src="./photo/Fichier 2-8.png" alt=""></a></div>
@@ -204,8 +216,15 @@
       <div class="swiper mySwiper " style="margin-left: 15%;">
         <div class="swiper-wrapper">
           <div class="swiper-slide" style="border-radius: 30px;">
-            <h4 class="equipe"> Equipe 1</h4>
-
+            <div class="er1">
+          <p>Couplage ligne et de la fouille </p>
+          <p><span>Chef d'equipe</span> <br> Pr. Benblidia Nadjia (Université Blida1) </p>
+            </div>
+            <div class="eme2"> 
+              <p> La conception d'un système et de son interface est facilitée par une bonne 
+                compréhension des processus cognitifs attendus.</p>
+            </div>
+             
 
           </div>
           <div class="swiper-slide" style="border-radius: 30px;">Slide</div>
@@ -443,20 +462,21 @@
     </div>
     <div class="wrapper">
       <div class="button">
-        <div class="icon"><ion-icon name="call"></ion-icon></div>
+       <a href="./contactsH.php"> <div class="icon"><ion-icon name="call"></ion-icon></div>
         <span>Telephone</span>
-      </div>
+      </div></a>
       <div class="button">
-        <div class="icon"><ion-icon name="mail"></ion-icon></div>
+    <a href=""> <div class="icon"><ion-icon name="mail"></ion-icon></div>
         <span>Email</span>
-      </div>
+      </div></a>
       <div class="button">
-        <div class="icon"><ion-icon name="location-sharp"></ion-icon></i></div>
+     <a href="https://www.google.com/maps?client=firefox-b-d&q=saad+dahleb&um=1&ie=UTF-8&sa=X&ved=2ahUKEwj60s6Y8Kb_AhXQwKQKHcsMAk0Q_AUoA3oECAEQBQ">  <div class="icon"><ion-icon name="location-sharp"></ion-icon></i></div>
         <span>Location</span>
-      </div>
+      </div></a> 
 
     </div>
     <p> Copyright ©2020 All rights reserved to LRDSI</p>
+    <p>made by Izem Bahidja . Sameut Hind . Benmeddah Hadjer </p>
   </footer>
 
 
@@ -494,6 +514,14 @@
   }
   document.querySelectorAll(".anim-leafs").forEach(animLeafs)
 
+</script>
+<script>
+  const button = document.getElementById("my-button");
+const nav = document.getElementById("mynav");
+
+button.addEventListener('click', () => {
+  nav.classList.toggle('showw');
+});
 </script>
 
 
