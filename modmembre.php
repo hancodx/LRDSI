@@ -83,7 +83,7 @@ mysqli_close($conn);
 <body>
 
 
-    <header>
+    
     <div class="container">
     <nav>
       <div class="logo"> <a href=""> <img src="./photo/Fichier 2-8.png" alt="">
@@ -132,65 +132,54 @@ mysqli_close($conn);
 <!-- formulaire a droite -->
     <section class="formulaire">
     <div class="said-check">
-        <div class="side-ul">
-         <h4>Projets </h4> 
-         <label for="Tout">
-      <div class="choix">
-        <input type="radio" id="Tout" name="projets" value="Tout" checked> Tout
-        <input type="radio" id="Tout" name="projets" value="Tout" checked> <a href="./projects2.html">Tout</a>
-      </div>
-    </label>
+                <div class="side-ul">
+                    <h4>Projets </h4>
+                    <label for="Tout">
+                        <div class="choix">
+                            <input type="radio" id="Tout" name="projets" value="Tout" checked> <a
+                                href="./projects2.html">Tout</a>
+                        </div>
+                    </label>
 
-    <label for="Nationaux">
-      <div class="choix">
-        <input type="radio" id="Nationaux" name="projets" value="Nationaux"> Nationaux
-        <input type="radio" id="Nationaux" name="projets" value="Nationaux"> <a href="./projects2.html">Nationaux
-        </a>
-        
-      </div>
-    </label>
+                    <label for="Nationaux">
+                        <div class="choix">
+                            <input type="radio" id="Nationaux" name="projets" value="Nationaux"> <a
+                                href="./projects2.html">Nationaux</a>
 
-    <label for="Internationaux">
-      <div class="choix">
-        <input type="radio" id="Internationaux" name="projets" value="Internationaux"> Nnternationaux
-        <input type="radio" id="Internationaux" name="projets" value="Internationaux"> <a href="./projects2.html">Internationaux</a>
-      </div>
-    </label>
+                        </div>
+                    </label>
 
-    </div>
-    <div class="side-ul">
-      <h4>Pub&Evnt</h4> 
-    <div class="choix">
-      Publication 
-    </div>
-    <div class="choix">
-      Evenment 
-    </div>
-    <div class="choix">
-      Thèses et mémoires
-      <a href="./pubbAlbome.html">Publication </a>
-    </div>
-    <div class="choix">
-      <a href="./events.html">Evenment </a>
-    </div>
-    <div class="choix">
-      <a href="">Thèses et mémoires</a>
-    </div>
+                    <label for="Internationaux">
+                        <div class="choix">
+                            <input type="radio" id="Internationaux" name="projets" value="Internationaux">
+                            <a href="./projects2.html"> Internationaux</a>
+                        </div>
+                    </label>
 
- </div>
- <div class="side-ul">
-  <h4>Equipe</h4> 
-<div class="choix">
-  Equipes
-    <a href="./Equips.php">Equipes</a>
-</div>
+                </div>
+                <div class="side-ul">
+                    <h4>Pub&Evnt</h4>
+                    <div class="choix">
+                        <a href="./pubbAlbome.html"> Publication</a>
+                    </div>
+                    <div class="choix">
+                        <a href="./events.html"> Evenment</a>
+                    </div>
+                    <div class="choix">
+                        <a href=""> Thèses et mémoires</a>
+                    </div>
+
+                </div>
+                <div class="side-ul">
+                    <h4>Equipe</h4>
+                    <div class="choix">
+                        <a href="./Equips.php"> Equipes</a>
+                    </div>
 
 
-</div>
+                </div>
 
-
-    <!-- formulaire -->
-  </div> 
+            </div>
     <form method="post">
 
         <label for="nom">Modifier le nom :</label>
@@ -205,7 +194,7 @@ mysqli_close($conn);
             <option value="Chercheur">Chercheur</option>
         </select>
         <br><br>
-        <input type="submit" name="submit" value="Ajouter">
+        <input type="submit" name="submit" value="Modifier">
     </form>
 
 
@@ -371,25 +360,31 @@ mysqli_close($conn);
 
 
 
-    <footer>
-        <div class="wrapper">
-            <div class="button">
-                <div class="icon"><ion-icon name="call"></ion-icon></div>
-                <span>Telephone</span>
-                </div>
-            <div class="button">
-                <div class="icon"><ion-icon name="mail"></ion-icon></div>
-                <span>Email</span>
-                </div>
-            <div class="button">
-                <div class="icon"><ion-icon name="location-sharp"></ion-icon></i></div>
-                <span>Location</span>
-                </div>
-                 
-            </div>  
-    </footer>
+    
+<footer>
+    <div class="txt">
+      <h5> LABORATOIRE DE RECHERCHE POUR LE DEVELOPPEMENT DES SYSTEMES INFORMATISES</h5>
+      <p> Université Saad Dahlab - Blida 1 | Faculté des Sciences </p>
+      <p> http://www.univ-blida.dz </p>
+    </div>
+    <div class="wrapper">
+      <div class="button">
+       <a href="./contactsH.php"> <div class="icon"><ion-icon name="call"></ion-icon></div>
+        <span>Telephone</span>
+      </div></a>
+      <div class="button">
+    <a href=""> <div class="icon"><ion-icon name="mail"></ion-icon></div>
+        <span>Email</span>
+      </div></a>
+      <div class="button">
+     <a href="https://www.google.com/maps?client=firefox-b-d&q=saad+dahleb&um=1&ie=UTF-8&sa=X&ved=2ahUKEwj60s6Y8Kb_AhXQwKQKHcsMAk0Q_AUoA3oECAEQBQ">  <div class="icon"><ion-icon name="location-sharp"></ion-icon></i></div>
+        <span>Location</span>
+      </div></a> 
 
-
+    </div>
+    <p> Copyright ©2020 All rights reserved to LRDSI</p>
+    <p>made by Izem Bahidja . Sameut Hind . Benmeddah Hadjer </p>
+  </footer>
 
 
 

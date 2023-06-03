@@ -1,3 +1,12 @@
+<?php
+include("DBconn.php");
+$req = "select * from pub";
+$resu=mysqli_query($conn, $req);
+
+?>
+
+
+
 <!doctype html>
 <html lang="en" data-bs-theme="auto">
 
@@ -43,8 +52,15 @@
 
     }
 
-<<<<<<< HEAD
-=======
+    .img {
+      height: 225;
+      width: 100%;
+      height: 48%;
+      object-fit: cover;
+    }
+
+
+
     .choix a {
       color: rgb(110, 133, 133);
 
@@ -54,7 +70,7 @@
       color: #385f5f;
     }
 
->>>>>>> 9d23ed02294fb9586dabaa8fc4d49ff7174f751f
+
     body {
       background-color: var(--color4);
     }
@@ -274,10 +290,9 @@
       right: 78.5%;
       top: 100px;
     }
-<<<<<<< HEAD
-=======
-
->>>>>>> 9d23ed02294fb9586dabaa8fc4d49ff7174f751f
+    .rw {
+      width: 101%;
+    }
     .said-check {
       background-color: var(--color2);
       height: 530px;
@@ -295,11 +310,7 @@
       /* top: 023.4%; */
       position: sticky;
       overflow: hidden;
-<<<<<<< HEAD
-      
-=======
 
->>>>>>> 9d23ed02294fb9586dabaa8fc4d49ff7174f751f
       top: 100px;
       left: 69px;
     }
@@ -310,8 +321,6 @@
       font-weight: 500;
       line-height: 1.2;
     }
-<<<<<<< HEAD
-=======
 
     @media screen and (max-width: 600px) {
       .said-check {
@@ -322,7 +331,7 @@
         justify-content: flex-start;
       }
     }
->>>>>>> 9d23ed02294fb9586dabaa8fc4d49ff7174f751f
+
   </style>
 
 </head>
@@ -385,34 +394,32 @@
         <h4>Projets </h4>
         <label for="Tout">
           <div class="choix">
-<<<<<<< HEAD
-            <input type="radio" id="Tout" name="projets" value="Tout" checked> Tout
-=======
+
             <input type="radio" id="Tout" name="projets" value="Tout" checked> <a href="./projects2.html">Tout</a>
->>>>>>> 9d23ed02294fb9586dabaa8fc4d49ff7174f751f
+
           </div>
         </label>
 
         <label for="Nationaux">
           <div class="choix">
-<<<<<<< HEAD
-            <input type="radio" id="Nationaux" name="projets" value="Nationaux"> Nationaux
-=======
+
+            
+
             <input type="radio" id="Nationaux" name="projets" value="Nationaux"><a href="./projects2.html">
               Nationaux</a>
->>>>>>> 9d23ed02294fb9586dabaa8fc4d49ff7174f751f
+
 
           </div>
         </label>
 
         <label for="Internationaux">
           <div class="choix">
-<<<<<<< HEAD
-            <input type="radio" id="Internationaux" name="projets" value="Internationaux"> Nnternationaux
-=======
+
+           
+
             <input type="radio" id="Internationaux" name="projets" value="Internationaux"> <a
               href="./projects2.html">Internationaux</a>
->>>>>>> 9d23ed02294fb9586dabaa8fc4d49ff7174f751f
+
           </div>
         </label>
 
@@ -420,15 +427,8 @@
       <div class="side-ul">
         <h4>Pub&Evnt</h4>
         <div class="choix">
-<<<<<<< HEAD
-          Publication
-        </div>
-        <div class="choix">
-          Evenment
-        </div>
-        <div class="choix">
-          Thèses et mémoires
-=======
+
+
           <a href="./pubbAlbome.html"> Publication</a>
         </div>
         <div class="choix">
@@ -436,18 +436,18 @@
         </div>
         <div class="choix">
           <a href="">Thèses et mémoires</a>
->>>>>>> 9d23ed02294fb9586dabaa8fc4d49ff7174f751f
+
         </div>
 
       </div>
       <div class="side-ul">
         <h4>Equipe</h4>
         <div class="choix">
-<<<<<<< HEAD
-          Equipes
-=======
+
+          
+
           <a href="./Equips.php">Equipes</a>
->>>>>>> 9d23ed02294fb9586dabaa8fc4d49ff7174f751f
+
         </div>
 
 
@@ -457,180 +457,41 @@
 
     </div>
 
+
+
     <div class="album  bg-body-tertiary" style="padding-top: 45px; position: relative;  left: 15px;   width: 82%;">
       <div class="container-end">
 
-        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3 rw">
-          <div class="col co">
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3 rw">
+    <?php while($row = mysqli_fetch_assoc($resu)) { ?>
+        <div class="col co">
             <div class="card shadow-sm sm">
-              <img class="img"
-                src="https://media.istockphoto.com/id/1173740436/fr/photo/moderne-high-tech-authentic-robot-arm-holding-contemporary-super-processeur-dordinateur.jpg?s=612x612&w=0&k=20&c=jtucFBdbdeG-5OmOCcROudhyrPWt4XHykP7omNGFpJw="
-                alt="">
-              <div class="card-body cdr">
-                <div class="card-text txt">
-                  <p class="fp1"> MicroBlaze-Based Multiprocessor embedded cryptosystem on FPGA for Elliptic Curve
-                    Scalar Multiplication over Fp</p>
-                  <P><span style="color: #126E62;">Journal</span> : International Journal on Semantic
-                    Web and Information Systems (IJSWIS)
-                  </P>
-                  <!-- <P>Autheurs : Ishak Riali, Messaouda Fareh,
-                 Hafida Bouarfa
-                 </P> -->
+                <img class="img" src="data:image/jpeg;base64,<?php echo base64_encode($row['photo']); ?>" alt="Photo de l'événement">
+                <div class="card-body cdr">
+                    <div class="card-text txt">
+                        <p class="fp1"><?php echo $row['titre']; ?></p>
+                        <p><span style="color: #126E62;">Journal</span>: <?php echo $row['journal']; ?></p>
+                        <!-- Ajoutez d'autres informations ici -->
+                    </div>
+
+                    <div class="d-flex justify-content-between align-items-center end">
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-sm btn-outline-secondary bt">
+                                <a href="chemin_vers_la_page_de_l_image">View</a>
+                            </button>
+                        </div>
+                        <small class="text-body-secondary"><?php echo $row['date']; ?></small>
+                    </div>
                 </div>
-
-                <div class="d-flex justify-content-between align-items-center end">
-
-                  <div class="btn-group">
-                    <button type="button" class="btn btn-sm btn-outline-secondary bt"><a href="">View</a></button>
-
-                  </div>
-                  <small class="text-body-secondary">9 mins</small>
-                </div>
-              </div>
             </div>
-          </div>
-          <div class="col co">
-            <div class="card shadow-sm sm">
-              <img class="img"
-                src="https://media.istockphoto.com/id/1210917316/fr/photo/concept-de-technologie-m%C3%A9dicale-m%C3%A9decine-%C3%A0-distance-dossier-m%C3%A9dical-%C3%A9lectronique.jpg?s=612x612&w=0&k=20&c=PhIQP4ERhWLH1Nsj9VXWYt408Q1Fz8Ks67-ZWQzXvtY="
-                alt="">
-              <div class="card-body cdr">
-                <div class="card-text txt">
-                  <p class="fp1"> MicroBlaze-Based Multiprocessor embedded cryptosystem on FPGA for Elliptic Curve
-                    Scalar Multiplication over Fp</p>
-                  <P><span style="color: #126E62;">Journal</span> : International Journal on Semantic
-                    Web and Information Systems (IJSWIS)
-                  </P>
-                  <!-- <P>Autheurs : Ishak Riali, Messaouda Fareh,
-                 Hafida Bouarfa
-                 </P> -->
-                </div>
-
-                <div class="d-flex justify-content-between align-items-center end">
-
-                  <div class="btn-group">
-                    <button type="button" class="btn btn-sm btn-outline-secondary bt"><a href="">View</a></button>
-
-                  </div>
-                  <small class="text-body-secondary">9 mins</small>
-                </div>
-              </div>
-            </div>
-          </div>
+        </div>
+    <?php } ?>
+</div>
 
 
-          <div class="col co">
-            <div class="card shadow-sm sm">
-              <img class="img"
-                src="https://media.istockphoto.com/id/1270623347/fr/photo/auto-industry-design-facility-screens-show-3d-cad-software-electric-vehicle-platform-chassis.jpg?s=612x612&w=0&k=20&c=L4_tUimtk_MuTROL_f4uIrHxXYZ1XtZk1vnlrQzZijw="
-                alt="">
-              <div class="card-body cdr">
-                <div class="card-text txt">
-                  <p class="fp1"> MicroBlaze-Based Multiprocessor embedded cryptosystem on FPGA for Elliptic Curve
-                    Scalar Multiplication over Fp</p>
-                  <P><span style="color: #126E62;">Journal</span> : International Journal on Semantic
-                    Web and Information Systems (IJSWIS)
-                  </P>
-                  <!-- <P>Autheurs : Ishak Riali, Messaouda Fareh,
-                 Hafida Bouarfa
-                 </P> -->
-                </div>
 
-                <div class="d-flex justify-content-between align-items-center end">
 
-                  <div class="btn-group">
-                    <button type="button" class="btn btn-sm btn-outline-secondary bt"><a href="">View</a></button>
-
-                  </div>
-                  <small class="text-body-secondary">9 mins</small>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col co">
-            <div class="card shadow-sm sm">
-              <img class="img"
-                src="https://media.istockphoto.com/id/925425860/fr/photo/dans-le-laboratoire-scientifique-portant-le-casque-de-r%C3%A9alit%C3%A9-virtuelle-assis-sur-une-chaise.jpg?s=612x612&w=0&k=20&c=5TmhxhbFEtJQF6Ck-mZAqkEapYMjIXy2B5J923EmT5Y="
-                alt="">
-              <div class="card-body cdr">
-                <div class="card-text txt">
-                  <p class="fp1"> MicroBlaze-Based Multiprocessor embedded cryptosystem on FPGA for Elliptic Curve
-                    Scalar Multiplication over Fp</p>
-                  <P><span style="color: #126E62;">Journal</span> : International Journal on Semantic
-                    Web and Information Systems (IJSWIS)
-                  </P>
-                  <!-- <P>Autheurs : Ishak Riali, Messaouda Fareh,
-                 Hafida Bouarfa
-                 </P> -->
-                </div>
-
-                <div class="d-flex justify-content-between align-items-center end">
-
-                  <div class="btn-group">
-                    <button type="button" class="btn btn-sm btn-outline-secondary bt"><a href="">View</a></button>
-
-                  </div>
-                  <small class="text-body-secondary">9 mins</small>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col co">
-            <div class="card shadow-sm sm">
-              <img class="img"
-                src="https://media.istockphoto.com/id/1173740436/fr/photo/moderne-high-tech-authentic-robot-arm-holding-contemporary-super-processeur-dordinateur.jpg?s=612x612&w=0&k=20&c=jtucFBdbdeG-5OmOCcROudhyrPWt4XHykP7omNGFpJw="
-                alt="">
-              <div class="card-body cdr">
-                <div class="card-text txt">
-                  <p class="fp1"> MicroBlaze-Based Multiprocessor embedded cryptosystem on FPGA for Elliptic Curve
-                    Scalar Multiplication over Fp</p>
-                  <P><span style="color: #126E62;">Journal</span> : International Journal on Semantic
-                    Web and Information Systems (IJSWIS)
-                  </P>
-                  <!-- <P>Autheurs : Ishak Riali, Messaouda Fareh,
-                 Hafida Bouarfa
-                 </P> -->
-                </div>
-
-                <div class="d-flex justify-content-between align-items-center end">
-
-                  <div class="btn-group">
-                    <button type="button" class="btn btn-sm btn-outline-secondary bt"><a href="">View</a></button>
-
-                  </div>
-                  <small class="text-body-secondary">9 mins</small>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col co">
-            <div class="card shadow-sm sm">
-              <img class="img"
-                src="https://media.istockphoto.com/id/1403692668/fr/photo/silhouette-de-lindustrie-de-linnovation-commerciale-future-automatisation-robot-arms-usine.jpg?s=612x612&w=0&k=20&c=iM3zmiM3ISpcL1jcjtrlhptwXrGOg74LFr4YnNLCeFc="
-                alt="">
-              <div class="card-body cdr">
-                <div class="card-text txt">
-                  <p class="fp1"> MicroBlaze-Based Multiprocessor embedded cryptosystem on FPGA for Elliptic Curve
-                    Scalar Multiplication over Fp</p>
-                  <P><span style="color: #126E62;">Journal</span> : International Journal on Semantic
-                    Web and Information Systems (IJSWIS)
-                  </P>
-                  <!-- <P>Autheurs : Ishak Riali, Messaouda Fareh,
-                 Hafida Bouarfa
-                 </P> -->
-                </div>
-
-                <div class="d-flex justify-content-between align-items-center end">
-
-                  <div class="btn-group">
-                    <button type="button" class="btn btn-sm btn-outline-secondary bt"><a href="">View</a></button>
-
-                  </div>
-                  <small class="text-body-secondary">9 mins</small>
-                </div>
-              </div>
-            </div>
-          </div>
+        
 
         </div>
       </div>
@@ -646,20 +507,21 @@
     </div>
     <div class="wrapper">
       <div class="button">
-        <div class="icon"><ion-icon name="call"></ion-icon></div>
+       <a href="./contactsH.php"> <div class="icon"><ion-icon name="call"></ion-icon></div>
         <span>Telephone</span>
-      </div>
+      </div></a>
       <div class="button">
-        <div class="icon"><ion-icon name="mail"></ion-icon></div>
+    <a href=""> <div class="icon"><ion-icon name="mail"></ion-icon></div>
         <span>Email</span>
-      </div>
+      </div></a>
       <div class="button">
-        <div class="icon"><ion-icon name="location-sharp"></ion-icon></i></div>
+     <a href="https://www.google.com/maps?client=firefox-b-d&q=saad+dahleb&um=1&ie=UTF-8&sa=X&ved=2ahUKEwj60s6Y8Kb_AhXQwKQKHcsMAk0Q_AUoA3oECAEQBQ">  <div class="icon"><ion-icon name="location-sharp"></ion-icon></i></div>
         <span>Location</span>
-      </div>
+      </div></a> 
 
     </div>
     <p> Copyright ©2020 All rights reserved to LRDSI</p>
+    <p>made by Izem Bahidja . Sameut Hind . Benmeddah Hadjer </p>
   </footer>
 
 

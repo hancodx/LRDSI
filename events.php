@@ -1,3 +1,13 @@
+<?php
+include("DBconn.php");
+$req = "select * from events";
+$resu=mysqli_query($conn, $req);
+
+?>
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -57,11 +67,7 @@
 
             </div>
         </nav>
-<<<<<<< HEAD
 
-
-=======
->>>>>>> 9d23ed02294fb9586dabaa8fc4d49ff7174f751f
     </div>
 
 
@@ -71,35 +77,28 @@
                 <h4>Projets </h4>
                 <label for="Tout">
                     <div class="choix">
-<<<<<<< HEAD
-                        <input type="radio" id="Tout" name="projets" value="Tout" checked> Tout
-=======
+
                         <input type="radio" id="Tout" name="projets" value="Tout" checked><a href="./projects2.html">
                             Tout</a>
->>>>>>> 9d23ed02294fb9586dabaa8fc4d49ff7174f751f
+
                     </div>
                 </label>
 
                 <label for="Nationaux">
                     <div class="choix">
-<<<<<<< HEAD
-                        <input type="radio" id="Nationaux" name="projets" value="Nationaux"> Nationaux
-=======
                         <input type="radio" id="Nationaux" name="projets" value="Nationaux"> <a
                             href="./projects2.html">Nationaux</a>
->>>>>>> 9d23ed02294fb9586dabaa8fc4d49ff7174f751f
+
 
                     </div>
                 </label>
 
                 <label for="Internationaux">
                     <div class="choix">
-<<<<<<< HEAD
-                        <input type="radio" id="Internationaux" name="projets" value="Internationaux"> Nnternationaux
-=======
+
                         <input type="radio" id="Internationaux" name="projets" value="Internationaux"> <a
                             href="./projects2.html">Internationaux</a>
->>>>>>> 9d23ed02294fb9586dabaa8fc4d49ff7174f751f
+
                     </div>
                 </label>
 
@@ -107,15 +106,6 @@
             <div class="side-ul">
                 <h4>Pub&Evnt</h4>
                 <div class="choix">
-<<<<<<< HEAD
-                    Publication
-                </div>
-                <div class="choix">
-                    Evenment
-                </div>
-                <div class="choix">
-                    Thèses et mémoires
-=======
                     <a href="./pubbAlbome.html"> Publication</a>
                 </div>
                 <div class="choix">
@@ -123,18 +113,16 @@
                 </div>
                 <div class="choix">
                     <a href=""> Thèses et mémoires</a>
->>>>>>> 9d23ed02294fb9586dabaa8fc4d49ff7174f751f
+
                 </div>
 
             </div>
             <div class="side-ul">
                 <h4>Equipe</h4>
                 <div class="choix">
-<<<<<<< HEAD
-                    Equipes
-=======
+
                     <a href="./Equips.php">Equipes</a>
->>>>>>> 9d23ed02294fb9586dabaa8fc4d49ff7174f751f
+
                 </div>
 
 
@@ -143,20 +131,22 @@
 
 
         </div>
+        
         <div class="all">
-            <div class="event">
-                <div class="dsrp">
-                    <h3> nome</h3>
-                    <span>Location</span>
-                    <span>date</span>
-                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ullam odio et, volu
-                        ptate, necessitatibus impedit numquam dolorem nam autem esse provident cum, ratione iure
-                        fugiat aspernatur facere quae dolore eius labore.</p>
-                </div>
-                <div class="imge-event">
-                    <img src="./photo/Untitle3d.jpeg" alt="">
-                </div>
+    <?php while($row = mysqli_fetch_assoc($resu)) { ?>
+        <div class="event">
+            <div class="dsrp">
+                <h3><?php echo $row['titre']; ?></h3>
+                <span><?php echo $row['lieu']; ?></span>
+                <span><?php echo $row['date']; ?></span>
+                <p><?php echo $row['description']; ?></p>
             </div>
+            <div class="photo">
+            <img class="img" src="data:image/jpeg;base64,<?php echo base64_encode($row['photo']); ?>" alt="Photo de l'événement">
+            </div>
+        </div>
+    <?php } ?>
+</div>
 
 
         </div>
@@ -166,27 +156,28 @@
 
     <footer>
         <div class="txt">
-            <h5> LABORATOIRE DE RECHERCHE POUR LE DEVELOPPEMENT DES SYSTEMES INFORMATISES</h5>
-            <p> Université Saad Dahlab - Blida 1 | Faculté des Sciences </p>
-            <p> http://www.univ-blida.dz </p>
+          <h5> LABORATOIRE DE RECHERCHE POUR LE DEVELOPPEMENT DES SYSTEMES INFORMATISES</h5>
+          <p> Université Saad Dahlab - Blida 1 | Faculté des Sciences </p>
+          <p> http://www.univ-blida.dz </p>
         </div>
         <div class="wrapper">
-            <div class="button">
-                <div class="icon"><ion-icon name="call"></ion-icon></div>
-                <span>Telephone</span>
-            </div>
-            <div class="button">
-                <div class="icon"><ion-icon name="mail"></ion-icon></div>
-                <span>Email</span>
-            </div>
-            <div class="button">
-                <div class="icon"><ion-icon name="location-sharp"></ion-icon></i></div>
-                <span>Location</span>
-            </div>
-
+          <div class="button">
+           <a href="./contactsH.php"> <div class="icon"><ion-icon name="call"></ion-icon></div>
+            <span>Telephone</span>
+          </div></a>
+          <div class="button">
+        <a href=""> <div class="icon"><ion-icon name="mail"></ion-icon></div>
+            <span>Email</span>
+          </div></a>
+          <div class="button">
+         <a href="https://www.google.com/maps?client=firefox-b-d&q=saad+dahleb&um=1&ie=UTF-8&sa=X&ved=2ahUKEwj60s6Y8Kb_AhXQwKQKHcsMAk0Q_AUoA3oECAEQBQ">  <div class="icon"><ion-icon name="location-sharp"></ion-icon></i></div>
+            <span>Location</span>
+          </div></a> 
+    
         </div>
         <p> Copyright ©2020 All rights reserved to LRDSI</p>
-    </footer>
+        <p>made by Izem Bahidja . Sameut Hind . Benmeddah Hadjer </p>
+      </footer>
 </body>
 </body>
 

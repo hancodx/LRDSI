@@ -82,24 +82,33 @@
          <h4>Projets </h4> 
          <label for="Tout">
       <div class="choix">
-        <input type="radio" id="Tout" name="projets" value="Tout" checked> Tout
+
+
         <input type="radio" id="Tout" name="projets" value="Tout" checked> <a href="./projects2.html">Tout</a>
+
+
       </div>
     </label>
 
     <label for="Nationaux">
       <div class="choix">
-        <input type="radio" id="Nationaux" name="projets" value="Nationaux"> Nationaux
+
+
         <input type="radio" id="Nationaux" name="projets" value="Nationaux"> <a href="./projects2.html">Nationaux
         </a>
+
+
         
       </div>
     </label>
 
     <label for="Internationaux">
       <div class="choix">
-        <input type="radio" id="Internationaux" name="projets" value="Internationaux"> Nnternationaux
+
+
         <input type="radio" id="Internationaux" name="projets" value="Internationaux"> <a href="./projects2.html">Internationaux</a>
+
+
       </div>
     </label>
 
@@ -107,13 +116,9 @@
     <div class="side-ul">
       <h4>Pub&Evnt</h4> 
     <div class="choix">
-      Publication 
-    </div>
-    <div class="choix">
-      Evenment 
-    </div>
-    <div class="choix">
-      Thèses et mémoires
+
+
+
       <a href="./pubbAlbome.html">Publication </a>
     </div>
     <div class="choix">
@@ -121,14 +126,20 @@
     </div>
     <div class="choix">
       <a href="">Thèses et mémoires</a>
+
+
+
     </div>
 
  </div>
  <div class="side-ul">
   <h4>Equipe</h4> 
 <div class="choix">
-  Equipes
+
+
     <a href="./Equips.php">Equipes</a>
+
+
 </div>
 
 

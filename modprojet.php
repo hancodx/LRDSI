@@ -83,8 +83,6 @@ mysqli_close($conn);
 
 </head>
 <body>
-
-
     <header>
     <div class="container">
     <nav>
@@ -129,72 +127,69 @@ mysqli_close($conn);
   </div>
     </header>
 
-    <div class="content">
 
-<!-- formulaire a droite -->
+
     <section class="formulaire">
+
     <div class="said-check">
         <div class="side-ul">
          <h4>Projets </h4> 
          <label for="Tout">
       <div class="choix">
-        <input type="radio" id="Tout" name="projets" value="Tout" checked> Tout
-        <input type="radio" id="Tout" name="projets" value="Tout" checked> <a href="./projects2.html">Tout</a>
+
+        <input type="radio" id="Tout" name="projets" value="Tout" checked=""> <a href="./projects2.html">Tout</a>
+
       </div>
     </label>
 
     <label for="Nationaux">
       <div class="choix">
-        <input type="radio" id="Nationaux" name="projets" value="Nationaux"> Nationaux
-        <input type="radio" id="Nationaux" name="projets" value="Nationaux"> <a href="./projects2.html">Nationaux
-        </a>
+
+        <input type="radio" id="Nationaux" name="projets" value="Nationaux"> <a href="./projects2.html">Nationaux</a>
+
         
       </div>
     </label>
 
     <label for="Internationaux">
       <div class="choix">
-        <input type="radio" id="Internationaux" name="projets" value="Internationaux"> Nnternationaux
+
+  
         <input type="radio" id="Internationaux" name="projets" value="Internationaux"> <a href="./projects2.html">Internationaux</a>
+
       </div>
     </label>
 
     </div>
     <div class="side-ul">
-      <h4>Pub&Evnt</h4> 
+
+      <h4>Pub&amp;Evnt</h4> 
     <div class="choix">
-      Publication 
+     <a href="./pubbAlbome.html"> Publication </a>
     </div>
     <div class="choix">
-      Evenment 
-    </div>
-    <div class="choix">
-      Thèses et mémoires
-      <a href="./pubbAlbome.html">Publication </a>
-    </div>
-    <div class="choix">
-      <a href="./events.html">Evenment </a>
+        <a href="./events.html">Evenment </a>
     </div>
     <div class="choix">
       <a href="">Thèses et mémoires</a>
+
     </div>
 
  </div>
  <div class="side-ul">
   <h4>Equipe</h4> 
 <div class="choix">
-  Equipes
-    <a href="./Equips.php">Equipes</a>
-</div>
 
+  <a href="./Equips.php"> Equipes</a>
 
 </div>
 
 
- <!-- formulaire -->
-  </div> 
+</div>
+
+
     
-  <section class="formulaire">
+  </div> 
     <form method="post">
         <label for="titre">Titre :</label>
         <input type="text" name="titre" required value="<?php echo $titre; ?>"><br><br>
@@ -212,14 +207,12 @@ mysqli_close($conn);
         <br><br>
         <input type="submit" name="submit" value="modifier">
     </form>
-</section>
 
 
 
 
 
 
-<!-- sidbare droite -->
 
 <aside class="sidebar" theme="dark">
     <div class="sidebar__section sidebar__section--title">
@@ -368,7 +361,6 @@ mysqli_close($conn);
     </div>
   </aside>
 
-
 </section>
 
 
@@ -378,23 +370,39 @@ mysqli_close($conn);
 
 
 
-    <footer>
-        <div class="wrapper">
-            <div class="button">
-                <div class="icon"><ion-icon name="call"></ion-icon></div>
-                <span>Telephone</span>
-                </div>
-            <div class="button">
-                <div class="icon"><ion-icon name="mail"></ion-icon></div>
-                <span>Email</span>
-                </div>
-            <div class="button">
-                <div class="icon"><ion-icon name="location-sharp"></ion-icon></i></div>
-                <span>Location</span>
-                </div>
-                 
-            </div>  
-    </footer>
+
+
+
+
+
+
+
+
+
+<footer>
+    <div class="txt">
+      <h5> LABORATOIRE DE RECHERCHE POUR LE DEVELOPPEMENT DES SYSTEMES INFORMATISES</h5>
+      <p> Université Saad Dahlab - Blida 1 | Faculté des Sciences </p>
+      <p> http://www.univ-blida.dz </p>
+    </div>
+    <div class="wrapper">
+      <div class="button">
+       <a href="./contactsH.php"> <div class="icon"><ion-icon name="call"></ion-icon></div>
+        <span>Telephone</span>
+      </div></a>
+      <div class="button">
+    <a href=""> <div class="icon"><ion-icon name="mail"></ion-icon></div>
+        <span>Email</span>
+      </div></a>
+      <div class="button">
+     <a href="https://www.google.com/maps?client=firefox-b-d&q=saad+dahleb&um=1&ie=UTF-8&sa=X&ved=2ahUKEwj60s6Y8Kb_AhXQwKQKHcsMAk0Q_AUoA3oECAEQBQ">  <div class="icon"><ion-icon name="location-sharp"></ion-icon></i></div>
+        <span>Location</span>
+      </div></a> 
+
+    </div>
+    <p> Copyright ©2020 All rights reserved to LRDSI</p>
+    <p>made by Izem Bahidja . Sameut Hind . Benmeddah Hadjer </p>
+  </footer>
 
 
 

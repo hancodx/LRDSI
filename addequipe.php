@@ -5,7 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/head-fot.css">
+
+
     <link rel="stylesheet" href="./css/equipes.css">
+
+
     <link rel="stylesheet" href="css/ajouterequipe.css">
     <link rel="stylesheet" href="css/sidbar.css">
     
@@ -86,37 +90,40 @@
          <h4>Projets </h4> 
          <label for="Tout">
       <div class="choix">
-        <input type="radio" id="Tout" name="projets" value="Tout" checked> Tout
+
+
         <input type="radio" id="Tout" name="projets" value="Tout" checked=""> <a href="./projects2.html">Tout</a>
+
+
       </div>
     </label>
 
     <label for="Nationaux">
       <div class="choix">
-        <input type="radio" id="Nationaux" name="projets" value="Nationaux"> Nationaux
+
+
         <input type="radio" id="Nationaux" name="projets" value="Nationaux"> <a href="./projects2.html">Nationaux</a>
+
         
       </div>
     </label>
 
     <label for="Internationaux">
       <div class="choix">
-        <input type="radio" id="Internationaux" name="projets" value="Internationaux"> Nnternationaux
+
+
+  
         <input type="radio" id="Internationaux" name="projets" value="Internationaux"> <a href="./projects2.html">Internationaux</a>
+
+
       </div>
     </label>
 
     </div>
     <div class="side-ul">
-      <h4>Pub&Evnt</h4> 
-    <div class="choix">
-      Publication 
-    </div>
-    <div class="choix">
-      Evenment 
-    </div>
-    <div class="choix">
-      Thèses et mémoires
+
+
+
       <h4>Pub&amp;Evnt</h4> 
     <div class="choix">
      <a href="./pubbAlbome.html"> Publication </a>
@@ -126,14 +133,18 @@
     </div>
     <div class="choix">
       <a href="">Thèses et mémoires</a>
+
+
     </div>
 
  </div>
  <div class="side-ul">
   <h4>Equipe</h4> 
 <div class="choix">
-  Equipes
+
+
   <a href="./Equips.php"> Equipes</a>
+
 </div>
 
 
@@ -144,7 +155,7 @@
   </div> 
 
     
-  <form action="ajouter_equipe.php" method="post">
+  <form  method="post">
     <label for="nom_equipe">Nom de l'équipe :</label>
     <input type="text" id="nom_equipe" name="nom_equipe"><br><br>
 
@@ -160,29 +171,37 @@
     <label for="date" class="description_projet">Description :</label>
     <textarea name="description_projet" rows="3"></textarea>
     <br><br>
+    <?php
+include("DBconn.php");
+$query = "SELECT id, nom, prenom FROM membre";
+$result = mysqli_query($conn, $query);
 
-    
-    <label for="membres_equipe">Membres de l'équipe :</label>
-<select id="membres_equipe" name="membres_equipe[]" multiple size="5">
-  <?php
-  include('DBconn.php');
-  $resultat = mysqli_query($conn, "SELECT nom, prenom FROM membre");
-  
-  if (!$resultat) {
-    echo "Erreur lors de la récupération des données : " . mysqli_error($conn);
-    exit;
-  }
-  
-  while ($row = mysqli_fetch_assoc($resultat)) {
-    echo "<option value='" . $row["nom"] . " " . $row["prenom"] . "'>" . $row["nom"] . " " . $row["prenom"] . "</option>";
-  }
-  
-  mysqli_free_result($resultat);
-  mysqli_close($conn);
-  ?>
-</select><br><br>
+// Vérifier si la requête a réussi
+if ($result) {
+    ?>
+    <label for="membre_equipe">Membres de l'équipe :</label>
+    <select name="membre[]" multiple required>
+        <?php
+        // Afficher les options de sélection des membres
+        while ($row = mysqli_fetch_assoc($result)) {
+            $id = $row["id"];
+            $nom = $row["nom"];
+            $prenom = $row["prenom"];
+            echo "<option value='$id'>$nom $prenom</option>";
+        }
+        ?>
+    </select><br><br>
+    <?php
+} else {
+    echo "Erreur lors de l'exécution de la requête : " . mysqli_error($conn);
+}
+
+// Fermer la connexion à la base de données
+mysqli_close($conn);
+?>
+
 <input type="submit" value ="ajouter">
-    <select id="membres_equipe" name="membres_equipe[]" multiple="">
+
       
 
 </select>
@@ -325,8 +344,7 @@
 
     <div class="sidebar__section sidebar__section--account">
       <div class="account">
-      <img src="./photo/Untitleerd.png" alt="Avatar image" class="account__avatar">
-
+        <img src="./photo/Untitleerd.png" alt="Avatar image" class="account__avatar">
         <div class="account__details">
           <h4 class="account__name">Luke Skywalker</h4>
           <p class="account__email">luke@force.com</p>
@@ -335,6 +353,9 @@
       </div>
     </div>
   </aside>
+
+
+
 
 
 </section>
@@ -349,39 +370,34 @@
 
 
 
-
-
-
-
-
-
 <?php
-include('DBconn.php');
+include("DBconn.php");
 
 // Vérifier si le formulaire a été soumis
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Récupérer les valeurs du formulaire
+    $nom_equipe = $_POST["nom_equipe"];
+    $nom_chef_equipe = $_POST["nom_chef_equipe"];
+    $domaine_recherche = $_POST["domaine_recherche"];
+    $mots_cle = $_POST["mots_cle"];
+    $description = $_POST["description"];
+    $membres = $_POST["membres"];
 
-  // Récupérer les données du formulaire
-  $nom_equipe = $_POST['nom'];
-  $nom_chef_equipe = $_POST['nom_chef_equipe'];
-  $domaine_recherche = $_POST['domaine_recherche'];
-  $membres_equipe = $_POST['membres_equipe'];
+    // Insérer les données dans la table "equipe"
+    $sql = "INSERT INTO equipe (nom_equipe, nom_chef_equipe, domaine_recherche, mots_cle, description, membres)
+            VALUES ('$nom_equipe', '$nom_chef_equipe', '$domaine_recherche', '$mots_cle', '$description', '$membres')";
 
-  // Insérer le membre dans la table membre
-  $requete = "INSERT INTO membre (nom, prenom, adresse_email, grade) VALUES ('$nom_equipe', '$nom_chef_equipe', '$domaine_recherche', '$membres_equipe')";
-  if (!mysqli_query($conn, $requete)) {
-    echo "Erreur lors de l'insertion du membre : " . mysqli_error($conn);
-    exit;
-  }
-  // Récupérer l'ID du membre inséré
-  $id_membre = mysqli_insert_id($conn);
-
-  // Afficher un message de confirmation
-  echo "Le membre a été ajouté avec succès !";
-
+    if ($conn->query($sql) === TRUE) {
+        echo "Nouvelle équipe ajoutée avec succès !";
+    } else {
+        echo "Erreur lors de l'ajout de l'équipe : " . $conn->error;
+    }
 }
 
-mysqli_close($conn); 
+// Récupérer les membres de la table "membre"
+$sql = "SELECT id, nom, prenom FROM membre";
+$result = $conn->query($sql);
+
 ?>
 
     
@@ -393,23 +409,30 @@ mysqli_close($conn);
 
 
 
-    <footer>
-        <div class="wrapper">
-            <div class="button">
-                <div class="icon"><ion-icon name="call"></ion-icon></div>
-                <span>Telephone</span>
-                </div>
-            <div class="button">
-                <div class="icon"><ion-icon name="mail"></ion-icon></div>
-                <span>Email</span>
-                </div>
-            <div class="button">
-                <div class="icon"><ion-icon name="location-sharp"></ion-icon></i></div>
-                <span>Location</span>
-                </div>
-                 
-            </div>  
-    </footer>
+<footer>
+    <div class="txt">
+      <h5> LABORATOIRE DE RECHERCHE POUR LE DEVELOPPEMENT DES SYSTEMES INFORMATISES</h5>
+      <p> Université Saad Dahlab - Blida 1 | Faculté des Sciences </p>
+      <p> http://www.univ-blida.dz </p>
+    </div>
+    <div class="wrapper">
+      <div class="button">
+       <a href="./contactsH.php"> <div class="icon"><ion-icon name="call"></ion-icon></div>
+        <span>Telephone</span>
+      </div></a>
+      <div class="button">
+    <a href=""> <div class="icon"><ion-icon name="mail"></ion-icon></div>
+        <span>Email</span>
+      </div></a>
+      <div class="button">
+     <a href="https://www.google.com/maps?client=firefox-b-d&q=saad+dahleb&um=1&ie=UTF-8&sa=X&ved=2ahUKEwj60s6Y8Kb_AhXQwKQKHcsMAk0Q_AUoA3oECAEQBQ">  <div class="icon"><ion-icon name="location-sharp"></ion-icon></i></div>
+        <span>Location</span>
+      </div></a> 
+
+    </div>
+    <p> Copyright ©2020 All rights reserved to LRDSI</p>
+    <p>made by Izem Bahidja . Sameut Hind . Benmeddah Hadjer </p>
+  </footer>
 
 
 

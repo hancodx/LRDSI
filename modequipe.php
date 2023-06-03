@@ -242,7 +242,7 @@ mysqli_close($conn);
   mysqli_close($conn);
   ?>
 </select><br><br>
-<input type="submit" value ="ajouter">
+<input type="submit" value ="modifier">
     <select id="membres_equipe" name="membres_equipe[]" multiple="">
       
 

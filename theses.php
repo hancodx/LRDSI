@@ -1,6 +1,6 @@
 <?php
 include("DBconn.php");
-$req = "select * from equipe";
+$req = "select * from these";
 $resu=mysqli_query($conn, $req);
 
 ?>
@@ -23,48 +23,45 @@ $resu=mysqli_query($conn, $req);
 
 <body>
 
-<div class="container">
-        <nav>
-            <div class="logo"> <a href=""> <img src="./photo/Fichier 2-8.png" alt="">
-                </a></div>
+  <div class="container">
+    <nav>
+      <div class="logo"> <a href=""> <img src="./photo/Fichier 2-8.png" alt="">
+        </a></div>
+      <ul>
+        <li><a href="#Equipes">Equipes</a></li>
+        <li><a href="#pub&event">pub&event</a>
+          <div class="dropdown">
             <ul>
-                <li><a href="./index.html">Accueil</a></li>
+              <li> <a href="./events.html"> events </a></li>
+              <li> <a href=""> publication </a></li>
+              <li> <a href=""> titre 1 </a></li>
+            </ul>
+          </div>
+        </li>
 
-                <li><a href="./projects2.html">Projets </a>
-                    <div class="dropdown">
-                        <ul>
-                            <li> <a href="./projects2.html">Nationaux </a></li>
-                            <li> <a href="./projects2.html">Internationaux </a></li>
-
-
-                        </ul>
-                    </div>
-                </li>
-                <li><a href="./Equips.html">Equipes</a></li>
-
-
-                <li><a href="./pubbAlbome.html">Pub&Event</a>
-                    <div class="dropdown">
-                        <ul>
-                            <li> <a href="./events.html"> Evenement </a></li>
-                            <li> <a href="./pubbAlbome.html"> Publications </a></li>
-                            <li> <a href="">Thèse et mémoire </a></li>
-                        </ul>
-                    </div>
-                </li>
+        <li><a href="#project">projects</a>
+          <div class="dropdown">
+            <ul>
+              <li> <a href="">national </a></li>
+              <li> <a href=""> international </a></li>
+              <li> <a href=""> titre 1 </a></li>
 
             </ul>
-            <div class="search-form">
-                <input type="search" value="" placeholder="Search" class="search-input">
-                <button type="submit" class="search-button">
-                    <ion-icon name="search-outline"></ion-icon>
-                </button>
+          </div>
+        </li>
+        <li><a href="#">home</a></li>
+      </ul>
+      <div class="search-form">
+        <input type="search" value="" placeholder="Search" class="search-input">
+        <button type="submit" class="search-button">
+          <ion-icon name="search-outline"></ion-icon>
+        </button>
 
 
-            </div>
-        </nav>
+      </div>
+    </nav>
 
-    </div>
+  </div>
 
 
   <section>
@@ -119,33 +116,16 @@ $resu=mysqli_query($conn, $req);
   <?php while ($row = mysqli_fetch_assoc($resu)) { ?>
     <div class="readmore">
       <div>
-        <h2><?php echo $row['domaine_recherche']; ?></h2>
-        <h5>Nom d'équipe <p><?php echo $row['nom_equipe']; ?></p>
-        </h5>
-        <h5>Chef d'équipe <p><?php echo $row['nom_chef_equipe']; ?></p>
+        <h2>Titre de these  <p><?php echo $row['titre_these']; ?></p></h2>
+        
+        <h5>Nom de doctorant <p><?php echo $row['nom_doctorant']; ?></p>
         </h5>
 
         <p><?php echo $row['description']; ?></p>
-
-        <div class="member">
-          <?php
-          include("DBconn.php");
-          // Récupérer les membres de l'équipe
-          $equipeId = $row['id_equipe'];
-          $memberQuery = "SELECT membre.* FROM membre JOIN equipe_membre ON membre.id = equipe_membre.id_membre WHERE equipe_membre.id_equipe = $equipeId";
-          $memberResult = mysqli_query($conn, $memberQuery);
-          if ($memberResult && mysqli_num_rows($memberResult) > 0) {
-            while ($memberData = mysqli_fetch_assoc($memberResult)) {
-              echo "<h6>" . $memberData['nom'] . "</h6>";
-              echo "<p>" . $memberData['adresse_email'] . "</p>";
-            }
-          }
-          ?>
-        </div>
       </div>
       <div class="div2">
-        <h3> Mots clés </h3>
-        <p> <?php echo $row['mots_clé']; ?> </p>
+        <h3> Date de soutnance </h3> 
+        <p> <?php echo $row['date_soutenance']; ?> </p>
       </div>
       <p class="readmore-link">
         <a href="#">More</a>
