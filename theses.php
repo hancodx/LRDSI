@@ -20,36 +20,77 @@ $resu=mysqli_query($conn, $req);
   <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 
 </head>
+<style>
+  .EQPS {
+	width: 75%;
+	margin-top: 34px;
+	display: flex;
+  flex-wrap: wrap;
+}
+.div2 h3{
+  font-size: 90%;
+}
+section h5{
+  display: block;
+}
+.readmore {
+	/* margin: 2em auto; */
+	
+  width: 200px;
+	display: flex;
+  margin-right: 30px;
+	background-color: var(--color2);
+	padding: 30px;
+	max-height: 200px;
+	border-radius: 30px;
+	position: relative;
+	overflow-y: hidden;
+	box-shadow: 0 4px 7px rgba(0, 0, 0, 0.18), 0 1px 2px rgba(0, 0, 0, 0.24);
+	transition: all 0.5s ease;
+	margin-bottom: 30px;
+}
+.readmore.open {
+	/* max-height: unset; */
+	transition: all 0.5s ease;
+	
 
+}
+.readmore.open{
+  max-height: 60%;
+}
+</style>
 <body>
 
-  <div class="container">
+<div class="container">
     <nav>
       <div class="logo"> <a href=""> <img src="./photo/Fichier 2-8.png" alt="">
         </a></div>
       <ul>
-        <li><a href="#Equipes">Equipes</a></li>
-        <li><a href="#pub&event">pub&event</a>
-          <div class="dropdown">
-            <ul>
-              <li> <a href="./events.html"> events </a></li>
-              <li> <a href=""> publication </a></li>
-              <li> <a href=""> titre 1 </a></li>
-            </ul>
-          </div>
-        </li>
+        <li><a href="./index.html">Accueil</a></li>
 
-        <li><a href="#project">projects</a>
+        <li><a href="./projects2.php">Projets </a>
           <div class="dropdown">
             <ul>
-              <li> <a href="">national </a></li>
-              <li> <a href=""> international </a></li>
-              <li> <a href=""> titre 1 </a></li>
+              <li> <a href="./projects2.php">Nationaux </a></li>
+              <li> <a href="./projects2.php">Internationaux </a></li>
+
 
             </ul>
           </div>
         </li>
-        <li><a href="#">home</a></li>
+        <li><a href="./Equips.php">Equipes</a></li>
+
+
+        <li><a href="./pubbAlbome.php">Pub&Event</a>
+          <div class="dropdown">
+            <ul>
+              <li> <a href="./events.php"> Evenement </a></li>
+              <li> <a href="./pubbAlbome.php"> Publications </a></li>
+              <li> <a href="./theses.php">Thèse et mémoire </a></li>
+            </ul>
+          </div>
+        </li>
+
       </ul>
       <div class="search-form">
         <input type="search" value="" placeholder="Search" class="search-input">
@@ -60,63 +101,73 @@ $resu=mysqli_query($conn, $req);
 
       </div>
     </nav>
-
   </div>
-
-
   <section>
-    <div class="said-check">
-      <div class="side-ul">
-        <h4>Projets </h4>
-        <label for="Tout">
-          <div class="choix">
-            <input type="radio" id="Tout" name="projets" value="Tout" checked> Tout
-          </div>
-        </label>
+  <div class="said-check">
+            <div class="side-ul">
+                <h4>Projets </h4>
+                <label for="Tout">
+                    <div class="choix">
 
-        <label for="Nationaux">
-          <div class="choix">
-            <input type="radio" id="Nationaux" name="projets" value="Nationaux"> Nationaux
+                        <input type="radio" id="Tout" name="projets" value="Tout" checked><a href="./projects2.php">
+                            Tout</a>
 
-          </div>
-        </label>
+                    </div>
+                </label>
 
-        <label for="Internationaux">
-          <div class="choix">
-            <input type="radio" id="Internationaux" name="projets" value="Internationaux"> Nnternationaux
-          </div>
-        </label>
+                <label for="Nationaux">
+                    <div class="choix">
+                        <input type="radio" id="Nationaux" name="projets" value="Nationaux"> <a
+                            href="./projects2.php">Nationaux</a>
 
-      </div>
-      <div class="side-ul">
-        <h4>Pub&Evnt</h4>
-        <div class="choix">
-          Publication
+
+                    </div>
+                </label>
+
+                <label for="Internationaux">
+                    <div class="choix">
+
+                        <input type="radio" id="Internationaux" name="projets" value="Internationaux"> <a
+                            href="./projects2.php">Internationaux</a>
+
+                    </div>
+                </label>
+
+            </div>
+            <div class="side-ul">
+                <h4>Pub&Evnt</h4>
+                <div class="choix">
+                    <a href="./pubbAlbome.php"> Publication</a>
+                </div>
+                <div class="choix">
+                    <a href="./events.php"> Evenment</a>
+                </div>
+                <div class="choix">
+                    <a href="./theses.php"> Thèses et mémoires</a>
+
+                </div>
+
+            </div>
+            <div class="side-ul">
+                <h4>Equipe</h4>
+                <div class="choix">
+
+                    <a href="./Equips.php">Equipes</a>
+
+                </div>
+
+
+            </div>
+
+
+
         </div>
-        <div class="choix">
-          Evenment
-        </div>
-        <div class="choix">
-          Thèses et mémoires
-        </div>
-
-      </div>
-      <div class="side-ul">
-        <h4>Equipe</h4>
-        <div class="choix">
-          Equipes
-        </div>
-
-
-      </div>
-  </div>
-
-
+        
   <div class="EQPS">
   <?php while ($row = mysqli_fetch_assoc($resu)) { ?>
-    <div class="readmore">
+    <div class="readmore" style="width: 410px;">
       <div>
-        <h2>Titre de these  <p><?php echo $row['titre_these']; ?></p></h2>
+        <h2 style="font-size: 140%;">  <p><?php echo $row['titre_these']; ?></p></h2>
         
         <h5>Nom de doctorant <p><?php echo $row['nom_doctorant']; ?></p>
         </h5>

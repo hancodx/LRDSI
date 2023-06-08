@@ -7,7 +7,7 @@ $resprojet = mysqli_query($conn, "SELECT * FROM projet");
 $resevent = mysqli_query($conn, "SELECT * FROM events");
 $respub = mysqli_query($conn, "SELECT * FROM pub");
 ?>
-?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -18,12 +18,10 @@ $respub = mysqli_query($conn, "SELECT * FROM pub");
 
 
    
-
     
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="//cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css" rel="stylesheet">
     <!--<link rel="stylesheet" href="css/braa.css"> -->
-
 
 
     
@@ -31,7 +29,6 @@ $respub = mysqli_query($conn, "SELECT * FROM pub");
     <link rel="stylesheet" href="css/admin.css">
     <link rel="stylesheet" href="./css/equipes.css">
     <link rel="stylesheet" href="css/sidbar.css">
-
 
 
     <!-- animation link -->
@@ -56,10 +53,11 @@ $respub = mysqli_query($conn, "SELECT * FROM pub");
  aside li{
   width: 200%;
  }
- aside{
-  left: 284px;
-  margin-top: 465px;
- }
+
+ aside {
+	left: 130px;
+	margin-top: 465px;
+}
  aside a{
   pading:0;
  }
@@ -122,7 +120,9 @@ $respub = mysqli_query($conn, "SELECT * FROM pub");
 .table th {
   font-weight: bold;
 }
-
+aside{
+  position: fixed;
+}
 .table td,
 .table th {
   padding: 8px;
@@ -148,40 +148,39 @@ $respub = mysqli_query($conn, "SELECT * FROM pub");
 
  
 
-    
       
 
-        
+
 <div class="container">
     <nav>
       <div class="logo"> <a href=""> <img src="./photo/Fichier 2-8.png" alt="">
         </a></div>
       <ul>
         <li><a href="./index.html">Accueil</a></li>
-       
-        <li><a href="./projects2.html">Projets </a>
+
+        <li><a href="./projects2.php">Projets </a>
           <div class="dropdown">
             <ul>
-              <li> <a href="./projects2.html">Nationaux </a></li>
-              <li> <a href="./projects2.html">Internationaux </a></li>
-              
+              <li> <a href="./projects2.php">Nationaux </a></li>
+              <li> <a href="./projects2.php">Internationaux </a></li>
+
 
             </ul>
           </div>
         </li>
-        <li><a href="./Equips.html">Equipes</a></li>
+        <li><a href="./Equips.php">Equipes</a></li>
 
-        
-        <li><a href="./pubbAlbome.html">Pub&Event</a>
+
+        <li><a href="./pubbAlbome.php">Pub&Event</a>
           <div class="dropdown">
             <ul>
-              <li> <a href="./events.html"> Evenement  </a></li>
-              <li> <a href="./pubbAlbome.html"> Publications </a></li>
-              <li> <a href="">Thèse et mémoire </a></li>
+              <li> <a href="./events.php"> Evenement </a></li>
+              <li> <a href="./pubbAlbome.php"> Publications </a></li>
+              <li> <a href="./theses.php">Thèse et mémoire </a></li>
             </ul>
           </div>
         </li>
-        <li><a href="admin.html">Gestion</a></li>
+
       </ul>
       <div class="search-form">
         <input type="search" value="" placeholder="Search" class="search-input">
@@ -193,19 +192,16 @@ $respub = mysqli_query($conn, "SELECT * FROM pub");
       </div>
     </nav>
   </div>
-
-
-    
    
 
 
 
 <!-- La 2 eme table des membres -->
-<div class="containerr" style="max-width: 850px; margin-top: 160px;  margin-left: 110px; display: flex;">      
-<div class="tabels" style=" width:600px ; position: relative; left:120px">
+<div class="containerr" style=" margin-top: 160px;  margin-left: 110px; display: flex;">      
+<div class="tabels" style=" width:740px ; position: relative; left:0px" >
 <!-- tableu des membres -->
 <h1 style=" font-size:25px; font-weight: bold; text-decoration: underline; margin-top: 30px;">Voici tous les membres</h1>
-        <table class="table table-striped">
+        <table class="table table-striped" id ="t1">
             <thead>
                 <tr style=" font-size:13px">
                     <th>id </th>
@@ -247,7 +243,7 @@ $respub = mysqli_query($conn, "SELECT * FROM pub");
 
 <!-- table des equipes -->
 <h1 style=" font-size:25px; font-weight: bold; text-decoration: underline; margin-top: 30px;">2 - Voici tous les equipes</h1>
-        <table class="table table-striped" >
+        <table class="table table-striped" id ="t2">
             <thead>
                 <tr style=" font-size:13px">
                     <th>id equipe</th>
@@ -288,7 +284,7 @@ $respub = mysqli_query($conn, "SELECT * FROM pub");
 
 <!-- table des projets -->
         <h1 style=" font-size:25px; font-weight: bold; text-decoration: underline; margin-top: 30px;">Voici tous les projets</h1>
-        <table class="table table-striped">
+        <table class="table table-striped" id ="t3">
             <thead>
                 <tr style=" font-size:13px">
                     <th>Id</th>
@@ -329,7 +325,7 @@ $respub = mysqli_query($conn, "SELECT * FROM pub");
 
 
         <h1 style="font-size:25px; font-weight:bold; text-decoration:underline; margin-top: 30px;">Voici tous les événements</h1>
-<table class="table table-striped">
+<table class="table table-striped" id ="t4">
     <thead>
         <tr style="font-size:13px">
             <th>id</th>
@@ -368,7 +364,7 @@ $respub = mysqli_query($conn, "SELECT * FROM pub");
 
 
 <h1 style="font-size:25px; font-weight:bold; text-decoration:underline; margin-top: 30px;">Voici tous les publications</h1>
-<table class="table table-striped">
+<table class="table table-striped" id ="t5">
     <thead>
         <tr style="font-size:13px">
             <th>id</th>
@@ -429,7 +425,7 @@ $respub = mysqli_query($conn, "SELECT * FROM pub");
       <div class="nav">
         <ul class="nav__list">
           <li class="nav__item">
-            <a href="#" class="nav__link">
+            <a href="./admin.php" class="nav__link">
               <span class="nav__icon nav__icon--home"></span>
               <span class="nav__text">Accueil</span>
              
@@ -444,15 +440,14 @@ $respub = mysqli_query($conn, "SELECT * FROM pub");
          
 
 
-
         </ul>
       </div>
 
-      <h2 class="sidebar__subtitle"><a href="">Membres</a></h2>
+      <h2 class="sidebar__subtitle"><a href="#t1">Membres</a></h2>
       <div class="nav">
         <ul class="nav__list">
           <li class="nav__item">
-            <a href="#" class="nav__link">
+            <a href="./addmember.php" class="nav__link">
             <ion-icon name="person-add-outline"></ion-icon>
               <span class="nav__text">ajouté un membre</span>
              
@@ -461,11 +456,11 @@ $respub = mysqli_query($conn, "SELECT * FROM pub");
       
     </div>
 
-      <h2 class="sidebar__subtitle"><a href="">Projet</a></h2>
+      <h2 class="sidebar__subtitle"><a href="#t2">Projet</a></h2>
       <div class="nav">
         <ul class="nav__list">
           <li class="nav__item">
-            <a href="#" class="nav__link">
+            <a href="./addprojet.php" class="nav__link">
             <ion-icon name="person-add-outline"></ion-icon>
               <span class="nav__text">ajouté un projet</span>
              
@@ -473,11 +468,11 @@ $respub = mysqli_query($conn, "SELECT * FROM pub");
           </li>
       
     </div>
-    <h2 class="sidebar__subtitle"> <a href="">Equipes</a>  </h2>
+    <h2 class="sidebar__subtitle"> <a href="#t3">Equipes</a>  </h2>
       <div class="nav">
         <ul class="nav__list">
           <li class="nav__item">
-            <a href="#" class="nav__link">
+            <a href="./addequipe.php" class="nav__link">
             <ion-icon name="person-add-outline"></ion-icon>
               <span class="nav__text">ajouté une equipe</span>
              
@@ -486,18 +481,18 @@ $respub = mysqli_query($conn, "SELECT * FROM pub");
       
     </div>
 
-    <h2 class="sidebar__subtitle"> <a href="">Publication et Event</a>  </h2>
+    <h2 class="sidebar__subtitle"> <a href="#t4">Publication et Event</a>  </h2>
       <div class="nav">
         <ul class="nav__list">
           <li class="nav__item">
-            <a href="#" class="nav__link">
+            <a href="./addpub.php" class="nav__link">
             <ion-icon name="person-add-outline"></ion-icon>
               <span class="nav__text">ajouté une publication</span>
              
             </a>
           </li>
           <li class="nav__item">
-            <a href="#" class="nav__link">
+            <a href="./addevent.php" class="nav__link">
             <ion-icon name="person-add-outline"></ion-icon>
               <span class="nav__text">ajouté une evenement</span>
              
@@ -605,7 +600,7 @@ $respub = mysqli_query($conn, "SELECT * FROM pub");
 
 
 
-</section>
+
 
 
 
@@ -631,7 +626,7 @@ $respub = mysqli_query($conn, "SELECT * FROM pub");
 
     </div>
     <p> Copyright ©2020 All rights reserved to LRDSI</p>
-    <p>made by Izem Bahidja . Sameut Hind . Benmeddah Hadjer </p>
+    <p>made by Izem Bahidja . Sameut Hind </p>
   </footer>
 
 

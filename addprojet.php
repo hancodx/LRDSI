@@ -28,36 +28,37 @@
 </head>
 <body>
     <header>
-    <div class="container">
+   
+  <div class="container">
     <nav>
       <div class="logo"> <a href=""> <img src="./photo/Fichier 2-8.png" alt="">
         </a></div>
       <ul>
         <li><a href="./index.html">Accueil</a></li>
-       
-        <li><a href="./projects2.html">Projets </a>
+
+        <li><a href="./projects2.php">Projets </a>
           <div class="dropdown">
             <ul>
-              <li> <a href="./projects2.html">Nationaux </a></li>
-              <li> <a href="./projects2.html">Internationaux </a></li>
-              
+              <li> <a href="./projects2.php">Nationaux </a></li>
+              <li> <a href="./projects2.php">Internationaux </a></li>
+
 
             </ul>
           </div>
         </li>
-        <li><a href="./Equips.html">Equipes</a></li>
+        <li><a href="./Equips.php">Equipes</a></li>
 
-        
-        <li><a href="./pubbAlbome.html">Pub&Event</a>
+
+        <li><a href="./pubbAlbome.php">Pub&Event</a>
           <div class="dropdown">
             <ul>
-              <li> <a href="./events.html"> Evenement  </a></li>
-              <li> <a href="./pubbAlbome.html"> Publications </a></li>
-              <li> <a href="">Thèse et mémoire </a></li>
+              <li> <a href="./events.php"> Evenement </a></li>
+              <li> <a href="./pubbAlbome.php"> Publications </a></li>
+              <li> <a href="./theses.php">Thèse et mémoire </a></li>
             </ul>
           </div>
         </li>
-        <li><a href="admin.html">Gestion</a></li>
+
       </ul>
       <div class="search-form">
         <input type="search" value="" placeholder="Search" class="search-input">
@@ -68,8 +69,7 @@
 
       </div>
     </nav>
-  </div>
-    </header>
+  </div> </header>
 
     <div class="content">
 
@@ -77,64 +77,65 @@
     <section class="formulaire">
 
     <div class="said-check">
-        <div class="side-ul">
-         <h4>Projets </h4> 
-         <label for="Tout">
-      <div class="choix">
+            <div class="side-ul">
+                <h4>Projets </h4>
+                <label for="Tout">
+                    <div class="choix">
 
-        <input type="radio" id="Tout" name="projets" value="Tout" checked=""> <a href="./projects2.html">Tout</a>
+                        <input type="radio" id="Tout" name="projets" value="Tout" checked><a href="./projects2.php">
+                            Tout</a>
 
-      </div>
-    </label>
+                    </div>
+                </label>
 
-    <label for="Nationaux">
-      <div class="choix">
-
-        <input type="radio" id="Nationaux" name="projets" value="Nationaux"> <a href="./projects2.html">Nationaux</a>
-
-        
-      </div>
-    </label>
-
-    <label for="Internationaux">
-      <div class="choix">
-
-  
-        <input type="radio" id="Internationaux" name="projets" value="Internationaux"> <a href="./projects2.html">Internationaux</a>
-
-      </div>
-    </label>
-
-    </div>
-    <div class="side-ul">
-
-      <h4>Pub&amp;Evnt</h4> 
-    <div class="choix">
-     <a href="./pubbAlbome.html"> Publication </a>
-    </div>
-    <div class="choix">
-        <a href="./events.html">Evenment </a>
-    </div>
-    <div class="choix">
-      <a href="">Thèses et mémoires</a>
-
-    </div>
-
- </div>
- <div class="side-ul">
-  <h4>Equipe</h4> 
-<div class="choix">
-
-  <a href="./Equips.php"> Equipes</a>
-
-</div>
+                <label for="Nationaux">
+                    <div class="choix">
+                        <input type="radio" id="Nationaux" name="projets" value="Nationaux"> <a
+                            href="./projects2.php">Nationaux</a>
 
 
-</div>
+                    </div>
+                </label>
+
+                <label for="Internationaux">
+                    <div class="choix">
+
+                        <input type="radio" id="Internationaux" name="projets" value="Internationaux"> <a
+                            href="./projects2.php">Internationaux</a>
+
+                    </div>
+                </label>
+
+            </div>
+            <div class="side-ul">
+                <h4>Pub&Evnt</h4>
+                <div class="choix">
+                    <a href="./pubbAlbome.php"> Publication</a>
+                </div>
+                <div class="choix">
+                    <a href="./events.php"> Evenment</a>
+                </div>
+                <div class="choix">
+                    <a href="./theses.php"> Thèses et mémoires</a>
+
+                </div>
+
+            </div>
+            <div class="side-ul">
+                <h4>Equipe</h4>
+                <div class="choix">
+
+                    <a href="./Equips.php">Equipes</a>
+
+                </div>
 
 
-    
-  </div> 
+            </div>
+
+
+
+        </div>
+         
     <form method="post" action="addprojet.php">
         <label for="titre">Titre :</label>
         <input type="text" name="titre" required><br><br>
@@ -154,152 +155,173 @@
     </form>
 
 
+     
     <aside class="sidebar" theme="dark">
-    <div class="sidebar__section sidebar__section--title">
-    Gestion 
-    </div>
+
+<div class="sidebar__section sidebar__section--title">
+Gestion 
+</div>
 
 
-    <div class="sidebar__section sidebar__section--menu">
-      <h2 class="sidebar__subtitle">Menu</h2>
-      <div class="nav">
-        <ul class="nav__list">
-          <li class="nav__item">
-            <a href="#" class="nav__link">
-              <span class="nav__icon nav__icon--home"></span>
-              <span class="nav__text">Accueil</span>
-             
-            </a>
-          </li>
-          <li class="nav__item">
-            <a href="#" class="nav__link">
-              <span class="nav__icon nav__icon--activity"></span>
-              <span class="nav__text">Activite</span>
-            </a>
-          </li>
+<div class="sidebar__section sidebar__section--menu">
+  <h2 class="sidebar__subtitle">Menu</h2>
+  <div class="nav">
+    <ul class="nav__list">
+      <li class="nav__item">
+        <a href="./admin.php" class="nav__link">
+          <span class="nav__icon nav__icon--home"></span>
+          <span class="nav__text">Accueil</span>
          
-        </ul>
-      </div>
-      <h2 class="sidebar__subtitle"><a href="">Projet</a></h2>
-      <div class="nav">
-        <ul class="nav__list">
-          <li class="nav__item">
-            <a href="#" class="nav__link">
-            <ion-icon name="person-add-outline"></ion-icon>
-              <span class="nav__text">ajouté un projet</span>
-             
-            </a>
-          </li>
-      
-    </div>
-    <h2 class="sidebar__subtitle"> <a href="">Equipes</a>  </h2>
-      <div class="nav">
-        <ul class="nav__list">
-          <li class="nav__item">
-            <a href="#" class="nav__link">
-            <ion-icon name="person-add-outline"></ion-icon>
-              <span class="nav__text">ajouté une equipe</span>
-             
-            </a>
-          </li>
-      
-    </div>
+        </a>
+      </li>
+      <li class="nav__item">
+        <a href="#" class="nav__link">
+          <span class="nav__icon nav__icon--activity"></span>
+          <span class="nav__text">Activite</span>
+        </a>
+      </li>
+     
 
-    <h2 class="sidebar__subtitle"> <a href="">Publication et Event</a>  </h2>
-      <div class="nav">
-        <ul class="nav__list">
-          <li class="nav__item">
-            <a href="#" class="nav__link">
-            <ion-icon name="person-add-outline"></ion-icon>
-              <span class="nav__text">ajouté une publication</span>
-             
-            </a>
-          </li>
-          <li class="nav__item">
-            <a href="#" class="nav__link">
-            <ion-icon name="person-add-outline"></ion-icon>
-              <span class="nav__text">ajouté une evenement</span>
-             
-            </a>
-          </li>
-      
-    </div>
+
+    </ul>
+  </div>
+
+  <h2 class="sidebar__subtitle"><a href="./admin.php">Membres</a></h2>
+  <div class="nav">
+    <ul class="nav__list">
+      <li class="nav__item">
+        <a href="./addmember.php" class="nav__link">
+        <ion-icon name="person-add-outline"></ion-icon>
+          <span class="nav__text">ajouté un membre</span>
+         
+        </a>
+      </li>
+  
+</div>
+
+  <h2 class="sidebar__subtitle"><a href="./admin.php">Projet</a></h2>
+  <div class="nav">
+    <ul class="nav__list">
+      <li class="nav__item">
+        <a href="./addprojet.php" class="nav__link">
+        <ion-icon name="person-add-outline"></ion-icon>
+          <span class="nav__text">ajouté un projet</span>
+         
+        </a>
+      </li>
+  
+</div>
+<h2 class="sidebar__subtitle"> <a href="./admin.php">Equipes</a>  </h2>
+  <div class="nav">
+    <ul class="nav__list">
+      <li class="nav__item">
+        <a href="./addequipe.php" class="nav__link">
+        <ion-icon name="person-add-outline"></ion-icon>
+          <span class="nav__text">ajouté une equipe</span>
+         
+        </a>
+      </li>
+  
+</div>
+
+<h2 class="sidebar__subtitle"> <a href="./admin.php">Publication et Event</a>  </h2>
+  <div class="nav">
+    <ul class="nav__list">
+      <li class="nav__item">
+        <a href="./addpub.php" class="nav__link">
+        <ion-icon name="person-add-outline"></ion-icon>
+          <span class="nav__text">ajouté une publication</span>
+         
+        </a>
+      </li>
+      <li class="nav__item">
+        <a href="./addevent.php" class="nav__link">
+        <ion-icon name="person-add-outline"></ion-icon>
+          <span class="nav__text">ajouté une evenement</span>
+         
+        </a>
+      </li>
+  
+</div>
 
 </div>
-    <hr class="divider">
+<hr class="divider">
 
-    <div class="sidebar__section sidebar__section--settings">
-  
-     
-    <div class="nav">
+<div class="sidebar__section sidebar__section--settings">
 
-        <ul class="nav__list">
-          <li class="nav__item">
-            <a href="#" class="nav__link">
-              <span class="nav__icon nav__icon--settings"></span>
-              <span class="nav__text">Settings</span>
-            </a>
-          </li>
-          <li class="nav__item">
-            <a href="#" class="nav__link">
-              <span class="nav__icon nav__icon--report"></span>
-              <span class="nav__text">Report</span>
-            </a>
-          </li>
-          <li class="nav__item">
-            <a href="#" class="nav__link">
-              <span class="nav__icon nav__icon--support"></span>
-              <span class="nav__text">Support</span>
-            </a>
-          </li>
-        </ul>
-      </div>
+ 
+<div class="nav">
+
+    <ul class="nav__list">
+      <li class="nav__item">
+        <a href="#" class="nav__link">
+          <span class="nav__icon nav__icon--settings"></span>
+          <span class="nav__text">Settings</span>
+        </a>
+      </li>
+      <li class="nav__item">
+        <a href="#" class="nav__link">
+          <span class="nav__icon nav__icon--report"></span>
+          <span class="nav__text">Report</span>
+        </a>
+      </li>
+      <li class="nav__item">
+        <a href="#" class="nav__link">
+          <span class="nav__icon nav__icon--support"></span>
+          <span class="nav__text">Support</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<hr class="divider">
+
+<div class="sidebar__section sidebar__section--groups">
+  <h2 class="sidebar__subtitle">Group</h2>
+  <div class="nav">
+    <ul class="nav__list">
+      <li class="nav__item">
+        <a href="#" class="nav__link">
+          <span class="nav__circle nav__circle--green"></span>
+          <span class="nav__text">Logoipsum Studio</span>
+          <span class="nav__chevron"></span>
+        </a>
+      </li>
+      <li class="nav__item">
+        <a href="#" class="nav__link">
+          <span class="nav__circle nav__circle--blue"></span>
+          <span class="nav__text">Design System</span>
+          <span class="nav__chevron"></span>
+        </a>
+      </li>
+      <li class="nav__item">
+        <a href="#" class="nav__link">
+          <span class="nav__circle nav__circle--yellow"></span>
+          <span class="nav__text">Accessibility</span>
+          <span class="nav__chevron"></span>
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>
+
+
+
+<div class="sidebar__section sidebar__section--account">
+  <div class="account">
+    <img src="./photo/Untitleerd.png" alt="Avatar image" class="account__avatar">
+    <div class="account__details">
+      <h4 class="account__name">Luke Skywalker</h4>
+      <p class="account__email">luke@force.com</p>
     </div>
+    <form method="POST" action="logout.php">
+      <button class="account__exit" type="submit" name="logout">Déconnecter</button>
+    </form>
 
-    <hr class="divider">
-
-    <div class="sidebar__section sidebar__section--groups">
-      <h2 class="sidebar__subtitle">Group</h2>
-      <div class="nav">
-        <ul class="nav__list">
-          <li class="nav__item">
-            <a href="#" class="nav__link">
-              <span class="nav__circle nav__circle--green"></span>
-              <span class="nav__text">Logoipsum Studio</span>
-              <span class="nav__chevron"></span>
-            </a>
-          </li>
-          <li class="nav__item">
-            <a href="#" class="nav__link">
-              <span class="nav__circle nav__circle--blue"></span>
-              <span class="nav__text">Design System</span>
-              <span class="nav__chevron"></span>
-            </a>
-          </li>
-          <li class="nav__item">
-            <a href="#" class="nav__link">
-              <span class="nav__circle nav__circle--yellow"></span>
-              <span class="nav__text">Accessibility</span>
-              <span class="nav__chevron"></span>
-            </a>
-          </li>
-        </ul>
-      </div>
-    </div>
-
-   
-
-    <div class="sidebar__section sidebar__section--account">
-      <div class="account">
-        <img src="./photo/Untitleerd.png" alt="Avatar image" class="account__avatar">
-        <div class="account__details">
-          <h4 class="account__name">Luke Skywalker</h4>
-          <p class="account__email">luke@force.com</p>
-        </div>
-        <button class="account__exit"></button>
-      </div>
-    </div>
-  </aside>
+  </div>
+</div>
+</aside>
 
 </section>
 
@@ -375,7 +397,7 @@ mysqli_close($conn);
 
     </div>
     <p> Copyright ©2020 All rights reserved to LRDSI</p>
-    <p>made by Izem Bahidja . Sameut Hind . Benmeddah Hadjer </p>
+    <p>made by Izem Bahidja . Sameut Hind </p>
   </footer>
 
 

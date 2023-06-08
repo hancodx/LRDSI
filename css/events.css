@@ -33,7 +33,7 @@ body{
 .dsrp p{
     margin-top: 2%;
 }
-.imge-event{
+.photo{
     width: 40%;
     position: relative;
    height: 100%;
@@ -44,7 +44,7 @@ body{
  
     min-width: 280px;
 }
-.imge-event img{
+.photo img{
     object-fit: cover;
  
  height: 100%;
@@ -173,3 +173,8 @@ section {
     }
   }
 
+  .event {
+	
+	margin-bottom: 4%;
+	
+}

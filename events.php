@@ -22,55 +22,68 @@ $resu=mysqli_query($conn, $req);
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     <link rel="stylesheet" href="./css/head-fot.css">
 </head>
-
+<style>.photo{
+    width: 40%;
+    position: relative;
+   height: 100%;
+    border-radius: 30px;
+    overflow: hidden;
+    
+    
+ 
+    min-width: 280px;
+}
+.photo img{
+    object-fit: cover;
+ 
+ height: 100%;
+width: 100%;}</style>
 <body>
     <a class="contact contac" href="./contactsH.html">contact</a>
 
 
-    <div class="container">
-        <nav>
-            <div class="logo"> <a href=""> <img src="./photo/Fichier 2-8.png" alt="">
-                </a></div>
+    
+  <div class="container">
+    <nav>
+      <div class="logo"> <a href=""> <img src="./photo/Fichier 2-8.png" alt="">
+        </a></div>
+      <ul>
+        <li><a href="./index.html">Accueil</a></li>
+
+        <li><a href="./projects2.php">Projets </a>
+          <div class="dropdown">
             <ul>
-                <li><a href="./index.html">Accueil</a></li>
+              <li> <a href="./projects2.php">Nationaux </a></li>
+              <li> <a href="./projects2.php">Internationaux </a></li>
 
-                <li><a href="./projects2.html">Projets </a>
-                    <div class="dropdown">
-                        <ul>
-                            <li> <a href="./projects2.html">Nationaux </a></li>
-                            <li> <a href="./projects2.html">Internationaux </a></li>
-
-
-                        </ul>
-                    </div>
-                </li>
-                <li><a href="./Equips.html">Equipes</a></li>
-
-
-                <li><a href="./pubbAlbome.html">Pub&Event</a>
-                    <div class="dropdown">
-                        <ul>
-                            <li> <a href="./events.html"> Evenement </a></li>
-                            <li> <a href="./pubbAlbome.html"> Publications </a></li>
-                            <li> <a href="">Thèse et mémoire </a></li>
-                        </ul>
-                    </div>
-                </li>
 
             </ul>
-            <div class="search-form">
-                <input type="search" value="" placeholder="Search" class="search-input">
-                <button type="submit" class="search-button">
-                    <ion-icon name="search-outline"></ion-icon>
-                </button>
+          </div>
+        </li>
+        <li><a href="./Equips.php">Equipes</a></li>
 
 
-            </div>
-        </nav>
+        <li><a href="./pubbAlbome.php">Pub&Event</a>
+          <div class="dropdown">
+            <ul>
+              <li> <a href="./events.php"> Evenement </a></li>
+              <li> <a href="./pubbAlbome.php"> Publications </a></li>
+              <li> <a href="./theses.php">Thèse et mémoire </a></li>
+            </ul>
+          </div>
+        </li>
 
-    </div>
+      </ul>
+      <div class="search-form">
+        <input type="search" value="" placeholder="Search" class="search-input">
+        <button type="submit" class="search-button">
+          <ion-icon name="search-outline"></ion-icon>
+        </button>
 
 
+      </div>
+    </nav>
+  </div>
     <section>
         <div class="said-check">
             <div class="side-ul">
@@ -78,7 +91,7 @@ $resu=mysqli_query($conn, $req);
                 <label for="Tout">
                     <div class="choix">
 
-                        <input type="radio" id="Tout" name="projets" value="Tout" checked><a href="./projects2.html">
+                        <input type="radio" id="Tout" name="projets" value="Tout" checked><a href="./projects2.php">
                             Tout</a>
 
                     </div>
@@ -87,7 +100,7 @@ $resu=mysqli_query($conn, $req);
                 <label for="Nationaux">
                     <div class="choix">
                         <input type="radio" id="Nationaux" name="projets" value="Nationaux"> <a
-                            href="./projects2.html">Nationaux</a>
+                            href="./projects2.php">Nationaux</a>
 
 
                     </div>
@@ -97,7 +110,7 @@ $resu=mysqli_query($conn, $req);
                     <div class="choix">
 
                         <input type="radio" id="Internationaux" name="projets" value="Internationaux"> <a
-                            href="./projects2.html">Internationaux</a>
+                            href="./projects2.php">Internationaux</a>
 
                     </div>
                 </label>
@@ -106,13 +119,13 @@ $resu=mysqli_query($conn, $req);
             <div class="side-ul">
                 <h4>Pub&Evnt</h4>
                 <div class="choix">
-                    <a href="./pubbAlbome.html"> Publication</a>
+                    <a href="./pubbAlbome.php"> Publication</a>
                 </div>
                 <div class="choix">
-                    <a href="./events.html"> Evenment</a>
+                    <a href="./events.php"> Evenment</a>
                 </div>
                 <div class="choix">
-                    <a href=""> Thèses et mémoires</a>
+                    <a href="./theses.php"> Thèses et mémoires</a>
 
                 </div>
 
@@ -134,7 +147,7 @@ $resu=mysqli_query($conn, $req);
         
         <div class="all">
     <?php while($row = mysqli_fetch_assoc($resu)) { ?>
-        <div class="event">
+        <div class="event"  style="margin-bottom: 4%;">
             <div class="dsrp">
                 <h3><?php echo $row['titre']; ?></h3>
                 <span><?php echo $row['lieu']; ?></span>
@@ -176,7 +189,8 @@ $resu=mysqli_query($conn, $req);
     
         </div>
         <p> Copyright ©2020 All rights reserved to LRDSI</p>
-        <p>made by Izem Bahidja . Sameut Hind . Benmeddah Hadjer </p>
+        <p>made by Izem Bahidja . Sameut Hind </p>
+        <h5><a href="auth.php">admin</a></h5>
       </footer>
 </body>
 </body>

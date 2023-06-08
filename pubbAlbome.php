@@ -290,9 +290,8 @@ $resu=mysqli_query($conn, $req);
       right: 78.5%;
       top: 100px;
     }
-    .rw {
-      width: 101%;
-    }
+
+
     .said-check {
       background-color: var(--color2);
       height: 530px;
@@ -351,25 +350,25 @@ $resu=mysqli_query($conn, $req);
       <ul>
         <li><a href="./index.html">Accueil</a></li>
 
-        <li><a href="./projects2.html">Projets </a>
+        <li><a href="./projects2.php">Projets </a>
           <div class="dropdown">
             <ul>
-              <li> <a href="./projects2.html">Nationaux </a></li>
-              <li> <a href="./projects2.html">Internationaux </a></li>
+              <li> <a href="./projects2.php">Nationaux </a></li>
+              <li> <a href="./projects2.php">Internationaux </a></li>
 
 
             </ul>
           </div>
         </li>
-        <li><a href="./Equips.html">Equipes</a></li>
+        <li><a href="./Equips.php">Equipes</a></li>
 
 
-        <li><a href="./pubbAlbome.html">Pub&Event</a>
+        <li><a href="./pubbAlbome.php">Pub&Event</a>
           <div class="dropdown">
             <ul>
-              <li> <a href="./events.html"> Evenement </a></li>
-              <li> <a href="./pubbAlbome.html"> Publications </a></li>
-              <li> <a href="">Thèse et mémoire </a></li>
+              <li> <a href="./events.php"> Evenement </a></li>
+              <li> <a href="./pubbAlbome.php"> Publications </a></li>
+              <li> <a href="./theses.php">Thèse et mémoire </a></li>
             </ul>
           </div>
         </li>
@@ -395,7 +394,7 @@ $resu=mysqli_query($conn, $req);
         <label for="Tout">
           <div class="choix">
 
-            <input type="radio" id="Tout" name="projets" value="Tout" checked> <a href="./projects2.html">Tout</a>
+            <input type="radio" id="Tout" name="projets" value="Tout" checked> <a href="./projects2.php">Tout</a>
 
           </div>
         </label>
@@ -405,7 +404,7 @@ $resu=mysqli_query($conn, $req);
 
             
 
-            <input type="radio" id="Nationaux" name="projets" value="Nationaux"><a href="./projects2.html">
+            <input type="radio" id="Nationaux" name="projets" value="Nationaux"><a href="./projects2.php">
               Nationaux</a>
 
 
@@ -418,7 +417,7 @@ $resu=mysqli_query($conn, $req);
            
 
             <input type="radio" id="Internationaux" name="projets" value="Internationaux"> <a
-              href="./projects2.html">Internationaux</a>
+              href="./projects2.php">Internationaux</a>
 
           </div>
         </label>
@@ -429,13 +428,13 @@ $resu=mysqli_query($conn, $req);
         <div class="choix">
 
 
-          <a href="./pubbAlbome.html"> Publication</a>
+          <a href="./pubbAlbome.php"> Publication</a>
         </div>
         <div class="choix">
-          <a href="./events.html">Evenment</a>
+          <a href="./events.php">Evenment</a>
         </div>
         <div class="choix">
-          <a href="">Thèses et mémoires</a>
+          <a href="./theses.php">Thèses et mémoires</a>
 
         </div>
 
@@ -459,7 +458,7 @@ $resu=mysqli_query($conn, $req);
 
 
 
-    <div class="album  bg-body-tertiary" style="padding-top: 45px; position: relative;  left: 15px;   width: 82%;">
+    <div class="album  bg-body-tertiary" style="padding-top: 45px; position: relative;  left: 15px;   width: 84%;">
       <div class="container-end">
 
       <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3 rw">
@@ -482,8 +481,10 @@ $resu=mysqli_query($conn, $req);
                         </div>
                         <small class="text-body-secondary"><?php echo $row['date']; ?></small>
                     </div>
+
                 </div>
             </div>
+
         </div>
     <?php } ?>
 </div>

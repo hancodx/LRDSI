@@ -159,7 +159,7 @@ main::first-line {
 
 .leader {
    display: flex;
-   width: 30%;
+   width: 50%;
    justify-content: space-between;
    margin-top: 1%;
    color: var(--color1)

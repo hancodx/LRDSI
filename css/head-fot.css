@@ -109,7 +109,7 @@ a{
 	top: 0;
 	z-index: 999;
 	padding-left: 0;
-	padding-right: 0;
+	padding-right: 0; 
 }
 
 
@@ -273,7 +273,7 @@ nav ul li a {
   letter-spacing: 1px;
   /* color: var(--color4); */
 
-  font-weight: 400;
+  font-weight: 500;
 
 
 }

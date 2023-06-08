@@ -50,56 +50,97 @@ if(isset($_POST['submit'])){
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
   
     <style>
+        .user {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	/* width: 700px; */
+	right: 30px;
+	left: 100px;
+	/* height: 500px; */
+	background: #f0fafb;
+	background-size: cover;
+	/* margin-left: 450px; */
+	margin-top: 40px;
+	justify-content: space-between;
+}
+.user {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	/* width: 700px; */
+	right: 30px;
+	left: 100px;
+	/* height: 500px; */
+	background: #f0fafb;
+	background-size: cover;
+	margin-left: 195px;
+	margin-top: 90px;
+}
+.user {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 783px;
+	right: 300px;
+	
+	height: 485px;
+	background: #f0fafb;
+	background-size: cover;
+	margin-left: 240px;
+	margin-top: 90px;
+}
         @import url('https://fonts.googleapis.com/css2?family=Fraunces:wght@700&family=Montserrat:ital,wght@0,700;1,200&family=Roboto:wght@400;500;700&display=swap');
     </style>
     
 
 </head>
 <body>
-    <header>
-        <div class="container">
-            <nav>
-                <div class="logo"> <a href=""> <img src="./photo/Fichier 2-8.png" alt="">
-                </a></div>
-                <ul>
-                    <li><a href="index.html">home</a></li>
-                    <li><a href="Equips.html">Equipes</a></li>
-                    <li ><a href="#pub&event">pub&event</a>
-                        <div class="dropdown">
-                            <ul>
-                                <li> <a href="./events.html"> events </a></li>
-                                <li> <a href="publication.html"> publication </a></li>
-                            </ul>
-                        </div>
-                    </li>
-                   
-                    <li ><a href="ProjectsH.html">projects</a>
-                        <div class="dropdown">
-                            <ul>
-                                <li> <a href="projetsH.html">national </a></li>
-                                <li> <a href="projetsH.html"> international </a></li>
-                                <li> <a href="projetsH.html"> tous </a></li>
-                              
-                            </ul>
-                        </div>
-                    </li>
-                    <li><a href="admin.php">Gestion</a></li>
-                </ul>
-                <div class="search-form">
-                    <input type="search" value="" placeholder="Search" class="search-input">
-                    <button type="submit" class="search-button">
-                        <ion-icon name="search-outline"></ion-icon>
-                    </button>
-                  
-               
-                </div>
-            </nav>
-            
-        </div>
-    </header>
 
+<div class="container">
+    <nav>
+      <div class="logo"> <a href=""> <img src="./photo/Fichier 2-8.png" alt="">
+        </a></div>
+      <ul>
+        <li><a href="./index.html">Accueil</a></li>
+
+        <li><a href="./projects2.php">Projets </a>
+          <div class="dropdown">
+            <ul>
+              <li> <a href="./projects2.php">Nationaux </a></li>
+              <li> <a href="./projects2.php">Internationaux </a></li>
+
+
+            </ul>
+          </div>
+        </li>
+        <li><a href="./Equips.php">Equipes</a></li>
+
+
+        <li><a href="./pubbAlbome.php">Pub&Event</a>
+          <div class="dropdown">
+            <ul>
+              <li> <a href="./events.php"> Evenement </a></li>
+              <li> <a href="./pubbAlbome.php"> Publications </a></li>
+              <li> <a href="./theses.php">Thèse et mémoire </a></li>
+            </ul>
+          </div>
+        </li>
+
+      </ul>
+      <div class="search-form">
+        <input type="search" value="" placeholder="Search" class="search-input">
+        <button type="submit" class="search-button">
+          <ion-icon name="search-outline"></ion-icon>
+        </button>
+
+
+      </div>
+    </nav>
+  </div>
     <div class="content">
         <section class="user">
+    
             <div class="user_options-container">
                 <div class="user_options-text">
                     <div class="user_options-unregistered">
@@ -132,21 +173,29 @@ if(isset($_POST['submit'])){
     </div>
 
     <footer>
-        <div class="wrapper">
-            <div class="button">
-                <div class="icon"><ion-icon name="call"></ion-icon></div>
-                <span>Telephone</span>
-            </div>
-            <div class="button">
-                <div class="icon"><ion-icon name="mail"></ion-icon></div>
-                <span>Email</span>
-            </div>
-            <div class="button">
-                <div class="icon"><ion-icon name="location-sharp"></ion-icon></div>
-                <span>Location</span>
-            </div>
-        </div>  
-    </footer>
+    <div class="txt">
+      <h5> LABORATOIRE DE RECHERCHE POUR LE DEVELOPPEMENT DES SYSTEMES INFORMATISES</h5>
+      <p> Université Saad Dahlab - Blida 1 | Faculté des Sciences </p>
+      <p> http://www.univ-blida.dz </p>
+    </div>
+    <div class="wrapper">
+      <div class="button">
+       <a href="./contactsH.php"> <div class="icon"><ion-icon name="call"></ion-icon></div>
+        <span>Telephone</span>
+      </div></a>
+      <div class="button">
+    <a href=""> <div class="icon"><ion-icon name="mail"></ion-icon></div>
+        <span>Email</span>
+      </div></a>
+      <div class="button">
+     <a href="https://www.google.com/maps?client=firefox-b-d&q=saad+dahleb&um=1&ie=UTF-8&sa=X&ved=2ahUKEwj60s6Y8Kb_AhXQwKQKHcsMAk0Q_AUoA3oECAEQBQ">  <div class="icon"><ion-icon name="location-sharp"></ion-icon></i></div>
+        <span>Location</span>
+      </div></a> 
+
+    </div>
+    <p> Copyright ©2020 All rights reserved to LRDSI</p>
+    <p>made by Izem Bahidja . Sameut Hind . Benmeddah Hadjer </p>
+  </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </body>
