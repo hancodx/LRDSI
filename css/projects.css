@@ -102,16 +102,19 @@ section {
 
 
 }
-.choix a{
+
+.choix a {
    color: rgb(110, 133, 133);
 
 }
-.choix a:hover{
+
+.choix a:hover {
    color: #385f5f;
 }
+
 .said-check .side-ul .choix:hover {
    background-color: #f0fafb;
-   
+
 
 }
 
@@ -243,12 +246,51 @@ p {
    display: none;
 }
 
-@media screen and (max-width: 600px) {
-   .said-check {
-     display: none;
-   }
-   section{
-       justify-content: center;
-   }
- }
 
+@media screen and (max-width:400px) {
+   .said-check {
+      display: none;
+   }
+
+
+
+   main {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 90%;
+      margin-top: 90px;
+   }
+
+   .projet {
+      height: auto;
+   }
+
+   section {
+      justify-content: center;
+
+   }
+}
+
+@media only screen and (max-width: 768px)and (min-width:401px) {
+   .said-check {
+      left: 0;
+      width: 25%;
+
+   }
+
+   main {
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+
+   }
+
+   .projet {
+      width: 96%;
+      height: 280px;
+   }
+
+}

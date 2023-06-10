@@ -1,10 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Fraunces:wght@700&family=Montserrat:ital,wght@0,700;1,200&family=Roboto:wght@400;500;700&display=swap');
 
 
-:root {
-
-
-}
+:root {}
 
 * {
   margin: 0;
@@ -13,22 +10,24 @@
   font-family: 'Tajawal', sans-serif;
   text-decoration: none;
 }
-a{
+
+a {
   text-decoration: none;
 }
+
 .contact {
-	bottom: 25px;
-	right: 25px;
-	position: fixed;
-	background-color: #2F9FF4;
+  bottom: 25px;
+  right: 25px;
+  position: fixed;
+  background-color: #2F9FF4;
   /* background-color: #639BBA; */
-	color: #fff;
-	height: 34px;
-	width: 75px;
-	padding: 8px;
-	border-radius: 50px;
-	padding-left: 11px;
-	box-shadow: 2px 2px 12px -1px gray;
+  color: #fff;
+  height: 34px;
+  width: 75px;
+  padding: 8px;
+  border-radius: 50px;
+  padding-left: 11px;
+  box-shadow: 2px 2px 12px -1px gray;
   z-index: 2;
   text-decoration: none;
   animation: cant infinite;
@@ -36,22 +35,34 @@ a{
 
 
 @keyframes glowing {
-  0% { box-shadow: 0 0 -10px #23d9ca; }
-  40% { box-shadow: 0 0 20px #22d9ca; }
-  60% { box-shadow: 0 0 20px #22d9ca; }
-  100% { box-shadow: 0 0 -10px #23dccc; }
+  0% {
+    box-shadow: 0 0 -10px #23d9ca;
+  }
+
+  40% {
+    box-shadow: 0 0 20px #22d9ca;
+  }
+
+  60% {
+    box-shadow: 0 0 20px #22d9ca;
+  }
+
+  100% {
+    box-shadow: 0 0 -10px #23dccc;
+  }
 }
-@keyframes post{
-  0%{
-    bottom:26.5px ;
-    
+
+@keyframes post {
+  0% {
+    bottom: 26.5px;
+
   }
 
 
 }
 
 .contact {
-  animation: glowing 5000ms infinite ,post 1s infinite;
+  animation: glowing 5000ms infinite, post 1s infinite;
 }
 
 
@@ -92,39 +103,40 @@ a{
 } */
 
 .container:first-of-type {
-	margin: 0 auto;
-	width: 90%;
-	height: auto;
-	background: rgba(202, 216, 218, 0.67);
-	background: rgba(163, 198, 198, 0.791);
-	border-radius: 16px;
-	box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-	backdrop-filter: blur(15.6px);
-	-webkit-backdrop-filter: blur(15.6px);
-	border: 1px solid rgba(223, 238, 240, 0.146);
-	border-radius: 30px;
-	margin-top: 25px;
-	left: 5%;
-	position: fixed;
-	top: 0;
-	z-index: 999;
-	padding-left: 0;
-	padding-right: 0; 
+  margin: 0 auto;
+  width: 90%;
+  height: auto;
+  background: rgba(202, 216, 218, 0.67);
+  background: rgba(163, 198, 198, 0.791);
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(15.6px);
+  -webkit-backdrop-filter: blur(15.6px);
+  border: 1px solid rgba(223, 238, 240, 0.146);
+  border-radius: 30px;
+  margin-top: 25px;
+  left: 5%;
+  position: fixed;
+  top: 0;
+  z-index: 999;
+  padding-left: 0;
+  padding-right: 0;
 }
 
 
 
 /* footer css */
 footer {
-  background:rgb(141, 179, 179) ; 
-  
- 
- box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
- backdrop-filter: blur(15.6px);
- -webkit-backdrop-filter: blur(15.6px);
- border: 1px solid rgba(223, 238, 240, 0.146);
+  background: rgb(141, 179, 179);
+
+
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(15.6px);
+  -webkit-backdrop-filter: blur(15.6px);
+  border: 1px solid rgba(223, 238, 240, 0.146);
   width: 100%;
   height: 37vh;
+  height: 260px;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
@@ -233,7 +245,8 @@ body {
 .container a {
   width: 20%;
   text-decoration: none;
-  color: #315454;;
+  color: #315454;
+  ;
 
 }
 
@@ -286,24 +299,26 @@ nav ul .dropdown {
   height: 29px;
   display: none;
 }
+
 nav ul li .dropdown ul li {
-	transform: translateX(0rem);
-	animation: none;
-	height: 15px;
-	margin-top: 10px;
+  transform: translateX(0rem);
+  animation: none;
+  height: 15px;
+  margin-top: 10px;
   margin-bottom: 10px;
 }
 
-nav ul li .dropdown ul li a{
+nav ul li .dropdown ul li a {
   transition: .5s;
   margin: 0 1.2rem;
 
 }
-nav ul li .dropdown ul li a:hover{
+
+nav ul li .dropdown ul li a:hover {
   position: relative;
-  bottom:  10%;
+  bottom: 10%;
   margin-left: 30px;
-  
+
 }
 
 nav ul .dropdown ul {
@@ -312,9 +327,9 @@ nav ul .dropdown ul {
   left: 20%;
   top: 100%;
   /* From https://css.glass */
-  background:rgba(202, 216, 218, 0.67) ; 
-  background:rgba(163, 198, 198, 0.791) ; 
-  
+  background: rgba(202, 216, 218, 0.67);
+  background: rgba(163, 198, 198, 0.791);
+
   border-radius: 16px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(15.6px);
@@ -334,9 +349,9 @@ nav ul a:hover {
   color: black;
 }
 
-.dropdown a:hover{
+.dropdown a:hover {
   padding-bottom: 0px;
-border-bottom: none;
+  border-bottom: none;
 }
 
 nav ul li:hover .dropdown {
@@ -347,7 +362,7 @@ nav ul li:hover .dropdown {
 nav ul li {
   transform: translateX(100rem);
   animation: slideIn 1s forwards;
-  
+
 }
 
 nav ul li .dropdown ul li:hover {
@@ -412,17 +427,130 @@ nav ul li:nth-child(4) {
 
   margin-top: 4px;
 }
-*:focus{
-outline: none;
+
+*:focus {
+  outline: none;
 
 }
 
-.choix a{
+.choix a {
   color: rgb(110, 133, 133);
   font-weight: 300;
 
 }
-.choix a:hover{
+
+.choix a:hover {
   color: #385f5f;
+
+}
+
+@media only screen and (max-width:768px) {
+  #search {
+    display: none;
+  }
+}
+
+
+
+label #btn,
+label #cancel {
+  color: #f0fafb;
+  font-size: 30px;
+  float: right;
+  line-height: 80px;
+  cursor: pointer;
+  display: none;
+  margin-right: 20px;
+
+}
+
+#check {
+  display: none;
+}
+
+@media only screen and (max-width:400px) {
+  #search {
+    display: none;
+  }
+
+  label #btn {
+    display: block;
+  }
+
+  .container {
+    max-height: 80px;
+
+  }
+
+  .logo {
+    position: fixed;
+    top: 22px;
+    left: 10px;
+  }
+
+  ul {
+    position: fixed;
+    top: 130px;
+    height: 35vh;
+    right: 120%;
+    align-items: center;
+    background-color: #64babb;
+    border-radius: 10px;
+    transition: all .3s;
+  }
+
+  .container nav ul {
+    display: block;
+    width: 110%;
+
+  }
+
+
+  li .dropdown ul {
+    display: none;
+  }
+
+  li {
+    padding: 20px;
+    text-align: center;
+  }
+
+  nav {
+    width: 110%;
+    height: 0vh;
+    margin-left: -10px;
+
+
+  }
+
+  nav {
+    width: 123%;
+    height: 0vh;
+    margin-left: -41px;
+  }
+
+  #check:checked~* ul {
+    right: 0;
+
+  }
+
+  #check:checked~* #cancel {
+    display: block;
+  }
+
+  #check:checked~* #btn {
+    display: none;
+  }
+
+
+
+  nav ul li {
+    transform: translateX(0rem);
+    animation: slideIn 1s forwards;
+
+  }
+
+
+
 
 }

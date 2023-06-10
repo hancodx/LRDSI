@@ -1,25 +1,27 @@
 :root {
 
-  
+
   --color4: #f0fafb;
   --color2: #ffff;
   --color3: rgb(141, 179, 179);
   --color1: #5ea4a4;
 
 
-  
+
 }
-*{
+
+* {
   margin: 0%;
   padding: 0%;
   box-sizing: border-box;
 }
+
 section {
   display: flex;
   justify-content: center;
   padding-right: 10%;
   position: relative;
- padding: 12% 4%;
+  padding: 12% 4%;
 }
 
 
@@ -92,22 +94,24 @@ section {
   border-left: #64babb solid;
   border-radius: 2px;
 }
- 
- 
+
+
 form {
-	margin: auto;
-	width: 50%;
-	background-color: #E1EDEB;
-	padding: 20px;
-	border-radius: 10px;
-	margin-bottom: 50px;
-	margin-top: 34px;
+  margin: auto;
+  width: 50%;
+  background-color: #E1EDEB;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 50px;
+  margin-top: 34px;
   height: fit-content;
 
 }
-.side-ul label{
+
+.side-ul label {
   margin-bottom: 0;
 }
+
 label {
   display: block;
   font-weight: bold;
@@ -115,7 +119,11 @@ label {
 }
 
 
-textarea, input[type="text"], input[type="email"], input[type="date"], select {
+textarea,
+input[type="text"],
+input[type="email"],
+input[type="date"],
+select {
   width: 100%;
   padding: 12px 20px;
   margin: 8px 0;
@@ -150,4 +158,22 @@ label .choix {
   font-weight: 200;
 }
 
+@media only screen and (max-width:768px) {
+  .said-check {
+    display: none;
+  }
+}
 
+@media only screen and (max-width:400px) {
+
+  section {
+
+    padding: 0;
+    padding-top: 170px;
+    flex-direction: column;
+    align-items: center;
+
+  }
+
+
+}

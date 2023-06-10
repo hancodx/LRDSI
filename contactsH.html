@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="contactsH.css">
     <link rel="stylesheet" href="css/head-fot.css">
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
 
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
@@ -19,237 +20,248 @@
 
 
 
-    <body>
+<body>
 
 
 
-       
-  <div class="container">
-    <nav>
-      <div class="logo"> <a href=""> <img src="./photo/Fichier 2-8.png" alt="">
-        </a></div>
-      <ul>
-        <li><a href="./index.html">Accueil</a></li>
 
-        <li><a href="./projects2.php">Projets </a>
-          <div class="dropdown">
+    <div class="container">
+
+        <input type="checkbox" id="check">
+        <label for="check">
+            <i class="fas fa-bars" id="btn"> </i>
+            <i class="fas fa-times" id="cancel"> </i>
+        </label>
+
+        <nav>
+            <div class="logo"> <a href=""> <img src="./photo/Fichier 2-8.png" alt="">
+                </a></div>
             <ul>
-              <li> <a href="./projects2.php">Nationaux </a></li>
-              <li> <a href="./projects2.php">Internationaux </a></li>
+                <li><a href="./index.html">Accueil</a></li>
 
+                <li><a href="./projects2.php">Projets </a>
+                    <div class="dropdown">
+                        <ul>
+                            <li> <a href="./projects2.php">Nationaux </a></li>
+                            <li> <a href="./projects2.php">Internationaux </a></li>
+
+
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="./Equips.php">Equipes</a></li>
+
+
+                <li><a href="./pubbAlbome.php">Pub&Event</a>
+                    <div class="dropdown">
+                        <ul>
+                            <li> <a href="./events.php"> Evenement </a></li>
+                            <li> <a href="./pubbAlbome.php"> Publications </a></li>
+                            <li> <a href="./theses.php">Thèse et mémoire </a></li>
+                        </ul>
+                    </div>
+                </li>
 
             </ul>
-          </div>
-        </li>
-        <li><a href="./Equips.php">Equipes</a></li>
+            <div class="search-form" id="search">
+                <input type="search" value="" placeholder="Search" class="search-input">
+                <button type="submit" class="search-button">
+                    <ion-icon name="search-outline"></ion-icon>
+                </button>
 
 
-        <li><a href="./pubbAlbome.php">Pub&Event</a>
-          <div class="dropdown">
-            <ul>
-              <li> <a href="./events.php"> Evenement </a></li>
-              <li> <a href="./pubbAlbome.php"> Publications </a></li>
-              <li> <a href="./theses.php">Thèse et mémoire </a></li>
-            </ul>
-          </div>
-        </li>
-
-      </ul>
-      <div class="search-form">
-        <input type="search" value="" placeholder="Search" class="search-input">
-        <button type="submit" class="search-button">
-          <ion-icon name="search-outline"></ion-icon>
-        </button>
-
-
-      </div>
-    </nav>
-  </div>
-        <section class="ftco-section">
-            <div class="said-check">
-                <div class="side-ul">
-                    <h4>Projets </h4>
-                    <label for="Tout">
-                        <div class="choix">
-    
-                            <input type="radio" id="Tout" name="projets" value="Tout" checked><a href="./projects2.php">
-                                Tout</a>
-    
-                        </div>
-                    </label>
-    
-                    <label for="Nationaux">
-                        <div class="choix">
-                            <input type="radio" id="Nationaux" name="projets" value="Nationaux"> <a
-                                href="./projects2.php">Nationaux</a>
-    
-    
-                        </div>
-                    </label>
-    
-                    <label for="Internationaux">
-                        <div class="choix">
-    
-                            <input type="radio" id="Internationaux" name="projets" value="Internationaux"> <a
-                                href="./projects2.php">Internationaux</a>
-    
-                        </div>
-                    </label>
-    
-                </div>
-                <div class="side-ul">
-                    <h4>Pub&Evnt</h4>
-                    <div class="choix">
-                        <a href="./pubbAlbome.php"> Publication</a>
-                    </div>
-                    <div class="choix">
-                        <a href="./events.php"> Evenment</a>
-                    </div>
-                    <div class="choix">
-                        <a href="./theses.php"> Thèses et mémoires</a>
-    
-                    </div>
-    
-                </div>
-                <div class="side-ul">
-                    <h4>Equipe</h4>
-                    <div class="choix">
-    
-                        <a href="./Equips.php">Equipes</a>
-    
-                    </div>
-    
-    
-                </div>
-    
-    
-    
             </div>
-            
-            <div class="container2">
-                <div class="titre">
-                    <div class="col-md-6 text-center mb-5">
-                        <h2 class="heading-section">Contact Form #09</h2>
+        </nav>
+    </div>
+    <section class="ftco-section">
+        <div class="said-check">
+            <div class="side-ul">
+                <h4>Projets </h4>
+                <label for="Tout">
+                    <div class="choix">
+
+                        <input type="radio" id="Tout" name="projets" value="Tout" checked><a href="./projects2.php">
+                            Tout</a>
+
                     </div>
+                </label>
+
+                <label for="Nationaux">
+                    <div class="choix">
+                        <input type="radio" id="Nationaux" name="projets" value="Nationaux"> <a
+                            href="./projects2.php">Nationaux</a>
+
+
+                    </div>
+                </label>
+
+                <label for="Internationaux">
+                    <div class="choix">
+
+                        <input type="radio" id="Internationaux" name="projets" value="Internationaux"> <a
+                            href="./projects2.php">Internationaux</a>
+
+                    </div>
+                </label>
+
+            </div>
+            <div class="side-ul">
+                <h4>Pub&Evnt</h4>
+                <div class="choix">
+                    <a href="./pubbAlbome.php"> Publication</a>
                 </div>
-                <div class="infos">
-                    <div class="col-lg-10 col-md-12">
-                        <div class="wrapper">
-                            <div class="row justify-content-center">
-                                <div class="about-us">
-                                    <div class="row">
-                                        <div class="col-md-4">
-                                            <div class="dbox w-100 text-center">
-                                                <div class="icon">
-                                                    <ion-icon name="location-sharp"></ion-icon>
-                                                </div>
-                                                <div class="text">
-                                                    <p><span>Address:</span> 198 West 21th Street, Suite 721 New York NY
-                                                        10016</p>
-                                                </div>
+                <div class="choix">
+                    <a href="./events.php"> Evenment</a>
+                </div>
+                <div class="choix">
+                    <a href="./theses.php"> Thèses et mémoires</a>
+
+                </div>
+
+            </div>
+            <div class="side-ul">
+                <h4>Equipe</h4>
+                <div class="choix">
+
+                    <a href="./Equips.php">Equipes</a>
+
+                </div>
+
+
+            </div>
+
+
+
+        </div>
+
+        <div class="container2">
+            <div class="titre">
+                <div class="col-md-6 text-center mb-5">
+                    <h2 class="heading-section">Contact Form #09</h2>
+                </div>
+            </div>
+            <div class="infos">
+                <div class="col-lg-10 col-md-12">
+                    <div class="wrapper">
+                        <div class="row justify-content-center">
+                            <div class="about-us">
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="dbox w-100 text-center">
+                                            <div class="icon">
+                                                <ion-icon name="location-sharp"></ion-icon>
+                                            </div>
+                                            <div class="text">
+                                                <p><span>Address:</span> 198 West 21th Street, Suite 721 New York NY
+                                                    10016</p>
                                             </div>
                                         </div>
-                                        <div class="col-md-4">
-                                            <div class="dbox w-100 text-center">
-                                                <div class="icon ">
-                                                    <ion-icon name="call-sharp"></ion-icon>
-                                                </div>
-                                                <div class="text">
-                                                    <p><span>Phone: <br> </span> <a href="tel://1234567920">+ 1235 2355
-                                                            98</a>
-                                                    </p>
-                                                </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="dbox w-100 text-center">
+                                            <div class="icon ">
+                                                <ion-icon name="call-sharp"></ion-icon>
+                                            </div>
+                                            <div class="text">
+                                                <p><span>Phone: <br> </span> <a href="tel://1234567920">+ 1235 2355
+                                                        98</a>
+                                                </p>
                                             </div>
                                         </div>
-                                        <div class="col-md-4">
-                                            <div class="dbox w-100 text-center">
-                                                <div class="icon">
-                                                    <ion-icon name="send-sharp"></ion-icon>
-                                                </div>
-                                                <div class="text">
-                                                    <p><span>Email:</span> <a
-                                                            href="mailto:info@yoursite.com">info@yoursite.com</a></p>
-                                                </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="dbox w-100 text-center">
+                                            <div class="icon">
+                                                <ion-icon name="send-sharp"></ion-icon>
+                                            </div>
+                                            <div class="text">
+                                                <p><span>Email:</span> <a
+                                                        href="mailto:info@yoursite.com">info@yoursite.com</a></p>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="messege">
-                                    <div class="contact-wrap">
-                                        <h3 class="titre ">Get in touch with us</h3>
+                            </div>
+                            <div class="messege">
+                                <div class="contact-wrap">
+                                    <h3 class="titre ">Get in touch with us</h3>
 
-                                        <form method="POST" id="contactForm" name="contactForm" class="contactForm"
-                                            novalidate="novalidate">
-                                            <div class="row">
-                                                <div class="col-md-12">
-                                                    <div class="form-group">
-                                                        <input type="text" class="form-control" name="name" id="name"
-                                                            placeholder="Name">
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-12">
-                                                    <div class="form-group">
-                                                        <input type="email" class="form-control" name="email" id="email"
-                                                            placeholder="Email">
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-12">
-                                                    <div class="form-group">
-                                                        <input type="text" class="form-control" name="subject"
-                                                            id="subject" placeholder="Subject">
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-12">
-                                                    <div class="form-group">
-                                                        <textarea name="message" class="form-control" id="message"
-                                                            cols="30" rows="8" placeholder="Message"></textarea>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-12">
-                                                    <div class="form-group">
-                                                        <input type="submit" id="btn" value="Send Message"
-                                                            class="btn btn-primary">
-
-                                                    </div>
+                                    <form method="POST" id="contactForm" name="contactForm" class="contactForm"
+                                        novalidate="novalidate">
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="form-group">
+                                                    <input type="text" class="form-control" name="name" id="name"
+                                                        placeholder="Name">
                                                 </div>
                                             </div>
-                                        </form>
-                                    </div>
+                                            <div class="col-md-12">
+                                                <div class="form-group">
+                                                    <input type="email" class="form-control" name="email" id="email"
+                                                        placeholder="Email">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <div class="form-group">
+                                                    <input type="text" class="form-control" name="subject" id="subject"
+                                                        placeholder="Subject">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <div class="form-group">
+                                                    <textarea name="message" class="form-control" id="message" cols="30"
+                                                        rows="8" placeholder="Message"></textarea>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <div class="form-group">
+                                                    <input type="submit" id="btn" value="Send Message"
+                                                        class="btn btn-primary">
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
 
 
-        <footer>
-            <div class="txt">
-              <h5> LABORATOIRE DE RECHERCHE POUR LE DEVELOPPEMENT DES SYSTEMES INFORMATISES</h5>
-              <p> Université Saad Dahlab - Blida 1 | Faculté des Sciences </p>
-              <p> http://www.univ-blida.dz </p>
-            </div>
-            <div class="wrapper">
-              <div class="button">
-               <a href="./contactsH.php"> <div class="icon"><ion-icon name="call"></ion-icon></div>
-                <span>Telephone</span>
-              </div></a>
-              <div class="button">
-            <a href=""> <div class="icon"><ion-icon name="mail"></ion-icon></div>
-                <span>Email</span>
-              </div></a>
-              <div class="button">
-             <a href="https://www.google.com/maps?client=firefox-b-d&q=saad+dahleb&um=1&ie=UTF-8&sa=X&ved=2ahUKEwj60s6Y8Kb_AhXQwKQKHcsMAk0Q_AUoA3oECAEQBQ">  <div class="icon"><ion-icon name="location-sharp"></ion-icon></i></div>
-                <span>Location</span>
-              </div></a> 
-        
-            </div>
-            <p> Copyright ©2020 All rights reserved to LRDSI</p>
-            <p>made by Izem Bahidja . Sameut Hind . Benmeddah Hadjer </p>
-          </footer>
-    </body>
+    <footer>
+        <div class="txt">
+            <h5> LABORATOIRE DE RECHERCHE POUR LE DEVELOPPEMENT DES SYSTEMES INFORMATISES</h5>
+            <p> Université Saad Dahlab - Blida 1 | Faculté des Sciences </p>
+            <p> http://www.univ-blida.dz </p>
+        </div>
+        <div class="wrapper">
+            <div class="button">
+                <a href="./contactsH.php">
+                    <div class="icon"><ion-icon name="call"></ion-icon></div>
+                    <span>Telephone</span>
+            </div></a>
+            <div class="button">
+                <a href="">
+                    <div class="icon"><ion-icon name="mail"></ion-icon></div>
+                    <span>Email</span>
+            </div></a>
+            <div class="button">
+                <a
+                    href="https://www.google.com/maps?client=firefox-b-d&q=saad+dahleb&um=1&ie=UTF-8&sa=X&ved=2ahUKEwj60s6Y8Kb_AhXQwKQKHcsMAk0Q_AUoA3oECAEQBQ">
+                    <div class="icon"><ion-icon name="location-sharp"></ion-icon></i></div>
+                    <span>Location</span>
+            </div></a>
+
+        </div>
+        <p> Copyright ©2020 All rights reserved to LRDSI</p>
+        <p>made by Izem Bahidja . Sameut Hind . Benmeddah Hadjer </p>
+    </footer>
+</body>
 
 
 

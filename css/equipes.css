@@ -1,11 +1,6 @@
 :root {
 
-  /* dark mode */
-  /* --color1: #126E62;
-    --color2: #E1EDEB;
-    --color3: #6BA49D;
-    --color4: #89B6B1;
-  color:   #000f31; */
+ 
   --color4: #f0fafb;
   --color2: #ffff;
   --color3: rgb(141, 179, 179);
@@ -217,3 +212,68 @@ section {
   margin-top: 34px;
 }
 
+@media only screen and (max-width:400px) {
+  .said-check{
+    display: none;
+  }
+section{
+  justify-content: center;
+}
+
+
+.readmore .div2 {
+margin-left: 0px;
+  width: 100px;
+	/* width: 250px; */
+}.readmore.open {
+	max-height: max-content;
+	transition: all 0.5s ease;
+}
+.readmore .div {
+	
+	 width: 100px;
+}
+.readmore {
+	/* margin: 2em auto; */
+	width: 100%;
+display: block;
+}
+.readmore div {
+	 width: 150px;
+}
+.EQPS{
+  margin-top: 90px;
+}
+
+
+}
+
+@media only screen and (min-width:401px) and (max-width:768px){
+  .readmore{
+    width: 80%;
+  }
+  .said-check{
+    left: 0;
+    width: 25%;
+  }
+  .EQPS{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+   
+  }
+  
+.readmore.open {
+    max-height: max-content;
+    transition: all 0.5s ease;
+  }
+ 
+  .readmore {
+   
+  display: block;
+  }
+  .readmore div {
+     width: 380px;
+  }
+  
+}

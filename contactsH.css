@@ -314,7 +314,7 @@ justify-content: center;
   font-size: 100%;
   
 }
-#btn{
+ section  #btn{
   font-size: 110%;
   font-weight: 500;
   color: var(--color2);
@@ -322,11 +322,11 @@ background-color: #5ea4a4b9;
 box-shadow: 4px 3px 14px .3px #4646466e;
 
 }
-#btn:hover{
+ section #btn:hover{
   background-color: var(--color1);
 
 }
-@media screen and (max-width: 600px) {
+@media only screen and (max-width: 400px) {
   .said-check {
     display: none;
   }
@@ -347,4 +347,4 @@ box-shadow: 4px 3px 14px .3px #4646466e;
 
   }
 }
->>>>>>> 9d23ed02294fb9586dabaa8fc4d49ff7174f751f
+

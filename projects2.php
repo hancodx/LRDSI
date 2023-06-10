@@ -1,7 +1,7 @@
 <?php
 include("DBconn.php");
 $req = "select * from projet";
-$resu=mysqli_query($conn, $req);
+$resu = mysqli_query($conn, $req);
 
 ?>
 
@@ -46,6 +46,11 @@ $resu=mysqli_query($conn, $req);
  
     
   <div class="container">
+  <input type="checkbox" id="check">
+      <label for="check" >  
+        <i class="fas fa-bars" id="btn"> </i>
+        <i class="fas fa-times" id="cancel"> </i>
+      </label>
     <nav>
       <div class="logo"> <a href=""> <img src="./photo/Fichier 2-8.png" alt="">
         </a></div>
@@ -76,7 +81,7 @@ $resu=mysqli_query($conn, $req);
         </li>
 
       </ul>
-      <div class="search-form">
+      <div class="search-form" id="search">
         <input type="search" value="" placeholder="Search" class="search-input">
         <button type="submit" class="search-button">
           <ion-icon name="search-outline"></ion-icon>
@@ -150,24 +155,24 @@ $resu=mysqli_query($conn, $req);
     
 <main>
     La liste des projets...
-    <?php while($row = mysqli_fetch_assoc($resu)) { ?>
-        <div class="projet">
-            <div class="titre">
-                <div class="type"><h5><?php echo $row['type_projet']; ?></h5> <span><?php echo $row['date']; ?></span></div>
-                <h4><?php echo $row['titre']; ?></h4> 
-                <div class="leader">
-                    <div class="" style="display: flex;">
-                        <ion-icon class="i" name="person-outline"></ion-icon>
-                        <h6><strong>Responsable</strong></h6>
-                    </div>
-                    <h6><?php echo $row['responsable']; ?></h6>
-                </div>
-            </div>
-            <div class="discr">
-                <p><?php echo $row['description_projet']; ?></p>
-            </div>
-            <a href="">acceder</a>
-        </div>
+    <?php while ($row = mysqli_fetch_assoc($resu)) { ?>
+          <div class="projet">
+              <div class="titre">
+                  <div class="type"><h5><?php echo $row['type_projet']; ?></h5> <span><?php echo $row['date']; ?></span></div>
+                  <h4><?php echo $row['titre']; ?></h4> 
+                  <div class="leader">
+                      <div class="" style="display: flex;">
+                          <ion-icon class="i" name="person-outline"></ion-icon>
+                          <h6><strong>Responsable</strong></h6>
+                      </div>
+                      <h6><?php echo $row['responsable']; ?></h6>
+                  </div>
+              </div>
+              <div class="discr">
+                  <p><?php echo $row['description_projet']; ?></p>
+              </div>
+              <a href="">acceder</a>
+          </div>
     <?php } ?>
 </main>
 
@@ -203,19 +208,19 @@ $resu=mysqli_query($conn, $req);
 
     <script>
         
-	//	function toggleCheckbox() {
-		///	var checkboxes = document.getElementsByName("grup");
-		//	var checkedOne = false;
-			/* for (var i = 0; i < checkboxes.length; i++) {
-				if (checkboxes[i].checked) {
-					if (checkedOne) {
-						checkboxes[i].checked = false;
+  //	function toggleCheckbox() {
+    ///	var checkboxes = document.getElementsByName("grup");
+    //	var checkedOne = false;
+      /* for (var i = 0; i < checkboxes.length; i++) {
+        if (checkboxes[i].checked) {
+          if (checkedOne) {
+            checkboxes[i].checked = false;
                     
-					} else {
-						checkedOne = true;
-					}
-				}
-			} */
+          } else {
+            checkedOne = true;
+          }
+        }
+      } */
          //   if(checkboxes[1].checked){
          //       checkboxes[0].checked= false;
 
@@ -223,8 +228,8 @@ $resu=mysqli_query($conn, $req);
         //        checkboxes[0].checked=true;
                 
          //   }
-		//}
-	
+    //}
+  
     </script>
     
     <script src="./jquery-3.6.4.js"></script>

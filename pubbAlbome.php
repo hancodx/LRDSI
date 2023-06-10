@@ -1,7 +1,7 @@
 <?php
 include("DBconn.php");
 $req = "select * from pub";
-$resu=mysqli_query($conn, $req);
+$resu = mysqli_query($conn, $req);
 
 ?>
 
@@ -22,6 +22,8 @@ $resu=mysqli_query($conn, $req);
   <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
   <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/album/">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+
 
   <link rel="stylesheet" href="">
 
@@ -70,6 +72,9 @@ $resu=mysqli_query($conn, $req);
       color: #385f5f;
     }
 
+    label {
+      display: block;
+    }
 
     body {
       background-color: var(--color4);
@@ -321,7 +326,7 @@ $resu=mysqli_query($conn, $req);
       line-height: 1.2;
     }
 
-    @media screen and (max-width: 600px) {
+    @media screen and (max-width: 400px) {
       .said-check {
         display: none;
       }
@@ -331,6 +336,20 @@ $resu=mysqli_query($conn, $req);
       }
     }
 
+    @media only screen and (max-width:768px) {
+
+      .said-check {
+        width: 25%;
+        left: 0;
+      }
+
+      .co {
+
+        width: 259px;
+        height: 403px;
+      }
+
+    }
   </style>
 
 </head>
@@ -344,6 +363,11 @@ $resu=mysqli_query($conn, $req);
 
 
   <div class="container">
+    <input type="checkbox" id="check">
+    <label for="check">
+      <i class="fas fa-bars" id="btn"> </i>
+      <i class="fas fa-times" id="cancel"> </i>
+    </label>
     <nav>
       <div class="logo"> <a href=""> <img src="./photo/Fichier 2-8.png" alt="">
         </a></div>
@@ -374,7 +398,7 @@ $resu=mysqli_query($conn, $req);
         </li>
 
       </ul>
-      <div class="search-form">
+      <div class="search-form" id="search">
         <input type="search" value="" placeholder="Search" class="search-input">
         <button type="submit" class="search-button">
           <ion-icon name="search-outline"></ion-icon>
@@ -402,7 +426,7 @@ $resu=mysqli_query($conn, $req);
         <label for="Nationaux">
           <div class="choix">
 
-            
+
 
             <input type="radio" id="Nationaux" name="projets" value="Nationaux"><a href="./projects2.php">
               Nationaux</a>
@@ -414,7 +438,7 @@ $resu=mysqli_query($conn, $req);
         <label for="Internationaux">
           <div class="choix">
 
-           
+
 
             <input type="radio" id="Internationaux" name="projets" value="Internationaux"> <a
               href="./projects2.php">Internationaux</a>
@@ -443,7 +467,7 @@ $resu=mysqli_query($conn, $req);
         <h4>Equipe</h4>
         <div class="choix">
 
-          
+
 
           <a href="./Equips.php">Equipes</a>
 
@@ -461,41 +485,48 @@ $resu=mysqli_query($conn, $req);
     <div class="album  bg-body-tertiary" style="padding-top: 45px; position: relative;  left: 15px;   width: 84%;">
       <div class="container-end">
 
-      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3 rw">
-    <?php while($row = mysqli_fetch_assoc($resu)) { ?>
-        <div class="col co">
-            <div class="card shadow-sm sm">
-                <img class="img" src="data:image/jpeg;base64,<?php echo base64_encode($row['photo']); ?>" alt="Photo de l'événement">
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3 rw">
+          <?php while ($row = mysqli_fetch_assoc($resu)) { ?>
+            <div class="col co">
+              <div class="card shadow-sm sm">
+                <img class="img" src="data:image/jpeg;base64,<?php echo base64_encode($row['photo']); ?>"
+                  alt="Photo de l'événement">
                 <div class="card-body cdr">
-                    <div class="card-text txt">
-                        <p class="fp1"><?php echo $row['titre']; ?></p>
-                        <p><span style="color: #126E62;">Journal</span>: <?php echo $row['journal']; ?></p>
-                        <!-- Ajoutez d'autres informations ici -->
-                    </div>
+                  <div class="card-text txt">
+                    <p class="fp1">
+                      <?php echo $row['titre']; ?>
+                    </p>
+                    <p><span style="color: #126E62;">Journal</span>:
+                      <?php echo $row['journal']; ?>
+                    </p>
+                    <!-- Ajoutez d'autres informations ici -->
+                  </div>
 
-                    <div class="d-flex justify-content-between align-items-center end">
-                        <div class="btn-group">
-                            <button type="button" class="btn btn-sm btn-outline-secondary bt">
-                                <a href="chemin_vers_la_page_de_l_image">View</a>
-                            </button>
-                        </div>
-                        <small class="text-body-secondary"><?php echo $row['date']; ?></small>
+                  <div class="d-flex justify-content-between align-items-center end">
+                    <div class="btn-group">
+                      <button type="button" class="btn btn-sm btn-outline-secondary bt">
+                        <a href="chemin_vers_la_page_de_l_image">View</a>
+                      </button>
                     </div>
+                    <small class="text-body-secondary">
+                      <?php echo $row['date']; ?>
+                    </small>
+                  </div>
 
                 </div>
+              </div>
+
             </div>
-
+          <?php } ?>
         </div>
-    <?php } ?>
-</div>
 
 
 
 
-        
 
-        </div>
+
       </div>
+    </div>
     </div>
 
   </main>
@@ -508,17 +539,21 @@ $resu=mysqli_query($conn, $req);
     </div>
     <div class="wrapper">
       <div class="button">
-       <a href="./contactsH.php"> <div class="icon"><ion-icon name="call"></ion-icon></div>
-        <span>Telephone</span>
+        <a href="./contactsH.php">
+          <div class="icon"><ion-icon name="call"></ion-icon></div>
+          <span>Telephone</span>
       </div></a>
       <div class="button">
-    <a href=""> <div class="icon"><ion-icon name="mail"></ion-icon></div>
-        <span>Email</span>
+        <a href="">
+          <div class="icon"><ion-icon name="mail"></ion-icon></div>
+          <span>Email</span>
       </div></a>
       <div class="button">
-     <a href="https://www.google.com/maps?client=firefox-b-d&q=saad+dahleb&um=1&ie=UTF-8&sa=X&ved=2ahUKEwj60s6Y8Kb_AhXQwKQKHcsMAk0Q_AUoA3oECAEQBQ">  <div class="icon"><ion-icon name="location-sharp"></ion-icon></i></div>
-        <span>Location</span>
-      </div></a> 
+        <a
+          href="https://www.google.com/maps?client=firefox-b-d&q=saad+dahleb&um=1&ie=UTF-8&sa=X&ved=2ahUKEwj60s6Y8Kb_AhXQwKQKHcsMAk0Q_AUoA3oECAEQBQ">
+          <div class="icon"><ion-icon name="location-sharp"></ion-icon></i></div>
+          <span>Location</span>
+      </div></a>
 
     </div>
     <p> Copyright ©2020 All rights reserved to LRDSI</p>

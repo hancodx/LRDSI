@@ -131,12 +131,13 @@
 
       color: #6c6cf7;
       position: absolute;
-      
+
     }
 
     .show {
       animation: in .5s ease both;
     }
+
     .hide:not(.no-hide) {
       animation: out .5s ease both;
     }
@@ -153,6 +154,7 @@
         opacity: 1;
       }
     }
+
     @keyframes out {
       0% {
         transform: translateY(0%);
@@ -172,11 +174,11 @@
       return new Promise(resolve => setTimeout(resolve, delayInms));
     }
 
-    document.querySelectorAll(".split").forEach(el=>{
-      var html = el.textContent.split('').map(e=>"<span style='display: inline-flex;'>"+e+"</span>").join("")
+    document.querySelectorAll(".split").forEach(el => {
+      var html = el.textContent.split('').map(e => "<span style='display: inline-flex;'>" + e + "</span>").join("")
       el.innerHTML = html;
     })
-    
+
     const animLeafs = async (el) => {
       const leafs = el.children;
       for (var j = 0; j < leafs.length; j++) {

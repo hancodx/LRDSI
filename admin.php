@@ -16,15 +16,10 @@ $respub = mysqli_query($conn, "SELECT * FROM pub");
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-
-   
-    
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="//cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css" rel="stylesheet">
     <!--<link rel="stylesheet" href="css/braa.css"> -->
 
-
-    
     <link rel="stylesheet" href="css/head-fot.css">
     <link rel="stylesheet" href="css/admin.css">
     <link rel="stylesheet" href="./css/equipes.css">
@@ -140,7 +135,9 @@ aside{
 	text-decoration: none;
 
 }
-
+label{
+  display: block;
+}
 
     </style>
 </head>
@@ -152,6 +149,11 @@ aside{
 
 
 <div class="container">
+<input type="checkbox" id="check">
+      <label for="check" >  
+        <i class="fas fa-bars" id="btn"> </i>
+        <i class="fas fa-times" id="cancel"> </i>
+      </label>
     <nav>
       <div class="logo"> <a href=""> <img src="./photo/Fichier 2-8.png" alt="">
         </a></div>
@@ -182,7 +184,7 @@ aside{
         </li>
 
       </ul>
-      <div class="search-form">
+      <div class="search-form" id="search">
         <input type="search" value="" placeholder="Search" class="search-input">
         <button type="submit" class="search-button">
           <ion-icon name="search-outline"></ion-icon>
