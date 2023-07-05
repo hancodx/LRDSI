@@ -83,6 +83,11 @@ if (isset($_POST['submit'])) {
   <header>
 
     <div class="container">
+    <input type="checkbox" id="check">
+      <label for="check">
+        <i class="fas fa-bars" id="btn"> </i>
+        <i class="fas fa-times" id="cancel"> </i>
+      </label>
       <nav>
         <div class="logo"> <a href=""> <img src="./photo/Fichier 2-8.png" alt="">
           </a></div>

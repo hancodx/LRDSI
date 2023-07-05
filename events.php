@@ -152,7 +152,7 @@ $resu = mysqli_query($conn, $req);
 
     <div class="all">
       <?php while ($row = mysqli_fetch_assoc($resu)) { ?>
-        <div class="event" style="margin-bottom: 4%;">
+        <div class="event" style="margin-bottom: 4%; ">
           <div class="dsrp">
             <h3>
               <?php echo $row['titre']; ?>

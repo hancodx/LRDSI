@@ -205,15 +205,22 @@ section {
 
   .all {
     margin-top: 55px;
+    width: 80%;
   }
 
 
   .said-check {
     display: none;
   }
+  /* .dsrp{
+   margin-left: 10px;
+  } */
 
   section {
     justify-content: center;
+  }
+  .event{
+   padding: 20px;
   }
 
 
