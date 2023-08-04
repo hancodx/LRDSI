@@ -203,6 +203,13 @@ $resu = mysqli_query($conn, $req);
       padding-left: calc(var(--bs-gutter-x) * .5);
       margin-top: var(--bs-gutter-y);
     }
+    .rw {
+	display: flex;
+	justify-content: flex-end;
+	height: auto;
+	width: 100%;
+	flex-wrap: wrap;
+}
 
     .co {
       height: auto;

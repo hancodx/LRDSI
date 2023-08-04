@@ -407,7 +407,7 @@
 
 
 
-  <<<<<<< HEAD=======>>>>>>> e993b40e51c562c14494a068ac0812f05ed648bb
+  
     <?php
     include("DBconn.php");
 
